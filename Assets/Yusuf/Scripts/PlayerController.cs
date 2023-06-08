@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         camera = Camera.main.transform;
+        
+        //Remove cursor
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }   
 
     void Update()
