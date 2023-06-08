@@ -13,11 +13,14 @@ public class PlayerController : MonoBehaviour
     
     private Transform camera;
 
+    private Animator animator;
+
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
+        animator = transform.GetChild(0).GetComponent<Animator>();
         camera = Camera.main.transform;
-        
+        Debug.Log(transform.GetChild(0).name);
         //Remove cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -42,6 +45,14 @@ public class PlayerController : MonoBehaviour
             
             //Move - Speed
             characterController.Move(moveDirection.normalized * playerSpeed * Time.deltaTime);
+            
+            //Animator
+            animator.SetBool("isWalk",true);
         }
+        else
+        {
+            animator.SetBool("isWalk",false);
+        }
+        
     }
 }
