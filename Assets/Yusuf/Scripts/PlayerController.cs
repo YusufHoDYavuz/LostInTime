@@ -9,15 +9,15 @@ public class PlayerController : MonoBehaviour
     private CharacterController characterController;
     private Transform camera;
     private Animator animator;
-    
-    [Header("Movement")]
-    [SerializeField] private float playerSpeed;
+
+    [Header("Movement")] [SerializeField] private float walkSpeed;
+    [SerializeField] private float runSpeed;
     [SerializeField] private float turnSmoothTime;
+    private float currentSpeed;
     private float turnSmoothVelocity;
     private Vector3 direction;
-    
-    [Header("Crouch")]
-    [SerializeField] private float crouchHeight;
+
+    [Header("Crouch")] [SerializeField] private float crouchHeight;
     [SerializeField] private Vector3 crouchHeightPosition;
     private float originalHeight;
     private Vector3 originalCrouchHeightPosition;
@@ -28,7 +28,8 @@ public class PlayerController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         animator = transform.GetChild(0).GetComponent<Animator>();
         camera = Camera.main.transform;
-        
+        currentSpeed = walkSpeed;
+
         //CROUCH
         originalHeight = characterController.height;
         originalCrouchHeightPosition = characterController.center;
@@ -36,12 +37,26 @@ public class PlayerController : MonoBehaviour
         //Remove cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-    }   
+    }
 
     void Update()
     {
         Movement();
-        
+
+        if (direction.magnitude >= 0.9f && Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            currentSpeed = runSpeed;
+            animator.SetBool("isRun", true);
+            animator.SetBool("isWalk", false);
+        }
+
+        if (!Input.GetKey(KeyCode.LeftShift) && Input.GetKeyUp(KeyCode.LeftShift) ||
+            Input.GetKey(KeyCode.LeftShift) && direction.magnitude <= 0.5f)
+        {
+            currentSpeed = walkSpeed;
+            animator.SetBool("isRun", false);
+        }
+
         if (Input.GetKeyDown(KeyCode.C))
         {
             ToggleCrouch();
@@ -49,12 +64,12 @@ public class PlayerController : MonoBehaviour
 
         if (direction.magnitude >= 0.1f && isCrouching)
         {
-            animator.SetBool("isCrouchWalk" , true);
+            animator.SetBool("isCrouchWalk", true);
             animator.SetBool("isCrouch", false);
         }
         else
         {
-            animator.SetBool("isCrouchWalk" , false);
+            animator.SetBool("isCrouchWalk", false);
         }
 
         if (direction.magnitude < 0.1f && isCrouching)
@@ -79,19 +94,19 @@ public class PlayerController : MonoBehaviour
 
             //Camera rotation with player
             Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            
+
             //Move - Speed
-            characterController.Move(moveDirection.normalized * playerSpeed * Time.deltaTime);
-            
+            characterController.Move(moveDirection.normalized * currentSpeed * Time.deltaTime);
+
             //Animator
-            animator.SetBool("isWalk",true);
+            animator.SetBool("isWalk", true);
         }
         else
         {
-            animator.SetBool("isWalk",false);
+            animator.SetBool("isWalk", false);
         }
     }
-    
+
     private void ToggleCrouch()
     {
         if (isCrouching)
@@ -113,5 +128,4 @@ public class PlayerController : MonoBehaviour
             isCrouching = true;
         }
     }
-
 }
