@@ -66,6 +66,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpeed: 0.925
   turnSmoothTime: 0.075
+  crouchHeight: 1.4
+  crouchHeightPosition: {x: 0.05, y: 0.7, z: 0.15}
 --- !u!1001 &1416465331363469365
 PrefabInstance:
   m_ObjectHideFlags: 0
