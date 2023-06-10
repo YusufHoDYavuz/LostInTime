@@ -64,8 +64,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc2c5e2891a5514bb1889f320a4fcf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 0.925
+  walkSpeed: 0.925
+  runSpeed: 3.5
   turnSmoothTime: 0.075
+  crouchHeight: 1.4
+  crouchHeightPosition: {x: 0.05, y: 0.7, z: 0.15}
 --- !u!1001 &1416465331363469365
 PrefabInstance:
   m_ObjectHideFlags: 0

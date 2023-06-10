@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class turret : MonoBehaviour
 {
-    [SerializeField] Transform target; // The target object to follow
-    [SerializeField] float rotationSpeed = 5f; // Rotation speed variable
+    [SerializeField] Transform target;
+    [SerializeField] float rotationSpeed = 5f; 
 
     [SerializeField] GameObject fireEffect;
 
 
-    [SerializeField] GameObject bulletPrefab; // Kullanýlacak mermi örneði
-    [SerializeField] Transform firePoint; // Mermi çýkýþ noktasý
+    [SerializeField] GameObject bulletPrefab; 
+    [SerializeField] Transform firePoint;
     [SerializeField] float fireRange;
 
     [SerializeField] float fireInterval;
