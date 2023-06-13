@@ -32,7 +32,7 @@ Uygulama ikincil fonksiyonu:
 # Ürün Özellikleri
 aaa
 # Hedef Kitle
-+12 yaş kitlesindeki macera oyunu seven oyuncular.
++13 yaş kitlesindeki macera oyunu seven oyuncular.
 
 # Juriye Not
 İlan formu veritabanına başarılı şekilde veri göndermesine rağmen, tecrübe yetersizliği ve zaman eksikliği sebebiyle ilanlar listesi ve teklif formları veritabanıyla ilişkilendirilememiştir.
