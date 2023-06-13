@@ -3,12 +3,18 @@
 Takım Unity 65
 
 # Ürün İle İlgili Bilgiler
+
 # Takım Elemanları
 Berfin Yağmur Kanat: Scrum Master 
+
 Mustafa Emir Uyar: Product Owner
+
 Yusuf Yavuz: Developer
+
 Abdullah İbrahimağaoğlu: Developer
+
 Ayşe Gül Tüysüz: Developer
+
 # Ürün İsmi
 --Anachrobot--
 
