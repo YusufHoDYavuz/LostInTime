@@ -1,40 +1,59 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CloseCombat : MonoBehaviour
 {
 
-    public float clickCooldown = 0.01f;
+    public float clickCooldown = 0.02f;
 
     
-    private int numberOfPunchs = 0;
+    public static int numberOfPunchs = 0;
     private float clickTimer = 0;
 
     public Animator animator;
-   
+    public static CloseCombat closeCombat;
+    public static float range = 1f; 
 
-    // Update is called once per frame
+
+    private void Start()
+    {
+        if (closeCombat == null)
+            closeCombat = this;
+    }
+
     void Update()
     {
-        if (numberOfPunchs != 0 && !(animator.GetCurrentAnimatorStateInfo(0).IsName("Cross Punch") || animator.GetCurrentAnimatorStateInfo(0).IsName("Punching"))|| animator.GetCurrentAnimatorStateInfo(0).normalizedTime>=1) 
-            animator.SetInteger("PunchCount",numberOfPunchs = 0);
 
-        
-        if (Input.GetKey(KeyCode.V))
+        if (Input.GetKeyUp(KeyCode.V))
             punchRequest();
         
     }
+
+    // Update is called once per frame
 
     void punchRequest()
     {
         if (Time.time-clickTimer > clickCooldown && numberOfPunchs<2)
         {
-
             clickTimer = Time.time;
-            animator.SetInteger("PunchCount",++numberOfPunchs);
-            
+            animator.SetInteger("PunchCount", ++numberOfPunchs);
+        }
+    }
+
+    public static void PunchCollision()
+    {
+        var ray = new Ray(closeCombat.transform.position, closeCombat.transform.forward);
+        RaycastHit hit;
+        if(Physics.Raycast(ray, out hit, range))
+        {
+            if (hit.transform.CompareTag("Enemy"))
+            {
+                Debug.Log("OUCH!! You hit the enemy.");
+            }
         }
     }
     
