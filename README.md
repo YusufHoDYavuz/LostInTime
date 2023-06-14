@@ -22,11 +22,9 @@ Ayşe Gül Tüysüz: Developer
 https://miro.com/app/board/uXjVMB1QjTc=/#tpicker-content
 
 # Ürün Açıklaması
-aaa
+İstanbulda bir metro inşasında bulunan bir lahit içindeki robotun içine ruhen sıkışan karakterimizin bedenine geri kavuşmak ümidiyle ,robotun zamanda yolculuk özelliğini kullanarak yaşadığı macera dolu hikaye.
+Kendini bulmaya çalışan bir kişinin zamanlar arasında görevleri tamamlaması
 
-Uygulama birincil fonksiyonu:
-
-Uygulama ikincil fonksiyonu: 
 
 
 # Ürün Özellikleri
