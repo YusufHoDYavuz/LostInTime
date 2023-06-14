@@ -48,8 +48,8 @@ Sprint board update: Sprint board screenshotları:
 
 Ürün Durumu: Ekran görüntüleri:  
 
-Sprint Review: Alınan kararlar: Kullanıcı temel sayfaları oluşturulmuş, bazıları kodlanmış, arduino kurulumu ve firebase'e bağlanması sağlanmış, uygulama için veritabanı olarak firebase servisleri aktif edilmiş ve eksiklikler değerlendirilmiştir. Sprint Review katılımcıları: Mustafa Aksoy
-
+Sprint Review: Alınan kararlar: 
+Sprint Review katılımcıları: 
 Sprint Retrospective:
 
 # Product Backlog URL
