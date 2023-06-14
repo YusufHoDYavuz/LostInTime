@@ -1,6 +1,6 @@
 # GoogleAkademiBootcamp U-65
 # Takım İsmi
-Takım Unity 65
+Takım Unity 65 (5D Studios)
 
 # Ürün İle İlgili Bilgiler
 
@@ -22,15 +22,26 @@ Ayşe Gül Tüysüz: Developer
 https://miro.com/app/board/uXjVMB1QjTc=/#tpicker-content
 
 # Ürün Açıklaması
-aaa
+İstanbulda bir metro inşasında bulunan bir lahit içindeki robotun içine ruhen sıkışan karakterimizin bedenine geri kavuşmak ümidiyle ,robotun zamanda yolculuk özelliğini kullanarak yaşadığı macera dolu hikaye.
+Kendini bulmaya çalışan bir kişinin zamanlar arasında görevleri tamamlaması
+Oyun Oyuncunun bu macerada kendi yeteneklerini keşfedip, düşmanlarla savaşarak gizemleri çözmesini hedeflemektedir.
 
-Uygulama birincil fonksiyonu:
-
-Uygulama ikincil fonksiyonu: 
 
 
 # Ürün Özellikleri
-aaa
+1- Macera ve aksiyon türünde bir oyundur.
+
+2- farklı mekanikleri içeren oyun zorlu platformlar, bulmacalar ve sürükleyici dövüşlerle doludur. 
+
+3- Üçüncü şahıs bakış açılı 3D bir oyundur.
+
+4- Araştırma keşif gibi unsurlar içermektedir. 
+
+5- hikaye odaklıdır.
+
+6- Oyuncunun farklı zamanlar arasında geçiş yapmasını sağlayacak mekaniklere sahiptir.
+
+
 # Hedef Kitle
 +13 yaş kitlesindeki macera oyunu seven oyuncular.
 
@@ -48,8 +59,8 @@ Sprint board update: Sprint board screenshotları:
 
 Ürün Durumu: Ekran görüntüleri:  
 
-Sprint Review: Alınan kararlar: Kullanıcı temel sayfaları oluşturulmuş, bazıları kodlanmış, arduino kurulumu ve firebase'e bağlanması sağlanmış, uygulama için veritabanı olarak firebase servisleri aktif edilmiş ve eksiklikler değerlendirilmiştir. Sprint Review katılımcıları: Mustafa Aksoy
-
+Sprint Review: Alınan kararlar: 
+Sprint Review katılımcıları: 
 Sprint Retrospective:
 
 # Product Backlog URL
