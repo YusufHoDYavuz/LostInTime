@@ -56,8 +56,6 @@ Bilgisayar kullanıcıları
 Bağımsız oyunlar oynayan genel oyuncu kitlesi.
 
 
-# Juriye Not
-İlan formu veritabanına başarılı şekilde veri göndermesine rağmen, tecrübe yetersizliği ve zaman eksikliği sebebiyle ilanlar listesi ve teklif formları veritabanıyla ilişkilendirilememiştir.
 
 # Sprint 1
 Sprint içinde tamamlanması tahmin edilen puan: 100 Puan
@@ -73,5 +71,3 @@ Sprint board update: Sprint board screenshotları:
 Sprint Review: Alınan kararlar: 
 Sprint Review katılımcıları: 
 Sprint Retrospective:
-
-# Product Backlog URL
