@@ -25,11 +25,12 @@ https://miro.com/app/board/uXjVMB1QjTc=/#tpicker-content
 
 Metro inşasında bulunan lahit içinden çıkan robotun içine yanlışlıkla ruhunu aktaran karakterimizin bedenine geri kavuşmak ümidiyle ,robotun zamanda yolculuk özelliğini kullanarak yaşadığı macera dolu hikaye. 
 
-Üç ayrı zaman arasında gezinen karakterimiz robotun yaratıcısının yönlendirmeleriyle zorlu platformlar, bulmacalar ve sürükleyici dövüşlerle zaman taşlarını elde etmeye çalışmaktadır. Zamanda gezinme sonucunda oluşan zaman kırılmaları oyuna yeni parkurlar eklemekte ve oyunun hikayesini değiştirmektedir. 
+Üç ayrı zaman arasında gezinen karakterimizin amacı robotun yaratıcısının yönlendirmeleriyle zaman taşlarını elde edip robotun yaratıcısına götürmek ve bedenine kavuşmaktır. Bu macerada onu zorlu platformlar, bulmacalar ve yüksek gerilimli dövüşler beklemektedir. Zamanda gezinme sonucunda oluşan zaman kırılmaları oyuna yeni parkurlar eklemekte ve oyunun hikayesini değiştirerek oyuna heyecan katmaktadır.
 
-Oyun Oyuncunun bu macerada kendi yeteneklerini keşfedip, düşmanlarla savaşarak gizemleri çözmesini hedeflemektedir.
+Oyun, Oyuncunun bu macerada kendi yeteneklerini keşfedip, düşmanlarla savaşarak gizemleri çözmesini hedeflemektedir.
 
 Anakronizm= Kişi, nesne veya olayların kendi gerçek zaman ve mekânlarından kopartılıp farklı bir çerçeveye oturtulması olarak değerlendirilmektedir. Oyunun ana fikri ve ismi burdan gelmektedir.
+
 
 # Ürün Özellikleri
 1- Macera ve aksiyon türündedir.
