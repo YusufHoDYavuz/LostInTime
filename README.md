@@ -30,7 +30,13 @@ Uygulama ikincil fonksiyonu:
 
 
 # Ürün Özellikleri
-aaa
+1- Macera ve aksiyon türünde bir oyundur.
+2- Bulmaca unsurları içeren bir oyundur.
+3- Üçüncü şahıs bakış açılı bir oyundur.
+4- Araştırma keşif gibi unsurlar içeren bir oyundur. 
+5- hikaye odaklı bir oyundur.
+6- Oyuncunun farklı zamanlar arasında geçiş yapmasını sağlayacak mekaniklere sahiptir.
+
 # Hedef Kitle
 +13 yaş kitlesindeki macera oyunu seven oyuncular.
 
