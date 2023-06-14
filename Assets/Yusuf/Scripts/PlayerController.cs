@@ -156,7 +156,7 @@ public class PlayerController : MonoBehaviour
         if (characterController.isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
             velocityY = Mathf.Sqrt(jumpHeight * 2f * gravity);
-
+            animator.SetBool("isJump",true);
            
         }
         velocityY -= gravity * gravityMultiplier * Time.deltaTime;
