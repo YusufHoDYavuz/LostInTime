@@ -23,6 +23,15 @@ public class PlayerController : MonoBehaviour
     private Vector3 originalCrouchHeightPosition;
     private bool isCrouching = false;
 
+    [Header("Gravity")]
+    [SerializeField] float gravity = 9.8f;
+    [SerializeField] float gravityMultiplier = 2;
+    [SerializeField] float groundedGravity = -0.5f;
+    [SerializeField] float jumpHeight = 3f;
+    private float velocityY;
+    
+    
+
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -41,8 +50,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        HandleJump();
         Movement();
-
         if (direction.magnitude >= 0.9f && Input.GetKeyDown(KeyCode.LeftShift))
         {
             currentSpeed = runSpeed;
@@ -76,6 +85,8 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("isCrouch", true);
         }
+
+        
     }
 
     private void Movement()
@@ -96,13 +107,14 @@ public class PlayerController : MonoBehaviour
             Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
 
             //Move - Speed
-            characterController.Move(moveDirection.normalized * currentSpeed * Time.deltaTime);
+            characterController.Move(moveDirection.normalized*  currentSpeed * Time.deltaTime  + Vector3.up*velocityY*Time.deltaTime);
 
             //Animator
             animator.SetBool("isWalk", true);
         }
         else
         {
+            characterController.Move( Vector3.up*velocityY*Time.deltaTime);
             animator.SetBool("isWalk", false);
         }
     }
@@ -127,5 +139,28 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isCrouch", true);
             isCrouching = true;
         }
+    }
+
+    private void HandleJump()
+    {
+        
+
+        if (characterController.isGrounded)
+        {
+            animator.SetBool("isJump",false);
+            if (velocityY < 0f)
+                velocityY = groundedGravity;
+           
+           
+        }
+        if (characterController.isGrounded && Input.GetKeyDown(KeyCode.Space))
+        {
+            velocityY = Mathf.Sqrt(jumpHeight * 2f * gravity);
+
+           
+        }
+        velocityY -= gravity * gravityMultiplier * Time.deltaTime;
+        animator.SetBool("isGrounded", characterController.isGrounded);
+        
     }
 }
