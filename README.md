@@ -16,7 +16,7 @@ Abdullah İbrahimağaoğlu: Developer
 Ayşe Gül Tüysüz: Developer
 
 # Ürün İsmi
---Anachrobot--
+--Anachrob--
 
 # Product Backlog URL
 https://miro.com/app/board/uXjVMB1QjTc=/#tpicker-content
