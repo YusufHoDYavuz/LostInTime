@@ -16,20 +16,21 @@ Abdullah İbrahimağaoğlu: Developer
 Ayşe Gül Tüysüz: Developer
 
 # Ürün İsmi
---Anachrobot--
+--Anachrob--
 
 # Product Backlog URL
 https://miro.com/app/board/uXjVMB1QjTc=/#tpicker-content
 
 # Ürün Açıklaması
 
-Metro inşasında bulunan lahit içinden çıkan robotun içine yanlışlıkla ruhunu aktaran karakterimizin bedenine geri kavuşmak ümidiyle ,robotun zamanda yolculuk özelliğini kullanarak yaşadığı macera dolu hikaye. 
+Metro inşası sırasında bulunan lahitin içinde robot olduğu keşfedilmiştir. Bu lahiti incelemekten sorumlu karakterimiz esrarengiz bir biçimde robotun içine sıkışır ve bedenine geri kavuşmak ümidiyle zamanda yolculuk yaparak macera dolu hikayenin kapılarını aralar.
 
-Üç ayrı zaman arasında gezinen karakterimiz robotun yaratıcısının yönlendirmeleriyle zorlu platformlar, bulmacalar ve sürükleyici dövüşlerle zaman taşlarını elde etmeye çalışmaktadır. Zamanda gezinme sonucunda oluşan zaman kırılmaları oyuna yeni parkurlar eklemekte ve oyunun hikayesini değiştirmektedir. 
+Üç ayrı zaman arasında gezinen karakterimizin amacı robotun yaratıcısının yönlendirmeleriyle zaman taşlarını elde edip robotun yaratıcısına götürmek ve bedenine kavuşmaktır. Bu macerada onu zorlu platformlar, bulmacalar ve yüksek gerilimli dövüşler beklemektedir. Zamanda gezinme sonucunda oluşan zaman kırılmaları oyuna yeni parkurlar eklemekte ve oyunun hikayesini değiştirerek oyuna heyecan katmaktadır.
 
-Oyun Oyuncunun bu macerada kendi yeteneklerini keşfedip, düşmanlarla savaşarak gizemleri çözmesini hedeflemektedir.
+Oyun, Oyuncunun bu macerada kendi yeteneklerini keşfedip, düşmanlarla savaşarak gizemleri çözmesini hedeflemektedir.
 
-Anakronizm= Kişi, nesne veya olayların kendi gerçek zaman ve mekânlarından kopartılıp farklı bir çerçeveye oturtulması olarak değerlendirilmektedir. Oyunun ana fikri ve ismi burdan gelmektedir.
+Anakronizm= Kişi, nesne veya olayların kendi gerçek zaman ve mekânlarından kopartılıp farklı bir çerçeveye oturtulması olarak değerlendirilmektedir. Oyunun ana fikri burdan gelmektedir.
+
 
 # Ürün Özellikleri
 1- Macera ve aksiyon türündedir.
@@ -56,8 +57,6 @@ Bilgisayar kullanıcıları
 Bağımsız oyunlar oynayan genel oyuncu kitlesi.
 
 
-# Juriye Not
-İlan formu veritabanına başarılı şekilde veri göndermesine rağmen, tecrübe yetersizliği ve zaman eksikliği sebebiyle ilanlar listesi ve teklif formları veritabanıyla ilişkilendirilememiştir.
 
 # Sprint 1
 Sprint içinde tamamlanması tahmin edilen puan: 100 Puan
@@ -73,5 +72,3 @@ Sprint board update: Sprint board screenshotları:
 Sprint Review: Alınan kararlar: 
 Sprint Review katılımcıları: 
 Sprint Retrospective:
-
-# Product Backlog URL
