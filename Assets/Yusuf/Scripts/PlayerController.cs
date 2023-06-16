@@ -24,11 +24,14 @@ public class PlayerController : MonoBehaviour
     private bool isCrouching = false;
 
     [Header("Gravity")]
-    [SerializeField] float gravity = 9.8f;
-    [SerializeField] float gravityMultiplier = 2;
-    [SerializeField] float groundedGravity = -0.5f;
-    [SerializeField] float jumpHeight = 3f;
+    [SerializeField] private float gravity = 9.8f;
+    [SerializeField] private float gravityMultiplier = 2;
+    [SerializeField] private float groundedGravity = -0.5f;
+    [SerializeField] private float jumpHeight = 3f;
+    [SerializeField] private float jumpCooldown = 0.25f;
     private float velocityY;
+    private float lastJumpTime;
+    private bool isGrounded, isJumping, isFalling;
     
     
 
@@ -56,7 +59,7 @@ public class PlayerController : MonoBehaviour
         {
             currentSpeed = runSpeed;
             animator.SetBool("isRun", true);
-            animator.SetBool("isWalk", false);
+            //animator.SetBool("isWalk", false);
         }
 
         if (!Input.GetKey(KeyCode.LeftShift) && Input.GetKeyUp(KeyCode.LeftShift) ||
@@ -144,10 +147,11 @@ public class PlayerController : MonoBehaviour
     private void HandleJump()
     {
         
-
+        
         if (characterController.isGrounded)
         {
-            animator.SetBool("isJump",false);
+            animator.SetBool("isJump",isJumping = false);
+            animator.SetBool("isFall", isFalling = false);
             if (velocityY < 0f)
                 velocityY = groundedGravity;
            
@@ -155,12 +159,21 @@ public class PlayerController : MonoBehaviour
         }
         if (characterController.isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
-            velocityY = Mathf.Sqrt(jumpHeight * 2f * gravity);
-            animator.SetBool("isJump",true);
+            
+            if (Time.time- lastJumpTime> jumpCooldown)
+            {
+                lastJumpTime = Time.time;
+                velocityY = Mathf.Sqrt(jumpHeight * 2f * gravity);
+                animator.SetBool("isJump",isJumping = true);
+            }
            
         }
         velocityY -= gravity * gravityMultiplier * Time.deltaTime;
-        animator.SetBool("isGrounded", characterController.isGrounded);
+        animator.SetBool("isGrounded", isGrounded = characterController.isGrounded);
+        if (velocityY<0 && isJumping)
+        {
+            animator.SetBool("isFall",isFalling = true);
+        }
         
     }
 }
