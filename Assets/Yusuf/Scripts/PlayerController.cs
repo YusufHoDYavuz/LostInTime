@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpCooldown = 0.25f;
     private float velocityY;
     private float lastJumpTime;
-    private bool isGrounded, isJumping, isFalling;
+    private bool isGrounded, isJumping, isFalling, isFreeFalling;
     
     
 
@@ -55,15 +55,15 @@ public class PlayerController : MonoBehaviour
     {
         HandleJump();
         Movement();
-        if (direction.magnitude >= 0.9f && Input.GetKeyDown(KeyCode.LeftShift))
+        if (direction.magnitude >= 0.9f && Input.GetKeyDown(KeyCode.LeftShift)&&!isCrouching)
         {
             currentSpeed = runSpeed;
             animator.SetBool("isRun", true);
             //animator.SetBool("isWalk", false);
         }
 
-        if (!Input.GetKey(KeyCode.LeftShift) && Input.GetKeyUp(KeyCode.LeftShift) ||
-            Input.GetKey(KeyCode.LeftShift) && direction.magnitude <= 0.5f)
+        if (!Input.GetKey(KeyCode.LeftShift) && Input.GetKeyUp(KeyCode.LeftShift)||
+            Input.GetKey(KeyCode.LeftShift)  && direction.magnitude <= 0.5f)
         {
             currentSpeed = walkSpeed;
             animator.SetBool("isRun", false);
@@ -74,6 +74,7 @@ public class PlayerController : MonoBehaviour
             ToggleCrouch();
         }
 
+        /*
         if (direction.magnitude >= 0.1f && isCrouching)
         {
             animator.SetBool("isCrouchWalk", true);
@@ -89,6 +90,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isCrouch", true);
         }
 
+        */
         
     }
 
@@ -137,10 +139,12 @@ public class PlayerController : MonoBehaviour
             // Crouching
             characterController.height = crouchHeight;
             characterController.center = crouchHeightPosition;
-            animator.SetBool("isWalk", false);
-            animator.SetBool("isCrouchWalk", true);
             animator.SetBool("isCrouch", true);
+            //animator.SetBool("isWalk", false);
+            //animator.SetBool("isCrouchWalk", true);
+            
             isCrouching = true;
+            
         }
     }
 
@@ -157,7 +161,7 @@ public class PlayerController : MonoBehaviour
            
            
         }
-        if (characterController.isGrounded && Input.GetKeyDown(KeyCode.Space))
+        if (characterController.isGrounded && Input.GetKeyDown(KeyCode.Space) && !isCrouching)
         {
             
             if (Time.time- lastJumpTime> jumpCooldown)
@@ -170,10 +174,13 @@ public class PlayerController : MonoBehaviour
         }
         velocityY -= gravity * gravityMultiplier * Time.deltaTime;
         animator.SetBool("isGrounded", isGrounded = characterController.isGrounded);
-        if (velocityY<0 && isJumping)
+        if (velocityY < 0 && isJumping)
+        {
+            animator.SetBool("isFall", isFalling = true);
+        }else if (characterController.velocity.y <= -2f)
         {
             animator.SetBool("isFall",isFalling = true);
         }
-        
+
     }
 }
