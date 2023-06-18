@@ -16,7 +16,8 @@ public class PlayerController : MonoBehaviour
     private float currentSpeed;
     private float turnSmoothVelocity;
     private Vector3 direction;
-
+    public static bool canMove ;
+    
     [Header("Crouch")] [SerializeField] private float crouchHeight;
     [SerializeField] private Vector3 crouchHeightPosition;
     private float originalHeight;
@@ -41,6 +42,7 @@ public class PlayerController : MonoBehaviour
         animator = transform.GetChild(0).GetComponent<Animator>();
         camera = Camera.main.transform;
         currentSpeed = walkSpeed;
+        canMove = true;
 
         //CROUCH
         originalHeight = characterController.height;
@@ -49,6 +51,7 @@ public class PlayerController : MonoBehaviour
         //Remove cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        
     }
 
     void Update()
@@ -100,7 +103,7 @@ public class PlayerController : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         direction = new Vector3(horizontal, 0f, vertical).normalized;
 
-        if (direction.magnitude >= 0.1f)
+        if (direction.magnitude >= 0.1f && canMove)
         {
             //Rotation
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + camera.eulerAngles.y;

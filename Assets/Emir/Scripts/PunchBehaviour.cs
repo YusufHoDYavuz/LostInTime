@@ -14,6 +14,9 @@ public class PunchBehaviour : StateMachineBehaviour
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         canHit = true;
+        PlayerController.canMove = true;
+        if (stateInfo.IsName("Punch1") && CloseCombat.numberOfPunchs == 2)
+            PlayerController.canMove = false;
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -23,7 +26,8 @@ public class PunchBehaviour : StateMachineBehaviour
             if (!(stateInfo.IsName("Punch1") && CloseCombat.numberOfPunchs == 2))
                 animator.SetInteger("PunchCount",CloseCombat.numberOfPunchs = 0);
 
-            
+
+
         }
         else if (canHit && stateInfo.normalizedTime>= 0.4f)
         {

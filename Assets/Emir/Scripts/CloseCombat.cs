@@ -28,7 +28,7 @@ public class CloseCombat : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyUp(KeyCode.V))
+        if (Input.GetKeyUp(KeyCode.V) && !animator.GetBool("isWalk") &&!animator.GetBool("isRun") && animator.GetBool("isGrounded"))
             punchRequest();
         
     }
@@ -41,6 +41,7 @@ public class CloseCombat : MonoBehaviour
         {
             clickTimer = Time.time;
             animator.SetInteger("PunchCount", ++numberOfPunchs);
+            PlayerController.canMove = false;
         }
     }
 
