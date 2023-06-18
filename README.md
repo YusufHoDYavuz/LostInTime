@@ -76,9 +76,11 @@ Story'ler yapılacak işlere (task'lere) bölünmüştür. Miro Board'da gözük
 ![sprint board 34](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/641111ba-f560-474e-a799-1c16c986d158)
 ![sprint board 44](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/ed420b8f-0462-4306-8cf8-8bbf4c41de41)
 
-- Ürün Durumu: Ekran görüntüleri:  
-
-
+- Ürün Durumu: Ekran görüntüleri:
+![ürünün ekran görüntüsü D](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/9e24c42f-cdb5-48fc-8294-bb90d3e2d0a7)
+![ürünün ekran görüntüsü B](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/6bd7d9b2-dfb5-400a-a577-baa4142dc936)
+![ürünün ekran görüntüsü C](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/4fc44d1a-9a40-474b-8d3d-8630d01b6eb8)
+![ürünün ekran görüntüsü A](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/9e3a8183-4598-437b-92fb-0c129e3abb6c)
 
 - Sprint Review: Alınan kararlar: Temel karakter kontrolleri ve animasyonları tamamlandı. Taret mekaniği, 3D objeleri sürükleme bırakma, zaman geçişi, yakın dövüş ve basit düşman yapay zekası tamamlandı. Şimdiki zaman ve gelecek zaman sahne tasarımı değerlendirildi.
 
