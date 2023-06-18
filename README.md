@@ -1,10 +1,10 @@
 # GoogleAkademiBootcamp U-65
-# Takım İsmi
+## Takım İsmi
 Takım Unity 65 (5D Studios)
 
 # Ürün İle İlgili Bilgiler
 
-# Takım Elemanları
+## Takım Elemanları
 Berfin Yağmur Kanat: Scrum Master 
 
 Mustafa Emir Uyar: Product Owner
@@ -15,13 +15,13 @@ Abdullah İbrahimağaoğlu: Developer
 
 Ayşe Gül Tüysüz: Developer
 
-# Ürün İsmi
+## Ürün İsmi
 --LOST IN TIME--
 
-# Product Backlog URL
+## Product Backlog URL
 https://miro.com/app/board/uXjVMB1QjTc=/#tpicker-content
 
-# Ürün Açıklaması
+## Ürün Açıklaması
 
 Metro inşası sırasında bulunan lahitin içinde robot olduğu keşfedilmiştir. Bu lahiti incelemekten sorumlu karakterimiz esrarengiz bir biçimde robotun içine sıkışır ve bedenine geri kavuşmak ümidiyle zamanda yolculuk yaparak macera dolu hikayenin kapılarını aralar.
 
@@ -32,7 +32,7 @@ Oyun, oyuncunun bu macerada kendi yeteneklerini keşfedip, düşmanlarla savaşa
 Anakronizm= Kişi, nesne veya olayların kendi gerçek zaman ve mekânlarından kopartılıp farklı bir çerçeveye oturtulması olarak değerlendirilmektedir. Oyunun ana fikri burdan gelmektedir.
 
 
-# Ürün Özellikleri
+## Ürün Özellikleri
 1- Macera ve aksiyon türündedir.
 
 2- Üç boyutlu low poly bir oyundur.
@@ -49,7 +49,7 @@ Anakronizm= Kişi, nesne veya olayların kendi gerçek zaman ve mekânlarından 
 
 8- Birden fazla düşman çeşitliliğine sahiptir.
 
-# Hedef Kitle
+## Hedef Kitle
 - +13 yaş kitlesindeki macera oyunu seven oyuncular.
 
 - Bilgisayar kullanıcıları.
