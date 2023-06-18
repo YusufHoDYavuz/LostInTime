@@ -16,7 +16,7 @@ Abdullah İbrahimağaoğlu: Developer
 Ayşe Gül Tüysüz: Developer
 
 # Ürün İsmi
---Anachrob--
+--LOST IN TIME--
 
 # Product Backlog URL
 https://miro.com/app/board/uXjVMB1QjTc=/#tpicker-content
@@ -43,11 +43,11 @@ Anakronizm= Kişi, nesne veya olayların kendi gerçek zaman ve mekânlarından 
 
 5- Araştırma keşif gibi unsurlar içermektedir. 
 
-6- hikaye odaklıdır.
+6- Hikaye odaklıdır.
 
 7- Oyuncunun farklı zamanlar arasında geçiş yapmasını sağlayacak mekaniklere sahiptir.
 
-8- birden fazla düşman çeşitliliğine sahiptir.
+8- Birden fazla düşman çeşitliliğine sahiptir.
 
 # Hedef Kitle
 - +13 yaş kitlesindeki macera oyunu seven oyuncular.
@@ -63,13 +63,15 @@ Sprint içinde tamamlanması tahmin edilen puan: 100 Puan
 
 Puan tamamlama mantığı: Toplamda proje boyunca tamamlanması gereken 340 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprint'in en azından 100 ile başlaması gerektiğine karar verildi.
 
-Daily Scrum: Daily Scrum toplantılarının zamansal sebeplerden ötürü Discord ve Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: [daily scrum-U65.docx](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/files/11768622/daily.scrum-U65.docx)
+Daily Scrum: Daily Scrum toplantılarının zamansal sebeplerden ötürü Discord ve Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: 
 
 
 Sprint board update: Sprint board screenshotları: 
 
 Ürün Durumu: Ekran görüntüleri:  
 
-Sprint Review: Alınan kararlar: 
-Sprint Review katılımcıları: 
-Sprint Retrospective:
+Sprint Review: Alınan kararlar: Temel karakter kontrolleri ve animasyonları tamamlandı. Taret mekaniği, 3D objeleri sürükleme bırakma, zaman geçişi, yakın dövüş ve basit düşman yapay zekası tamamlandı. Şimdiki zaman ve gelecek zaman sahne tasarımı değerlendirildi.
+
+Sprint Review katılımcıları: Berfin Yağmur Kanat, Mustafa Emir Uyar,Yusuf Yavuz, Abdullah İbrahimağaoğlu, Ayşe Gül Tüysüz
+
+Sprint Retrospective: Sürekli çalışan bir takım olduğumuz için zaman zaman mola verilmesinin daha verimli olacağına karar verilmiştir. Mola günü olmasına vurgu yapılmıştır. 
