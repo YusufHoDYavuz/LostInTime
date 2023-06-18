@@ -27,7 +27,7 @@ Metro inşası sırasında bulunan lahitin içinde robot olduğu keşfedilmişti
 
 Üç ayrı zaman arasında gezinen karakterimizin amacı robotun yaratıcısının yönlendirmeleriyle zaman taşlarını elde edip robotun yaratıcısına götürmek ve bedenine kavuşmaktır. Bu macerada onu zorlu platformlar, bulmacalar ve yüksek gerilimli dövüşler beklemektedir. Zamanda gezinme sonucunda oluşan zaman kırılmaları oyuna yeni parkurlar eklemekte ve oyunun hikayesini değiştirerek oyuna heyecan katmaktadır.
 
-Oyun, Oyuncunun bu macerada kendi yeteneklerini keşfedip, düşmanlarla savaşarak gizemleri çözmesini hedeflemektedir.
+Oyun, oyuncunun bu macerada kendi yeteneklerini keşfedip, düşmanlarla savaşarak gizemleri çözmesini hedeflemektedir.
 
 Anakronizm= Kişi, nesne veya olayların kendi gerçek zaman ve mekânlarından kopartılıp farklı bir çerçeveye oturtulması olarak değerlendirilmektedir. Oyunun ana fikri burdan gelmektedir.
 
