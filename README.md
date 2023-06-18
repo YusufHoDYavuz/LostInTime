@@ -70,6 +70,10 @@ Daily Scrum: Daily Scrum toplantılarının zamansal sebeplerden ötürü Discor
 Sprint board update: Sprint board screenshotları: 
 
 Ürün Durumu: Ekran görüntüleri:  
+![sprint board 1](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/30794d71-b9f3-4e18-aae6-e4f47485f3cd)
+![sprint board 2](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/38c0007a-be65-41d3-8282-983087f373e6)
+![sprint board 3](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/7d04200b-1e6a-41e4-9795-860a1416f5f6)
+
 
 Sprint Review: Alınan kararlar: Temel karakter kontrolleri ve animasyonları tamamlandı. Taret mekaniği, 3D objeleri sürükleme bırakma, zaman geçişi, yakın dövüş ve basit düşman yapay zekası tamamlandı. Şimdiki zaman ve gelecek zaman sahne tasarımı değerlendirildi.
 
