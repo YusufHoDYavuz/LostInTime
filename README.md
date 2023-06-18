@@ -50,11 +50,11 @@ Anakronizm= Kişi, nesne veya olayların kendi gerçek zaman ve mekânlarından 
 8- birden fazla düşman çeşitliliğine sahiptir.
 
 # Hedef Kitle
-+13 yaş kitlesindeki macera oyunu seven oyuncular.
+- +13 yaş kitlesindeki macera oyunu seven oyuncular.
 
-Bilgisayar kullanıcıları
+- Bilgisayar kullanıcıları.
 
-Bağımsız oyunlar oynayan genel oyuncu kitlesi.
+- Bağımsız oyunlar seven genel oyuncu kitlesi.
 
 
 
