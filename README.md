@@ -46,7 +46,7 @@ Anakronizm= Kişi, nesne veya olayların kendi gerçek zaman ve mekânlarından 
 8- Birden fazla düşman çeşitliliğine sahiptir.
 
 ## Hedef Kitle
-- +13-65 yaş kitlesindeki macera oyunu seven oyuncular.
+- +13-65 yaş arası macera oyunu seven oyuncular.
 
 - Bilgisayar kullanıcıları.
 
@@ -81,4 +81,4 @@ Story'ler yapılacak işlere (task'lere) bölünmüştür. Miro Board'da gözük
 
 - Sprint Review katılımcıları: Berfin Yağmur Kanat, Mustafa Emir Uyar,Yusuf Yavuz, Abdullah İbrahimağaoğlu, Ayşe Gül Tüysüz
 
-- Sprint Retrospective: Sürekli çalışan bir takım olduğumuz için zaman zaman mola verilmesinin daha verimli olacağına karar verilmiştir. Mola günü olmasına vurgu yapılmıştır. 
+- Sprint Retrospective:  Sürekli çalışan bir takım olduğumuz için zaman zaman mola verilmesinin daha verimli olacağına karar verilmiştir. Mola günü olmasına vurgu yapılmıştır. 
