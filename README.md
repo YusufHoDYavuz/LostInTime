@@ -58,29 +58,27 @@ https://miro.com/app/board/uXjVMB1QjTc=/#tpicker-content
 
 
 # Sprint 1
-Sprint Notları: User Story'ler product backlog'ların içine yazılmıştır. Product backlog item'lara tıklandığında hikayelerin detayları okunabilir.
+- Sprint Notları: User Story'ler product backlog'ların içine yazılmıştır. Product backlog item'lara tıklandığında hikayelerin detayları okunabilir.
 
-Sprint içinde tamamlanması tahmin edilen puan: 100 Puan
+- Sprint içinde tamamlanması tahmin edilen puan: 100 Puan
 
-Puan tamamlama mantığı: Toplamda proje boyunca tamamlanması gereken 380 puanlık backlog bulunmaktadır. 4 sprint'e bölündüğünde ilk sprint'in en azından 100 ile başlaması gerektiğine karar verildi.
+- Puan tamamlama mantığı: Toplamda proje boyunca tamamlanması gereken 380 puanlık backlog bulunmaktadır. 4 sprint'e bölündüğünde ilk sprint'in en azından 100 ile başlaması gerektiğine karar verildi.
 
-Backlog düzeni ve Story seçimleri: Backlog'umuz ilk yapılacak story'lere göre düzenlenmiştir. Sprint başına tahmin edilen puan sayısını geçmeyecek şekilde sıradan seçimler yapılmaktadır. Story başına çıkan tahmin puanı, toplam puanın yarısından az tutulmuştur.
+- Backlog düzeni ve Story seçimleri: Backlog'umuz ilk yapılacak story'lere göre düzenlenmiştir. Sprint başına tahmin edilen puan sayısını geçmeyecek şekilde sıradan seçimler yapılmaktadır. Story başına çıkan tahmin puanı, toplam puanın yarısından az tutulmuştur.
 
 Story'ler yapılacak işlere (task'lere) bölünmüştür. Miro Board'da gözüken kırmızı item'lar yapılacak işleri (task) gösterirken, mavi item'lar story'leri temsil etmektedir.
 
-Daily Scrum: Daily Scrum toplantılarının zamansal sebeplerden ötürü Discord ve Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg ve word olarak Readme'de tarafımızdan paylaşılmaktadır. jpeg, Word belgesinin içindedir. [daily scrum-U65.docx](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/files/11782407/daily.scrum-U65.docx)
+- Daily Scrum: Daily Scrum toplantılarının zamansal sebeplerden ötürü Discord ve Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg ve word olarak Readme'de tarafımızdan paylaşılmaktadır. jpeg, Word belgesinin içindedir. [daily scrum-U65.docx](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/files/11782407/daily.scrum-U65.docx)
+
+- Sprint board update: Sprint board screenshotları: 
+
+
+- Ürün Durumu: Ekran görüntüleri:  
 
 
 
-Sprint board update: Sprint board screenshotları: 
+- Sprint Review: Alınan kararlar: Temel karakter kontrolleri ve animasyonları tamamlandı. Taret mekaniği, 3D objeleri sürükleme bırakma, zaman geçişi, yakın dövüş ve basit düşman yapay zekası tamamlandı. Şimdiki zaman ve gelecek zaman sahne tasarımı değerlendirildi.
 
+- Sprint Review katılımcıları: Berfin Yağmur Kanat, Mustafa Emir Uyar,Yusuf Yavuz, Abdullah İbrahimağaoğlu, Ayşe Gül Tüysüz
 
-Ürün Durumu: Ekran görüntüleri:  
-
-
-
-Sprint Review: Alınan kararlar: Temel karakter kontrolleri ve animasyonları tamamlandı. Taret mekaniği, 3D objeleri sürükleme bırakma, zaman geçişi, yakın dövüş ve basit düşman yapay zekası tamamlandı. Şimdiki zaman ve gelecek zaman sahne tasarımı değerlendirildi.
-
-Sprint Review katılımcıları: Berfin Yağmur Kanat, Mustafa Emir Uyar,Yusuf Yavuz, Abdullah İbrahimağaoğlu, Ayşe Gül Tüysüz
-
-Sprint Retrospective: Sürekli çalışan bir takım olduğumuz için zaman zaman mola verilmesinin daha verimli olacağına karar verilmiştir. Mola günü olmasına vurgu yapılmıştır. 
+- Sprint Retrospective: Sürekli çalışan bir takım olduğumuz için zaman zaman mola verilmesinin daha verimli olacağına karar verilmiştir. Mola günü olmasına vurgu yapılmıştır. 
