@@ -50,7 +50,7 @@ Anakronizm= Kişi, nesne veya olayların kendi gerçek zaman ve mekânlarından 
 8- Birden fazla düşman çeşitliliğine sahiptir.
 
 ## Hedef Kitle
-- +13 yaş kitlesindeki macera oyunu seven oyuncular.
+- +13-65 yaş kitlesindeki macera oyunu seven oyuncular.
 
 - Bilgisayar kullanıcıları.
 
@@ -59,20 +59,25 @@ Anakronizm= Kişi, nesne veya olayların kendi gerçek zaman ve mekânlarından 
 
 
 # Sprint 1
+Sprint Notları: User Story'ler product backlog'ların içine yazılmıştır. Product backlog item'lara tıklandığında hikayelerin detayları okunabilir.
+
 Sprint içinde tamamlanması tahmin edilen puan: 100 Puan
 
-Puan tamamlama mantığı: Toplamda proje boyunca tamamlanması gereken 340 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprint'in en azından 100 ile başlaması gerektiğine karar verildi.
+Puan tamamlama mantığı: Toplamda proje boyunca tamamlanması gereken 380 puanlık backlog bulunmaktadır. 4 sprint'e bölündüğünde ilk sprint'in en azından 100 ile başlaması gerektiğine karar verildi.
 
-Daily Scrum: Daily Scrum toplantılarının zamansal sebeplerden ötürü Discord ve Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: [daily scrum-U65.docx](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/files/11782407/daily.scrum-U65.docx)
+Backlog düzeni ve Story seçimleri: Backlog'umuz ilk yapılacak story'lere göre düzenlenmiştir. Sprint başına tahmin edilen puan sayısını geçmeyecek şekilde sıradan seçimler yapılmaktadır. Story başına çıkan tahmin puanı, toplam puanın yarısından az tutulmuştur.
+
+Story'ler yapılacak işlere (task'lere) bölünmüştür. Miro Board'da gözüken kırmızı item'lar yapılacak işleri (task) gösterirken, mavi item'lar story'leri temsil etmektedir.
+
+Daily Scrum: Daily Scrum toplantılarının zamansal sebeplerden ötürü Discord ve Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg ve word olarak Readme'de tarafımızdan paylaşılmaktadır. jpeg, Word belgesinin içindedir. [daily scrum-U65.docx](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/files/11782407/daily.scrum-U65.docx)
 
 
 
 Sprint board update: Sprint board screenshotları: 
 
+
 Ürün Durumu: Ekran görüntüleri:  
-![sprint board 1](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/30794d71-b9f3-4e18-aae6-e4f47485f3cd)
-![sprint board 2](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/38c0007a-be65-41d3-8282-983087f373e6)
-![sprint board 3](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/7d04200b-1e6a-41e4-9795-860a1416f5f6)
+
 
 
 Sprint Review: Alınan kararlar: Temel karakter kontrolleri ve animasyonları tamamlandı. Taret mekaniği, 3D objeleri sürükleme bırakma, zaman geçişi, yakın dövüş ve basit düşman yapay zekası tamamlandı. Şimdiki zaman ve gelecek zaman sahne tasarımı değerlendirildi.
