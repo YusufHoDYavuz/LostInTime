@@ -18,9 +18,6 @@ Ayşe Gül Tüysüz: Developer
 ## Ürün İsmi
 --LOST IN TIME--
 
-## Product Backlog URL
-https://miro.com/app/board/uXjVMB1QjTc=/#tpicker-content
-
 ## Ürün Açıklaması
 
 Metro inşası sırasında bulunan lahitin içinde robot olduğu keşfedilmiştir. Bu lahiti incelemekten sorumlu karakterimiz esrarengiz bir biçimde robotun içine sıkışır ve bedenine geri kavuşmak ümidiyle zamanda yolculuk yaparak macera dolu hikayenin kapılarını aralar.
@@ -30,7 +27,6 @@ Metro inşası sırasında bulunan lahitin içinde robot olduğu keşfedilmişti
 Oyun, oyuncunun bu macerada kendi yeteneklerini keşfedip, düşmanlarla savaşarak gizemleri çözmesini hedeflemektedir.
 
 Anakronizm= Kişi, nesne veya olayların kendi gerçek zaman ve mekânlarından kopartılıp farklı bir çerçeveye oturtulması olarak değerlendirilmektedir. Oyunun ana fikri burdan gelmektedir.
-
 
 ## Ürün Özellikleri
 1- Macera ve aksiyon türündedir.
@@ -56,6 +52,9 @@ Anakronizm= Kişi, nesne veya olayların kendi gerçek zaman ve mekânlarından 
 
 - Bağımsız oyunlar seven genel oyuncu kitlesi.
 
+
+## Product Backlog URL
+https://miro.com/app/board/uXjVMB1QjTc=/#tpicker-content
 
 
 # Sprint 1
