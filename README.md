@@ -46,7 +46,7 @@ Anakronizm= Kişi, nesne veya olayların kendi gerçek zaman ve mekânlarından 
 8- Birden fazla düşman çeşitliliğine sahiptir.
 
 ## Hedef Kitle
-- +13-65 yaş arası macera oyunu seven oyuncular.
+- 13-65 yaş arası macera oyunu seven oyuncular.
 
 - Bilgisayar kullanıcıları.
 
