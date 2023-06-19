@@ -29,21 +29,21 @@ Oyun, oyuncunun bu macerada kendi yeteneklerini keşfedip, düşmanlarla savaşa
 Anakronizm= Kişi, nesne veya olayların kendi gerçek zaman ve mekânlarından kopartılıp farklı bir çerçeveye oturtulması olarak değerlendirilmektedir. Oyunun ana fikri burdan gelmektedir.
 
 ## Ürün Özellikleri
-1- Macera ve aksiyon türündedir.
+- Macera ve aksiyon türündedir.
 
-2- Üç boyutlu low poly bir oyundur.
+- Üç boyutlu low poly bir oyundur.
 
-3- farklı mekanikleri içeren oyun zorlu platformlar, bulmacalar ve sürükleyici dövüşlerle doludur. 
+- farklı mekanikleri içeren oyun zorlu platformlar, bulmacalar ve sürükleyici dövüşlerle doludur. 
 
-4- Üçüncü şahıs bakış açılıdır.
+- Üçüncü şahıs bakış açılıdır.
 
-5- Araştırma keşif gibi unsurlar içermektedir. 
+- Araştırma keşif gibi unsurlar içermektedir. 
 
-6- Hikaye odaklıdır.
+- Hikaye odaklıdır.
 
-7- Oyuncunun farklı zamanlar arasında geçiş yapmasını sağlayacak mekaniklere sahiptir.
+- Oyuncunun farklı zamanlar arasında geçiş yapmasını sağlayacak mekaniklere sahiptir.
 
-8- Birden fazla düşman çeşitliliğine sahiptir.
+- Birden fazla düşman çeşitliliğine sahiptir.
 
 ## Hedef Kitle
 - 13-65 yaş arası macera oyunu seven oyuncular.
