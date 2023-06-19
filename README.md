@@ -68,7 +68,8 @@ https://miro.com/app/board/uXjVMB1QjTc=/#tpicker-content
 
 Story'ler yapılacak işlere (task'lere) bölünmüştür. Miro Board'da gözüken kırmızı item'lar yapılacak işleri (task) gösterirken, mavi item'lar story'leri temsil etmektedir.
 
-- Daily Scrum: Daily Scrum toplantılarının zamansal sebeplerden ötürü Discord ve Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg ve word olarak Readme'de tarafımızdan paylaşılmaktadır. jpeg, Word belgesinin içindedir. [daily scrum-U65.docx](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/files/11782407/daily.scrum-U65.docx)
+- Daily Scrum: Daily Scrum toplantılarının zamansal sebeplerden ötürü Discord ve Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg, word ve txt olarak Readme'de tarafımızdan zip olarak paylaşılmaktadır.[daily scrum-U65.zip](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/files/11782895/daily.scrum-U65.zip)
+
 
 - Sprint board update: Sprint board screenshotları:
 ![sprint board 11](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/319cb303-4b86-457a-988a-a80adfb0f67d)
