@@ -52,7 +52,6 @@ Anakronizm= Kişi, nesne veya olayların kendi gerçek zaman ve mekânlarından 
 
 - Bağımsız oyunlar seven genel oyuncu kitlesi.
 
-
 ## Product Backlog URL
 https://miro.com/app/board/uXjVMB1QjTc=/#tpicker-content
 
@@ -70,7 +69,6 @@ Story'ler yapılacak işlere (task'lere) bölünmüştür. Miro Board'da gözük
 
 - **Daily Scrum:** Daily Scrum toplantılarının zamansal sebeplerden ötürü Discord ve Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg, word ve txt olarak Readme'de tarafımızdan zip olarak paylaşılmaktadır.[daily scrum-U65.zip](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/files/11782895/daily.scrum-U65.zip)
 
-
 - **Sprint board update: Sprint board screenshotları:**
 ![sprint board 11](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/319cb303-4b86-457a-988a-a80adfb0f67d)
 ![sprint board 22](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/111916ce-8012-4d06-bcab-75f68642e64e)
@@ -83,8 +81,6 @@ Story'ler yapılacak işlere (task'lere) bölünmüştür. Miro Board'da gözük
 ![ürünün ekran görüntüsü C](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/4fc44d1a-9a40-474b-8d3d-8630d01b6eb8)
 ![ürünün ekran görüntüsü A](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/9e3a8183-4598-437b-92fb-0c129e3abb6c)
 
-- **Sprint Review: Alınan kararlar:** Temel karakter kontrolleri ve animasyonları tamamlandı. Taret mekaniği, 3D objeleri sürükleme bırakma, zaman geçişi, yakın dövüş ve basit düşman yapay zekası tamamlandı. Şimdiki zaman ve gelecek zaman sahne tasarımı değerlendirildi.
-
-- **Sprint Review katılımcıları:** Berfin Yağmur Kanat, Mustafa Emir Uyar,Yusuf Yavuz, Abdullah İbrahimağaoğlu, Ayşe Gül Tüysüz
+- **Sprint Review: Alınan kararlar:** Temel karakter kontrolleri ve animasyonları tamamlandı. Taret mekaniği, 3D objeleri sürükleme bırakma, zaman geçişi, yakın dövüş ve basit düşman yapay zekası tamamlandı. Şimdiki zaman ve gelecek zaman sahne tasarımı değerlendirildi. **Sprint Review katılımcıları:** Berfin Yağmur Kanat, Mustafa Emir Uyar,Yusuf Yavuz, Abdullah İbrahimağaoğlu, Ayşe Gül Tüysüz
 
 - **Sprint Retrospective:**  Sürekli çalışan bir takım olduğumuz için zaman zaman mola verilmesinin daha verimli olacağına karar verilmiştir. Mola günü olmasına vurgu yapılmıştır. 
