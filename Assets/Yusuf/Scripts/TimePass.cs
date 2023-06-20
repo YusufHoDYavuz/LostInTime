@@ -23,7 +23,7 @@ public class TimePass : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             cinemachineFreeLook.Follow = null;
             ShakeKamera();
