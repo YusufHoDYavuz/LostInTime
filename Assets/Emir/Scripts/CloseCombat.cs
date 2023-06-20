@@ -28,7 +28,7 @@ public class CloseCombat : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyUp(KeyCode.V) && !animator.GetBool("isWalk") &&!animator.GetBool("isRun") && animator.GetBool("isGrounded"))
+        if (Input.GetMouseButtonDown(0) && !animator.GetBool("isWalk") &&!animator.GetBool("isRun") && animator.GetBool("isGrounded"))
             punchRequest();
         
     }
