@@ -33,6 +33,10 @@ public class PlayerController : MonoBehaviour
     private float velocityY;
     private float lastJumpTime;
     private bool isGrounded, isJumping, isFalling, isFreeFalling;
+
+
+    // ******
+  
     
     
 
@@ -51,6 +55,8 @@ public class PlayerController : MonoBehaviour
         //Remove cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+      
         
     }
 
@@ -58,6 +64,8 @@ public class PlayerController : MonoBehaviour
     {
         HandleJump();
         Movement();
+        
+        
         if (direction.magnitude >= 0.9f && Input.GetKeyDown(KeyCode.LeftShift)&&!isCrouching)
         {
             currentSpeed = runSpeed;
@@ -186,4 +194,7 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+
+   
 }
