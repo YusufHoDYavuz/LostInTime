@@ -1316,6 +1316,19 @@ MonoBehaviour:
   - http://89.163.206.23/AssetStore/TreeOffers/Offer_9.jpg
   - http://89.163.206.23/AssetStore/TreeOffers/Offer_10.jpg
   - http://89.163.206.23/AssetStore/TreeOffers/Offer_11.jpg
+  textures:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   LinksURL:
   - 
   - 
@@ -1331,6 +1344,7 @@ MonoBehaviour:
   - 
   gameLinks: http://89.163.206.23/AssetStore/TreeOffers/OfferLink.txt
   isLoading: 1
+  loaded: 1
 --- !u!4 &1576418730
 Transform:
   m_ObjectHideFlags: 0
@@ -6342,11 +6356,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7546599186502855564, guid: 440fade6b80f8764e8c02162eb6fe52e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000001646809
+      value: 0.000000016468093
       objectReference: {fileID: 0}
     - target: {fileID: 7546599186502855564, guid: 440fade6b80f8764e8c02162eb6fe52e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000004986136
+      value: -0.0000000049861373
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 440fade6b80f8764e8c02162eb6fe52e, type: 3}
