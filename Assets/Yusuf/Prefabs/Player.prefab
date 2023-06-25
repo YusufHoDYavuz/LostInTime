@@ -151,6 +151,9 @@ MonoBehaviour:
   groundedGravity: -0.5
   jumpHeight: 3
   jumpCooldown: 1
+  maxStamina: 100
+  staminaDrainRate: 10
+  staminaSlider: {fileID: 0}
 --- !u!1001 &1416465331363469365
 PrefabInstance:
   m_ObjectHideFlags: 0
