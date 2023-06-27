@@ -21,7 +21,7 @@ public class PunchBehaviour : StateMachineBehaviour
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (stateInfo.normalizedTime >= 1f)
+        if (stateInfo.normalizedTime >= 0.8f)
         {
             if (!(stateInfo.IsName("Punch1") && CloseCombat.numberOfPunchs == 2))
                 animator.SetInteger("PunchCount",CloseCombat.numberOfPunchs = 0);

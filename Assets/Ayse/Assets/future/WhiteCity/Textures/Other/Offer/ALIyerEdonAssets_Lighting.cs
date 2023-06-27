@@ -13,10 +13,11 @@ public class ALIyerEdonAssets_Lighting : EditorWindow
         Rect r = EditorGUILayout.GetControlRect(GUILayout.Height(padding + thickness));
         r.height = thickness;
         r.y += padding / 2;
-        r.x -= 2;
+        r.x -= 2; 
         r.width += 6;
         EditorGUI.DrawRect(r, color);
     }
+
 
     private const int windowWidth = 610;
     private const int windowHeight = 500;

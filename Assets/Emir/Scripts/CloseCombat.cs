@@ -23,6 +23,8 @@ public class CloseCombat : MonoBehaviour
     {
         if (closeCombat == null)
             closeCombat = this;
+
+            
     }
 
     void Update()
@@ -31,6 +33,7 @@ public class CloseCombat : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && !animator.GetBool("isWalk") &&!animator.GetBool("isRun") && animator.GetBool("isGrounded"))
             punchRequest();
         
+            
     }
 
     // Update is called once per frame
