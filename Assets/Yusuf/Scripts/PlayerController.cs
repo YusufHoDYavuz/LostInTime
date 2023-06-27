@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,16 +17,15 @@ public class PlayerController : MonoBehaviour
     private float currentSpeed;
     private float turnSmoothVelocity;
     private Vector3 direction;
-    public static bool canMove ;
-    
+    public static bool canMove;
+
     [Header("Crouch")] [SerializeField] private float crouchHeight;
     [SerializeField] private Vector3 crouchHeightPosition;
     private float originalHeight;
     private Vector3 originalCrouchHeightPosition;
     private bool isCrouching = false;
 
-    [Header("Gravity")]
-    [SerializeField] private float gravity = 9.8f;
+    [Header("Gravity")] [SerializeField] private float gravity = 9.8f;
     [SerializeField] private float gravityMultiplier = 2;
     [SerializeField] private float groundedGravity = -0.5f;
     [SerializeField] private float jumpHeight = 3f;
@@ -34,11 +34,10 @@ public class PlayerController : MonoBehaviour
     private float lastJumpTime;
     private bool isGrounded, isJumping, isFalling, isFreeFalling;
 
-
-    // ******
-  
-    
-    
+    [Header("Stamina")] [SerializeField] private float maxStamina = 100f;
+    [SerializeField] private float staminaDrainRate = 10f;
+    private float currentStamina;
+    public Slider staminaSlider;
 
     private void Start()
     {
@@ -56,8 +55,9 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-      
-        
+        //STAMINA
+        currentStamina = maxStamina;
+        UpdateStaminaUI();
     }
 
     void Update()
@@ -65,16 +65,14 @@ public class PlayerController : MonoBehaviour
         HandleJump();
         Movement();
         
-        
-        if (direction.magnitude >= 0.9f && Input.GetKeyDown(KeyCode.LeftShift)&&!isCrouching)
+        if (direction.magnitude >= 0.9f && Input.GetKeyDown(KeyCode.LeftShift) && !isCrouching && currentStamina > 1f)
         {
             currentSpeed = runSpeed;
             animator.SetBool("isRun", true);
-            //animator.SetBool("isWalk", false);
         }
 
-        if (!Input.GetKey(KeyCode.LeftShift) && Input.GetKeyUp(KeyCode.LeftShift)||
-            Input.GetKey(KeyCode.LeftShift)  && direction.magnitude <= 0.5f)
+        if (!Input.GetKey(KeyCode.LeftShift) && Input.GetKeyUp(KeyCode.LeftShift) ||
+            Input.GetKey(KeyCode.LeftShift) && direction.magnitude <= 0.5f || currentStamina < 1f)
         {
             currentSpeed = walkSpeed;
             animator.SetBool("isRun", false);
@@ -84,25 +82,14 @@ public class PlayerController : MonoBehaviour
         {
             ToggleCrouch();
         }
-
-        /*
-        if (direction.magnitude >= 0.1f && isCrouching)
-        {
-            animator.SetBool("isCrouchWalk", true);
-            animator.SetBool("isCrouch", false);
-        }
-        else
-        {
-            animator.SetBool("isCrouchWalk", false);
-        }
-
-        if (direction.magnitude < 0.1f && isCrouching)
-        {
-            animator.SetBool("isCrouch", true);
-        }
-
-        */
         
+        //Stamina
+        if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0)
+            DrainStamina(staminaDrainRate * Time.deltaTime);
+        else
+            RefillStamina(staminaDrainRate * Time.deltaTime);
+
+        UpdateStaminaUI();
     }
 
     private void Movement()
@@ -123,14 +110,15 @@ public class PlayerController : MonoBehaviour
             Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
 
             //Move - Speed
-            characterController.Move(moveDirection.normalized*  currentSpeed * Time.deltaTime  + Vector3.up*velocityY*Time.deltaTime);
+            characterController.Move(moveDirection.normalized * currentSpeed * Time.deltaTime +
+                                     Vector3.up * velocityY * Time.deltaTime);
 
             //Animator
             animator.SetBool("isWalk", true);
         }
         else
         {
-            characterController.Move( Vector3.up*velocityY*Time.deltaTime);
+            characterController.Move(Vector3.up * velocityY * Time.deltaTime);
             animator.SetBool("isWalk", false);
         }
     }
@@ -151,50 +139,57 @@ public class PlayerController : MonoBehaviour
             characterController.height = crouchHeight;
             characterController.center = crouchHeightPosition;
             animator.SetBool("isCrouch", true);
-            //animator.SetBool("isWalk", false);
-            //animator.SetBool("isCrouchWalk", true);
-            
             isCrouching = true;
-            
         }
     }
 
     private void HandleJump()
     {
-        
-        
         if (characterController.isGrounded)
         {
-            animator.SetBool("isJump",isJumping = false);
+            animator.SetBool("isJump", isJumping = false);
             animator.SetBool("isFall", isFalling = false);
             if (velocityY < 0f)
                 velocityY = groundedGravity;
-           
-           
         }
+
         if (characterController.isGrounded && Input.GetKeyDown(KeyCode.Space) && !isCrouching)
         {
-            
-            if (Time.time- lastJumpTime> jumpCooldown)
+            if (Time.time - lastJumpTime > jumpCooldown)
             {
                 lastJumpTime = Time.time;
                 velocityY = Mathf.Sqrt(jumpHeight * 2f * gravity);
-                animator.SetBool("isJump",isJumping = true);
+                animator.SetBool("isJump", isJumping = true);
             }
-           
         }
+
         velocityY -= gravity * gravityMultiplier * Time.deltaTime;
         animator.SetBool("isGrounded", isGrounded = characterController.isGrounded);
         if (velocityY < 0 && isJumping)
         {
             animator.SetBool("isFall", isFalling = true);
-        }else if (characterController.velocity.y <= -2f)
-        {
-            animator.SetBool("isFall",isFalling = true);
         }
-
+        else if (characterController.velocity.y <= -2f)
+        {
+            animator.SetBool("isFall", isFalling = true);
+        }
     }
 
+    //STAMINA
+    private void DrainStamina(float amount)
+    {
+        currentStamina -= amount;
+        currentStamina = Mathf.Clamp(currentStamina, 0f, maxStamina);
+    }
 
-   
+    private void RefillStamina(float amount)
+    {
+        currentStamina += amount;
+        currentStamina = Mathf.Clamp(currentStamina, 0f, maxStamina);
+    }
+
+    private void UpdateStaminaUI()
+    {
+        staminaSlider.value = currentStamina / maxStamina;
+    }
 }

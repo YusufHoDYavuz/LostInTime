@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DraggableObject
   - Enemy
+  - Collactable
   layers:
   - Default
   - TransparentFX
