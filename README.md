@@ -86,7 +86,7 @@ Story'ler yapılacak işlere (task'lere) bölünmüştür. Miro Board'da gözük
 - **Sprint Retrospective:**  Sürekli çalışan bir takım olduğumuz için zaman zaman mola verilmesinin daha verimli olacağına karar verilmiştir. Mola günü olmasına vurgu yapılmıştır.
 
 
-# Sprint 1
+# Sprint 2
 - **Sprint Notları**: User Story'ler product backlog'ların içine yazılmıştır. Product backlog item'lara tıklandığında hikayelerin detayları okunabilir.
 
 - **Sprint içinde tamamlanması tahmin edilen puan:** 130 Puan
