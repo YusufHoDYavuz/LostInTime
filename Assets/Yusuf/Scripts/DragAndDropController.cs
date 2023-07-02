@@ -17,8 +17,50 @@ public class DragAndDropController : MonoBehaviour
     [SerializeField] private Transform currentPov;
     [SerializeField] private Transform dragDropPov;
 
+    //************************
+
+    [SerializeField] private GameObject turretPrefab; 
+    [SerializeField] private float minDistance = 0.5f; 
+    [SerializeField] private float maxDistance = 10f; 
+
+    private bool isRaycasting = false; 
+    private RaycastHit raycastHit;
+
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+           
+            isRaycasting = true;
+        }
+
+        if (Input.GetKeyUp(KeyCode.X))
+        {
+           
+            isRaycasting = false;
+
+            if (!isRaycasting)
+            {
+                Vector3 raycastOrigin = transform.position + transform.forward;
+                Ray ray = new Ray(raycastOrigin, transform.forward);
+
+                Debug.DrawRay(ray.origin, ray.direction * maxDistance, Color.red);
+
+                if (Physics.Raycast(ray, out raycastHit, maxDistance))
+                {
+
+                    float distance = raycastHit.distance;
+                    if (distance >= minDistance && distance <= maxDistance)
+                    {
+                        turretPrefab.transform.position = raycastHit.point;
+                        Instantiate(turretPrefab);
+                    }
+                }
+            }
+        }
+
+
+        //************************************************************************
         if (Input.GetMouseButton(1))
         {
             Vector3 raycastOrigin = transform.position + transform.forward;
