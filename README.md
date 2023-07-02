@@ -105,6 +105,6 @@ Story'ler yapılacak işlere (task'lere) bölünmüştür. Miro Board'da gözük
 - **Ürün Durumu: Ekran görüntüleri:**
 
 
-- **Sprint Review: Alınan kararlar:** Temel karakter kontrolleri ve animasyonları tamamlandı. Taret mekaniği, 3D objeleri sürükleme bırakma, zaman geçişi, yakın dövüş ve basit düşman yapay zekası tamamlandı. Şimdiki zaman ve gelecek zaman sahne tasarımı değerlendirildi. **Sprint Review katılımcıları:** Berfin Yağmur Kanat, Mustafa Emir Uyar,Yusuf Yavuz, Abdullah İbrahimağaoğlu, Ayşe Gül Tüysüz
+- **Sprint Review: Alınan kararlar:** Şimdiki zaman sahnesi, Gelecek zaman yapılarının konulması tamamlandı. Turret modeli entegrasyonu tamamlandı. Oynanış düşünüldü. Gelecek zaman sahne tasarımı değerlendirildi. **Sprint Review katılımcıları:** Berfin Yağmur Kanat, Mustafa Emir Uyar,Yusuf Yavuz, Abdullah İbrahimağaoğlu, Ayşe Gül Tüysüz
 
 - **Sprint Retrospective:**  Bayram tatilinden dolayı iletişimde aksaklıklar saptanmındığı için takım üyelerinin gelecek projelerde daha fazla aktif olması gerektiğine vurgu yapılmıştır.
