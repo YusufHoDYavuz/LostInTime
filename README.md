@@ -1,7 +1,7 @@
 # GoogleAkademiBootcamp U-65
 ## Takım İsmi
 Takım Unity 65 (**5D Studios**)
-
+![TAKIM LOGOSU2 küçük](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/872f5267-b510-4dc5-87cd-f1d0c4f4c7a2)
 # Ürün İle İlgili Bilgiler
 
 ## Takım Elemanları
@@ -17,7 +17,7 @@ Ayşe Gül Tüysüz: Developer
 
 ## Ürün İsmi
 --**LOST IN TIME**--
-
+![Oyun logosu küçük](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/3ae570bb-bc25-4abe-b2e1-72791d2aefd5)
 ## Ürün Açıklaması
 
 Metro inşası sırasında bulunan lahitin içinde robot olduğu keşfedilmiştir. Bu lahiti incelemekten sorumlu karakterimiz esrarengiz bir biçimde robotun içine sıkışır ve bedenine geri kavuşmak ümidiyle zamanda yolculuk yaparak macera dolu hikayenin kapılarını aralar.
@@ -98,3 +98,13 @@ Story'ler yapılacak işlere (task'lere) bölünmüştür. Miro Board'da gözük
 Story'ler yapılacak işlere (task'lere) bölünmüştür. Miro Board'da gözüken kırmızı item'lar yapılacak işleri (task) gösterirken, mavi item'lar story'leri temsil etmektedir.
 
 - **Daily Scrum:** Daily Scrum toplantılarının zamansal sebeplerden ötürü Discord ve Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg, word ve txt olarak Readme'de tarafımızdan zip olarak paylaşılmaktadır.
+- 
+- - **Sprint board update: Sprint board screenshotları:**
+
+
+- **Ürün Durumu: Ekran görüntüleri:**
+
+
+- **Sprint Review: Alınan kararlar:** Temel karakter kontrolleri ve animasyonları tamamlandı. Taret mekaniği, 3D objeleri sürükleme bırakma, zaman geçişi, yakın dövüş ve basit düşman yapay zekası tamamlandı. Şimdiki zaman ve gelecek zaman sahne tasarımı değerlendirildi. **Sprint Review katılımcıları:** Berfin Yağmur Kanat, Mustafa Emir Uyar,Yusuf Yavuz, Abdullah İbrahimağaoğlu, Ayşe Gül Tüysüz
+
+- **Sprint Retrospective:**  Bayram tatilinden dolayı iletişimde aksaklıklar saptanmındığı için takım üyelerinin gelecek projelerde daha fazla aktif olması gerektiğine vurgu yapılmıştır.
