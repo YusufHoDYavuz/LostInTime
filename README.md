@@ -31,7 +31,7 @@ Anakronizm= Kişi, nesne veya olayların kendi gerçek zaman ve mekânlarından 
 ## Ürün Özellikleri
 - Macera ve aksiyon türündedir.
 
-- Üç boyutlu low poly bir oyundur.
+- Üç boyutlu bir oyundur.
 
 - farklı mekanikleri içeren oyun zorlu platformlar, bulmacalar ve sürükleyici dövüşlerle doludur. 
 
@@ -105,6 +105,7 @@ Story'ler yapılacak işlere (task'lere) bölünmüştür. Miro Board'da gözük
   ![board 2](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/03277ac7-dd57-43d7-846c-be0d4bee40c2)
   ![board 3](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/1fdf6deb-6205-4c5d-819c-ceaeede1b4fa)
   ![board 4](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/7edacb47-931f-4cfb-a6f2-f611db858469)
+  
 - **Ürün Durumu: Ekran görüntüleri:**
   ![ss1](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/c73623f9-26ae-4cb2-9ba1-fe39624a8352)
 ![ss2](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/442394ed-13a6-42cb-a723-52f30f979fb2)
