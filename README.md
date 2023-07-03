@@ -106,7 +106,10 @@ Story'ler yapılacak işlere (task'lere) bölünmüştür. Miro Board'da gözük
   ![board 3](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/1fdf6deb-6205-4c5d-819c-ceaeede1b4fa)
   ![board 4](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/7edacb47-931f-4cfb-a6f2-f611db858469)
 - **Ürün Durumu: Ekran görüntüleri:**
-
+  ![ss1](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/c73623f9-26ae-4cb2-9ba1-fe39624a8352)
+![ss2](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/442394ed-13a6-42cb-a723-52f30f979fb2)
+![ss3](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/70086a60-d36a-4d33-9080-5f856fb123fd)
+https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/da46f9b0-c823-4d5c-8140-05a9326cdad0
 
 - **Sprint Review: Alınan kararlar:** Şimdiki zaman sahnesi, Gelecek zaman yapılarının konulması tamamlandı. Turret modeli entegrasyonu tamamlandı. Oynanış düşünüldü. Gelecek zaman sahne tasarımı değerlendirildi. **Sprint Review katılımcıları:** Berfin Yağmur Kanat, Mustafa Emir Uyar,Yusuf Yavuz, Abdullah İbrahimağaoğlu, Ayşe Gül Tüysüz
 
