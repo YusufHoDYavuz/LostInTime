@@ -137,6 +137,9 @@ MonoBehaviour:
   cmFreeLook: {fileID: 0}
   currentPov: {fileID: 0}
   dragDropPov: {fileID: 0}
+  turretPrefab: {fileID: 5566845109179967729, guid: 41c85ba313ea9e1408b8fd0270fd5fae, type: 3}
+  minDistance: 5
+  maxDistance: 10
 --- !u!114 &1088653572
 MonoBehaviour:
   m_ObjectHideFlags: 0
