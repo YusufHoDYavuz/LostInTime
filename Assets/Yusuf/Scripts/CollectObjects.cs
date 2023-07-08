@@ -1,11 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CollectObjects : MonoBehaviour
 {
     public float raycastDistance;
+
+    [SerializeField] private List<Sprite> parchmentUIList = new List<Sprite>();
+    private int parchmentValue;
     
+    [SerializeField] private GameObject parchmentUI;
+    private bool isActiveParchmentUI;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
@@ -20,9 +29,47 @@ public class CollectObjects : MonoBehaviour
                     Destroy(hit.collider.gameObject);
                     Debug.Log("Collactable Object: " + hit.collider.name);
                 }
+                else if (hit.collider.CompareTag("Show"))
+                {
+                    if (!isActiveParchmentUI)
+                    {
+                        Sprite matchingSprite = FindSpriteByRaycastObjectName(parchmentUIList, hit.collider.name);
+                        
+                        parchmentUI.transform.DOLocalMove(Vector3.zero, 0.25f);
+                        isActiveParchmentUI = true;
+
+                        if (matchingSprite != null)
+                        {
+                            parchmentUI.GetComponent<Image>().sprite = parchmentUIList[parchmentValue];
+                        }
+                    }
+                }
             }
-            
+
             Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.cyan);
         }
+
+        if (isActiveParchmentUI && Input.GetKeyDown(KeyCode.O))
+        {
+            parchmentUI.transform.DOLocalMove(new Vector3(0,1100,0), 0.25f);
+            isActiveParchmentUI = false;
+        }
+    }
+    
+     private Sprite FindSpriteByRaycastObjectName(List<Sprite> sprites, string objectName)
+     {
+         int raiseValue = 0;
+        
+        foreach (Sprite sprite in sprites)
+        {
+            if (sprite.name == objectName)
+            {
+                parchmentValue = raiseValue;
+                return sprite;
+            }
+            raiseValue++;
+        }
+
+        return null;
     }
 }

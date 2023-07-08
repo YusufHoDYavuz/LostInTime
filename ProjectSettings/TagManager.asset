@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Collactable
   - PuzzlePiece
+  - Show
   layers:
   - Default
   - TransparentFX
