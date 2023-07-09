@@ -8,11 +8,13 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject tutorial;
     private bool isActiveTutorial = true;
 
+    [SerializeField] private GameObject uiPanel;
+    private bool isActivePanel;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
-
             if (isActiveTutorial)
             {
                 tutorial.transform.DOLocalMove(new Vector3(1250, 0, 0), 0.25f);
@@ -21,9 +23,18 @@ public class UIManager : MonoBehaviour
             {
                 tutorial.transform.DOLocalMove(new Vector3(680, 0, 0), 0.25f);
             }
-            
+
             isActiveTutorial = !isActiveTutorial;
-           
         }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            SetActiveTransitionPanel();
+        }
+    }
+
+    public void SetActiveTransitionPanel()
+    {
+        uiPanel.SetActive(!uiPanel.activeSelf);
     }
 }
