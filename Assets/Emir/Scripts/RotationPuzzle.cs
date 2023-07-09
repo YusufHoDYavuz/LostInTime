@@ -8,12 +8,15 @@ public class RotationPuzzle : MonoBehaviour
 
     private bool isInteracting = false;
     GameObject [] puzzlePieces;
+    private Camera cam;
+    public static int puzzlePiecesLength;
     
 
     void Start()
     {
         puzzlePieces = GameObject.FindGameObjectsWithTag("PuzzlePiece");
-
+        puzzlePiecesLength = puzzlePieces.Length;
+        cam = Camera.main;
     }
 
     // Update is called once per frame
@@ -33,7 +36,9 @@ public class RotationPuzzle : MonoBehaviour
 
     void interactPiece(){
         RaycastHit hit;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition+new Vector3(0,0.5f,0));
+        
+        Vector3 raycastOrigin = cam.transform.position+ cam.transform.forward;
+        Ray ray = new Ray(raycastOrigin, cam.transform.forward);
         if(Physics.Raycast(ray, out hit)){
             if(hit.collider.gameObject.tag == "PuzzlePiece"){
                 Outline objectOutline = hit.collider.gameObject.GetComponent<Outline>();

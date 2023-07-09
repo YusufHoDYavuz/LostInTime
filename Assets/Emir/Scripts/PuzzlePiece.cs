@@ -20,7 +20,7 @@ public class PuzzlePiece : MonoBehaviour
                 if(currentDirection == correctDirection){
                   correctPieces++;
                   isPrevCorrect = true;
-                    if(correctPieces == 3){
+                    if(correctPieces == RotationPuzzle.puzzlePiecesLength){
                         Debug.Log("Puzzle solved");
                     }
                 }else{
