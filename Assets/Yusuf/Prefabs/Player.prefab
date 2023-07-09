@@ -1145,6 +1145,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6700619806255484597}
+  - component: {fileID: 378184567}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1171,6 +1172,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &378184567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6700619806255484596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42272d01ff3a5074f8f2e1ed8102c35d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3767126741588894677
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1268,11 +1281,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7546599186502855564, guid: 440fade6b80f8764e8c02162eb6fe52e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000001646809
+      value: 0.000000016468093
       objectReference: {fileID: 0}
     - target: {fileID: 7546599186502855564, guid: 440fade6b80f8764e8c02162eb6fe52e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000004986136
+      value: -0.0000000049861373
       objectReference: {fileID: 0}
     - target: {fileID: 7546599186502855565, guid: 440fade6b80f8764e8c02162eb6fe52e, type: 3}
       propertyPath: m_Lens.FarClipPlane
