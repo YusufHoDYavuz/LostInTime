@@ -20,7 +20,7 @@ public class turret : MonoBehaviour
     [SerializeField] float fireInterval;
 
     [SerializeField] float fireForce = 1000;
-
+    Vector3 direction;
 
 
 
@@ -39,14 +39,14 @@ public class turret : MonoBehaviour
     }
     private void returnTarget()
     {
-        Vector3 direction = target.transform.position - transform.position;
+        direction = target.transform.position - transform.position;
         Quaternion targetRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
     }
     public void fire()
     {
-        Vector3 direction = target.transform.position - transform.position;
+        
 
         if (direction.magnitude < fireRange)
         {
