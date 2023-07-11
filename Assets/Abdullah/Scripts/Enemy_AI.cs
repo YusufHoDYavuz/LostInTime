@@ -50,10 +50,11 @@ public class Enemy_AI : MonoBehaviour
     }
     private void Movement(Vector3 nextPosition)
     {
+        nextPosition.y = gameObject.transform.position.y;
         if (Vector3.Distance(transform.position, Target.transform.position) < distance)
         {
             
-            if (transform.position != pointObject.transform.position)
+            if (transform.position != nextPosition)
             {
                 isFire = false;
                 animator.SetBool("isWalk", true);

@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Main Game/past_backup.unity
-    guid: 25efa8a8d6b11e041a119ce003ba7dff
+    path: Assets/Main Game/past.unity
+    guid: 8f19d37cc1cccfd4996867bad1e1ace7
   - enabled: 1
     path: Assets/Main Game/present.unity
     guid: b3470894befd9d74d91bb400d96f841e
+  - enabled: 1
+    path: Assets/Main Game/future.unity
+    guid: c0ce9da3ebdf05147bc97b06b97f64eb
+  - enabled: 1
+    path: Assets/Main Game/past_backup.unity
+    guid: 25efa8a8d6b11e041a119ce003ba7dff
   m_configObjects: {}

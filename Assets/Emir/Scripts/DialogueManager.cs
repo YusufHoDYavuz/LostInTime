@@ -14,11 +14,12 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
+       
         Invoke("StartDemo", 2);
     }
     void StartDemo()
     {
-        textPanelObject.transform.localScale = Vector3.zero;
+       
         ShowTextBox(new string[] { "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel ante at mi euismod accumsan.", "Duis gravida sapien tincidunt odio maximus, ac gravida lorem condimentum.\r\nCurabitur vel orci mattis, sollicitudin purus quis, tristique magna.", "Nunc fringilla leo a dolor porttitor auctor.\r\nAliquam ornare lectus nec metus condimentum, vitae tempus metus dignissim.\r\nEtiam ut erat ut leo facilisis pharetra.\r\nPhasellus sed erat convallis, sodales ligula non."});
     }
 
@@ -26,7 +27,7 @@ public class DialogueManager : MonoBehaviour
     {
         textPanelObject.SetActive(true);
         textBox.text = "";
-        textPanelObject.transform.DOScale(Vector3.one, 0.25f).OnComplete(()=>StartCoroutine(StartDialogue(dialogues)));
+        textPanelObject.transform.DOScale(Vector3.zero, 0.25f).From().OnComplete(()=>StartCoroutine(StartDialogue(dialogues)));
     }
 
     void CloseTextBox()
