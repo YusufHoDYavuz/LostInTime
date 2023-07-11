@@ -43,6 +43,14 @@ public class CollectObjects : MonoBehaviour
                             parchmentUI.GetComponent<Image>().sprite = parchmentUIList[parchmentValue];
                         }
                     }
+                }else if (hit.collider.CompareTag("Gem"))
+                {
+                    Singleton.Instance.RaiseGemAmount(1);
+                    Destroy(hit.collider.gameObject);
+                    Debug.Log("Gem count: " + Singleton.Instance.gems);
+
+                    if (Singleton.Instance.gems == 3)
+                        Debug.Log("FINISH GAME");
                 }
             }
 
