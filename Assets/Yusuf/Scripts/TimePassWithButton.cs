@@ -66,7 +66,7 @@ public class TimePassWithButton : MonoBehaviour, IPointerEnterHandler, IPointerE
         index = Mathf.Clamp(index, 0, buttons.Length - 1);
         isHovering = true;
         
-        buttons[currentIndex].GetComponent<Image>().color = Color.red;
+        buttons[currentIndex].GetComponent<Image>().color = Color.white;
         buttons[index].GetComponent<Image>().color = Color.green;
 
         currentIndex = index;
