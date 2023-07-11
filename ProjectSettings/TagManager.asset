@@ -10,6 +10,8 @@ TagManager:
   - PuzzlePiece
   - Show
   - merdiven
+  - FxTemporaire
+  - Gem
   layers:
   - Default
   - TransparentFX
