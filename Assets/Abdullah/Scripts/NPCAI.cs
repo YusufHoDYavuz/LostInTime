@@ -43,7 +43,7 @@ public class NPCAI : MonoBehaviour
 
 
         Vector3 targetPosition = new Vector3(waypoints[currentWaypointIndex].position.x, transform.position.y,
-            waypoints[currentWaypointIndex].position.z);
+         waypoints[currentWaypointIndex].position.z);
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
         if (transform.position == targetPosition)

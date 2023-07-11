@@ -7,12 +7,12 @@ public class EnemyAi : MonoBehaviour
     [SerializeField] private Transform target;
     [SerializeField] private Transform spine;
     [SerializeField] private float maxDistance;
- 
+    
 
     // Start is called before the first frame update
     void Start()
     {
-
+       
     }
 
     // Update is called once per frame
