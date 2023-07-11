@@ -9,6 +9,7 @@ TagManager:
   - Collactable
   - PuzzlePiece
   - Show
+  - merdiven
   layers:
   - Default
   - TransparentFX
