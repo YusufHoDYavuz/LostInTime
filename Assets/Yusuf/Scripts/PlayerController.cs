@@ -39,6 +39,8 @@ public class PlayerController : MonoBehaviour
     private float currentStamina;
     public Slider staminaSlider;
 
+    [SerializeField] private UIManager uiManager;
+
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -191,5 +193,21 @@ public class PlayerController : MonoBehaviour
     private void UpdateStaminaUI()
     {
         staminaSlider.value = currentStamina / maxStamina;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("TeleportCollider"))
+        {
+            uiManager.SetActiveTransitionPanel();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("TeleportCollider"))
+        {
+            uiManager.SetActiveTransitionPanel();
+        }
     }
 }

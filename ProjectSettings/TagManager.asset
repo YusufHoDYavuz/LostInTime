@@ -12,6 +12,7 @@ TagManager:
   - merdiven
   - FxTemporaire
   - Gem
+  - TeleportCollider
   layers:
   - Default
   - TransparentFX

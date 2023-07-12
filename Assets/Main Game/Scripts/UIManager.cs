@@ -28,12 +28,9 @@ public class UIManager : MonoBehaviour
             isActiveTutorial = !isActiveTutorial;
         }
 
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            SetActiveTransitionPanel();
-        }
     }
 
+    
     public void SetActiveTransitionPanel()
     {
         uiPanel.SetActive(!uiPanel.activeSelf);
