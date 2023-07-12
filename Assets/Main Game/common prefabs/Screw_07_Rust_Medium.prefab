@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4942894404507272030}
   - component: {fileID: 1703549432981094311}
   - component: {fileID: 3676417614336964440}
+  - component: {fileID: -8572924759143689658}
   m_Layer: 0
   m_Name: Screw_07_Rust_Medium
   m_TagString: Collactable
@@ -97,3 +98,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.049999997, y: 0.009980852, z: 0.049999997}
   m_Center: {x: -9.313226e-10, y: 0.004990427, z: 9.313226e-10}
+--- !u!114 &-8572924759143689658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123911037674179451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 3
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
