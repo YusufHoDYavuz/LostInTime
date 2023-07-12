@@ -3,7 +3,9 @@ using UnityEngine;
 public class NPCAI : MonoBehaviour
 {
     [SerializeField] private AIState currentState = AIState.None;
-    
+    [SerializeField] GameObject referanceObject;
+    [SerializeField] float distance = 20;
+
     [SerializeField] private Transform[] waypoints;
     [SerializeField] private float moveSpeed = 5f;
 
@@ -21,16 +23,26 @@ public class NPCAI : MonoBehaviour
 
     private void Update()
     {
+       
+       
+        transform.position = new Vector3(transform.position.x,referanceObject.transform.position.y, transform.position.z);
         if (currentState == AIState.Patrolling && currentWaypointIndex < waypoints.Length)
         {
+           
             Movement();
             animator.SetBool("isWalk", true);
         }
-
         if (currentState == AIState.Patrolling && target != null && IsTargetInVision(target))
         {
             currentState = AIState.Detected;
             animator.SetBool("isWalk", false);
+        }
+        if (currentWaypointIndex >= waypoints.Length - 1)
+        {
+            currentWaypointIndex = 0;
+            Vector3 newPos = transform.position;
+            transform.position = newPos;
+
         }
     }
 
@@ -42,16 +54,21 @@ public class NPCAI : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
 
 
-        Vector3 targetPosition = new Vector3(waypoints[currentWaypointIndex].position.x, transform.position.y,
-         waypoints[currentWaypointIndex].position.z);
+        Vector3 targetPosition = new Vector3(waypoints[currentWaypointIndex].position.x, referanceObject.transform.position.y,
+        waypoints[currentWaypointIndex].position.z);
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
         if (transform.position == targetPosition)
         {
-            currentWaypointIndex++;
-            Vector3 newPos = transform.position;
-            newPos.y = 0f;
-            transform.position = newPos;
+            if (currentWaypointIndex < waypoints.Length)
+            {
+                currentWaypointIndex++;
+                Vector3 newPos = transform.position;
+
+                transform.position = newPos;
+               
+            }
+ 
         }
     }
 
@@ -60,7 +77,7 @@ public class NPCAI : MonoBehaviour
         Vector3 directionToTarget = target.position - transform.position;
         float angle = Vector3.Angle(transform.forward, directionToTarget);
 
-        if (angle <= visionAngle)
+        if (angle <= visionAngle && Vector3.Distance(transform.position, target.position) < distance)
         {
             return true;
         }
