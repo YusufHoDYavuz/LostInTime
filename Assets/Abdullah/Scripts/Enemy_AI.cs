@@ -9,7 +9,7 @@ using UnityEngine;
 public class Enemy_AI : MonoBehaviour
 {
     [SerializeField] Transform Target;
-    [SerializeField] float distance = 10;
+    public float distanceEnemy = 10;
     [SerializeField] float moveSpeed = 2f;
 
     [SerializeField] targetForEnemy targetForEnemy;
@@ -32,11 +32,12 @@ public class Enemy_AI : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
-        InvokeRepeating("functionForPointObject", 0f,10f);
+        InvokeRepeating("functionForPointObject", 5f,10f);
     }
 
     private void Update()
     {
+        
         transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
       
         if (isFire && fireIntervalControl)
@@ -51,7 +52,7 @@ public class Enemy_AI : MonoBehaviour
     private void Movement(Vector3 nextPosition)
     {
         nextPosition.y = gameObject.transform.position.y;
-        if (Vector3.Distance(transform.position, Target.transform.position) < distance)
+        if (Vector3.Distance(transform.position, Target.transform.position) < distanceEnemy)
         {
             
             if (transform.position != nextPosition)
@@ -66,31 +67,34 @@ public class Enemy_AI : MonoBehaviour
 
     private void Rotate()
     {
-        if (Vector3.Distance(transform.position, pointObject.transform.position) < 1f)
+        if (pointObject != null)
         {
-            isFire = true;
-            animator.SetBool("isWalk", false);
-            // Hedefe dönme durumu
-            Vector3 targetDirection = Target.position - transform.position;
-            targetDirection.y = 0f;
-            Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
-    
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 3f);
-            
+            if (Vector3.Distance(transform.position, pointObject.transform.position) < 1f)
+            {
+                isFire = true;
+                animator.SetBool("isWalk", false);
+                // Hedefe dönme durumu
+                Vector3 targetDirection = Target.position - transform.position;
+                targetDirection.y = 0f;
+                Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
 
-        }       
-        else if (Vector3.Distance(transform.position,pointObject.transform.position) > 1f)
-        // noktaya bakarken
-        {
-            isFire = false;
-            Vector3 targetDirection = pointObject.transform.position - transform.position;
-            targetDirection.y = 0f;
-            Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
-            targetRotation.x = 0f;
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 3f);
-            Movement(pointObject.transform.position);
+                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 3f);
 
-        }
+
+            }
+            else if (Vector3.Distance(transform.position, pointObject.transform.position) > 1f)
+            // noktaya bakarken
+            {
+                isFire = false;
+                Vector3 targetDirection = pointObject.transform.position - transform.position;
+                targetDirection.y = 0f;
+                Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+                targetRotation.x = 0f;
+                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 3f);
+                Movement(pointObject.transform.position);
+
+            }
+        }    
     }
 
     private void functionForPointObject()
@@ -99,7 +103,7 @@ public class Enemy_AI : MonoBehaviour
         {
             Destroy(pointObject);
         }
-        targetForEnemy.GenerateRandomPoint();
+        targetForEnemy.GenerateRandomPoint(gameObject);
         pointObject = targetForEnemy.pointObject;
 
     }

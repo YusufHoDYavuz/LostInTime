@@ -2199,7 +2199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  distance: 10
+  distanceEnemy: 10
   moveSpeed: 3
   targetForEnemy: {fileID: 0}
   fireEffect: {fileID: 6263782476919498309, guid: 1fd2749f2a4056446881dce86ed70c39, type: 3}
