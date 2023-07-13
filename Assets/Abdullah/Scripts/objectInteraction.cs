@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class objectInteraction : MonoBehaviour
 {
-    [SerializeField] float interactionDistance = 3f;
+    [SerializeField] float interactionDistance = 2f;
 
 
-    [SerializeField] string dialogueText = "Merhaba! Nasýlsýnýz?";
+    [SerializeField] chestController chestController;
 
     [SerializeField] GameObject interactionUI;
     [SerializeField] GameObject player;
@@ -15,8 +15,12 @@ public class objectInteraction : MonoBehaviour
 
     void Interact()
     {
-        Debug.Log(dialogueText);
-        // fonskiyonunu buraya yazcaz
+        if (chestController.isOpen)
+        {
+            interactionUI.SetActive(true);
+            gameObject.SetActive(false);
+            Debug.Log("aaa");
+        }
     }
 
     private void Start()
@@ -30,16 +34,14 @@ public class objectInteraction : MonoBehaviour
 
         if (distance <= interactionDistance)
         {
-            interactionUI.SetActive(true);
+            
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Interact();
-                interactionUI.SetActive(false);
+                
+                
             }
         }
-        else
-        {
-            interactionUI.SetActive(false);
-        }
+       
     }
 }

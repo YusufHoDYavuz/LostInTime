@@ -18,6 +18,7 @@
             boxCollider.enabled = false;
             fracturedCrate.SetActive(true);
             crashAudioClip.Play();
+            Destroy(gameObject, 2f);
         }
 
         [ContextMenu("Test")]

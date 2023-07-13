@@ -5,7 +5,7 @@ using UnityEngine;
 public class chestController : MonoBehaviour
 {
     Animation animation;
-     bool isOpen = false;
+    public  bool isOpen = false;
     void Start()
     {
         animation = GetComponent<Animation>();
