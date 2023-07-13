@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 public class CloseCombat : MonoBehaviour
 {
 
-    public float clickCooldown = 0.02f;
+    public float clickCooldown = 0.2f;
 
     
     public static int numberOfPunchs = 0;
@@ -51,12 +51,17 @@ public class CloseCombat : MonoBehaviour
     public static void PunchCollision()
     {
         var ray = new Ray(closeCombat.transform.position, closeCombat.transform.forward);
+        Debug.DrawRay(closeCombat.transform.position, closeCombat.transform.forward * range, Color.red, 1f);
         RaycastHit hit;
         if(Physics.Raycast(ray, out hit, range))
         {
             if (hit.transform.CompareTag("Enemy"))
             {
-                Debug.Log("OUCH!! You hit the enemy.");
+                hit.transform.gameObject.GetComponent<CapsuleCollider>().enabled = false;
+                hit.transform.gameObject.GetComponent<Enemy_AI>().die(100);
+                Destroy(hit.transform.gameObject,10f);
+                Debug.Log("Enemy Hit");
+                    
             }
         }
     }

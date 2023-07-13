@@ -15,8 +15,13 @@ public class PunchBehaviour : StateMachineBehaviour
     {
         canHit = true;
         PlayerController.canMove = true;
-        if (stateInfo.IsName("Punch1") && CloseCombat.numberOfPunchs == 2)
+        if (stateInfo.IsName("Punch1") && CloseCombat.numberOfPunchs >= 2)
             PlayerController.canMove = false;
+        else
+        {
+            PlayerController.canMove = true;
+            animator.SetInteger("PunchCount", CloseCombat.numberOfPunchs = 0);
+        }
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

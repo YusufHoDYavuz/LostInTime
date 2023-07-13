@@ -39,7 +39,7 @@ public class Enemy_AI : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(isDie);
+ 
         transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
       
         if (isFire && fireIntervalControl)
