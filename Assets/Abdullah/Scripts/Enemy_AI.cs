@@ -31,6 +31,9 @@ public class Enemy_AI : MonoBehaviour
 
     [SerializeField] int health = 100;
      bool isDie = false;
+
+
+    bool isFirst = true;
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -48,6 +51,15 @@ public class Enemy_AI : MonoBehaviour
         }
         
         Rotate();
+
+        if (Vector3.Distance(transform.position,Target.position) <= distanceEnemy)
+        {
+            if (isFirst)
+            {
+                functionForPointObject();
+                isFirst = false;
+            }
+        }
        
         
     }
