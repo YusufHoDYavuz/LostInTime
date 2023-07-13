@@ -1757,11 +1757,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7546599186452334924, guid: 440fade6b80f8764e8c02162eb6fe52e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.5716999
+      value: 3.571701
       objectReference: {fileID: 0}
     - target: {fileID: 7546599186452334924, guid: 440fade6b80f8764e8c02162eb6fe52e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.2495728
+      value: -3.2496033
       objectReference: {fileID: 0}
     - target: {fileID: 7546599186452334924, guid: 440fade6b80f8764e8c02162eb6fe52e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1809,11 +1809,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7546599186502855564, guid: 440fade6b80f8764e8c02162eb6fe52e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000001646809
+      value: 0.000000016468093
       objectReference: {fileID: 0}
     - target: {fileID: 7546599186502855564, guid: 440fade6b80f8764e8c02162eb6fe52e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000004986136
+      value: -0.0000000049861373
       objectReference: {fileID: 0}
     - target: {fileID: 7546599186502855565, guid: 440fade6b80f8764e8c02162eb6fe52e, type: 3}
       propertyPath: m_Lens.FarClipPlane
@@ -1932,6 +1932,42 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1450988986581270494, guid: ef2ca6c90becb5b48b28a1a2333c8313, type: 3}
   m_PrefabInstance: {fileID: 5716520934767945488}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6700619806127460505 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1416465331702069129, guid: ef2ca6c90becb5b48b28a1a2333c8313, type: 3}
+  m_PrefabInstance: {fileID: 5716520934767945488}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &415630704125525892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6700619806127460505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 439ae6c8918d577498cf16e5e84f5ae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 3
+  pointObject: {fileID: 0}
+  Enemy_AI: {fileID: 0}
+--- !u!114 &4713310954595298645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6700619806127460505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3385da52f648324a80f681c1f6a0b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHaveKey: 0
+  distance: 2
+  chest: {fileID: 0}
+  chestController: {fileID: 0}
 --- !u!4 &6700619806127460506 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1416465331702069130, guid: ef2ca6c90becb5b48b28a1a2333c8313, type: 3}
@@ -1990,11 +2026,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4181407151540523413, guid: f55d6eebb9b03a4418f68e8cdd8deb3c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.5716999
+      value: 3.571701
       objectReference: {fileID: 0}
     - target: {fileID: 4181407151540523413, guid: f55d6eebb9b03a4418f68e8cdd8deb3c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.2495728
+      value: -3.2496033
       objectReference: {fileID: 0}
     - target: {fileID: 4181407151540523413, guid: f55d6eebb9b03a4418f68e8cdd8deb3c, type: 3}
       propertyPath: m_LocalRotation.w

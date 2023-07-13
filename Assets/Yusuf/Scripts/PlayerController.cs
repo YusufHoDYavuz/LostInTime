@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private UIManager uiManager;
 
+
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
