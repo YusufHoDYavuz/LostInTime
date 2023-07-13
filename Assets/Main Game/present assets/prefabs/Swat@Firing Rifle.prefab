@@ -2209,6 +2209,7 @@ MonoBehaviour:
   destroyTime: 2
   fireInterval: 0.5
   isFire: 0
+  health: 100
 --- !u!1 &6586852499078280651
 GameObject:
   m_ObjectHideFlags: 0

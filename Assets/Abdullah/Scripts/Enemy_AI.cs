@@ -28,6 +28,7 @@ public class Enemy_AI : MonoBehaviour
     [SerializeField] bool isFire = false;
     bool fireIntervalControl = true;
 
+    [SerializeField] int health = 100;
 
     private void Start()
     {
@@ -130,5 +131,15 @@ public class Enemy_AI : MonoBehaviour
         fireIntervalControl = true;   // Ateþ yapýlabilir hale getirilir
     }
 
+
+    public void die(int damage)
+    {
+        health -= damage;
+
+        if (health <= 0)
+        {
+            animator.SetBool("isDie", true);
+        }
+    }
 
 }
