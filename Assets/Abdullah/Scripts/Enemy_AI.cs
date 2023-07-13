@@ -28,8 +28,9 @@ public class Enemy_AI : MonoBehaviour
     [SerializeField] bool isFire = false;
     bool fireIntervalControl = true;
 
-    [SerializeField] int health = 100;
 
+    [SerializeField] int health = 100;
+     bool isDie = false;
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -38,7 +39,7 @@ public class Enemy_AI : MonoBehaviour
 
     private void Update()
     {
-        
+        Debug.Log(isDie);
         transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
       
         if (isFire && fireIntervalControl)
@@ -52,50 +53,56 @@ public class Enemy_AI : MonoBehaviour
     }
     private void Movement(Vector3 nextPosition)
     {
-        nextPosition.y = gameObject.transform.position.y;
-        if (Vector3.Distance(transform.position, Target.transform.position) < distanceEnemy)
+       if (isDie == false)
         {
-            
-            if (transform.position != nextPosition)
+            nextPosition.y = gameObject.transform.position.y;
+            if (Vector3.Distance(transform.position, Target.transform.position) < distanceEnemy)
             {
-                isFire = false;
-                animator.SetBool("isWalk", true);
-                transform.position = Vector3.MoveTowards(transform.position, nextPosition, moveSpeed * Time.deltaTime);
 
+                if (transform.position != nextPosition)
+                {
+                    isFire = false;
+                    animator.SetBool("isWalk", true);
+                    transform.position = Vector3.MoveTowards(transform.position, nextPosition, moveSpeed * Time.deltaTime);
+
+                }
             }
         }
     }
 
     private void Rotate()
     {
-        if (pointObject != null)
+        if (isDie == false)
         {
-            if (Vector3.Distance(transform.position, pointObject.transform.position) < 1f)
+            if (pointObject != null)
             {
-                isFire = true;
-                animator.SetBool("isWalk", false);
-                // Hedefe dönme durumu
-                Vector3 targetDirection = Target.position - transform.position;
-                targetDirection.y = 0f;
-                Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+                if (Vector3.Distance(transform.position, pointObject.transform.position) < 1f)
+                {
+                    isFire = true;
+                    animator.SetBool("isWalk", false);
+                    // Hedefe dönme durumu
+                    Vector3 targetDirection = Target.position - transform.position;
+                    targetDirection.y = 0f;
+                    Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
 
-                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 3f);
+                    transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 3f);
 
 
+                }
+                else if (Vector3.Distance(transform.position, pointObject.transform.position) > 1f)
+                // noktaya bakarken
+                {
+                    isFire = false;
+                    Vector3 targetDirection = pointObject.transform.position - transform.position;
+                    targetDirection.y = 0f;
+                    Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+                    targetRotation.x = 0f;
+                    transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 3f);
+                    Movement(pointObject.transform.position);
+
+                }
             }
-            else if (Vector3.Distance(transform.position, pointObject.transform.position) > 1f)
-            // noktaya bakarken
-            {
-                isFire = false;
-                Vector3 targetDirection = pointObject.transform.position - transform.position;
-                targetDirection.y = 0f;
-                Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
-                targetRotation.x = 0f;
-                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 3f);
-                Movement(pointObject.transform.position);
-
-            }
-        }    
+        }
     }
 
     private void functionForPointObject()
@@ -112,23 +119,30 @@ public class Enemy_AI : MonoBehaviour
 
     void Fire()
     {
-        
-        GameObject yeniMermi = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        GameObject yeniEfekt = Instantiate(fireEffect, firePoint.position, firePoint.rotation);
-        Rigidbody mermiRigidbody = yeniMermi.GetComponent<Rigidbody>();
-        mermiRigidbody.velocity =firePoint.forward * bulletForce;
+        if (isDie == false)
+        {
+            GameObject yeniMermi = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            GameObject yeniEfekt = Instantiate(fireEffect, firePoint.position, firePoint.rotation);
+            Rigidbody mermiRigidbody = yeniMermi.GetComponent<Rigidbody>();
+            mermiRigidbody.velocity = firePoint.forward * bulletForce;
 
-        
-        Destroy(yeniMermi, destroyTime);
-        Destroy(yeniEfekt, 0.2f);
-        StartCoroutine(fireStandby());
+
+            Destroy(yeniMermi, destroyTime);
+            Destroy(yeniEfekt, 0.2f);
+            StartCoroutine(fireStandby());
+
+        }
 
     }
     System.Collections.IEnumerator fireStandby()
     {
-        fireIntervalControl= false;  // Ateþ yapýlamaz hale getirilir
-        yield return new WaitForSeconds(fireInterval);  // Belirli bir süre beklenir
-        fireIntervalControl = true;   // Ateþ yapýlabilir hale getirilir
+        if (isDie == false)
+        {
+            fireIntervalControl = false;  // Ateþ yapýlamaz hale getirilir
+            yield return new WaitForSeconds(fireInterval);  // Belirli bir süre beklenir
+            fireIntervalControl = true;   // Ateþ yapýlabilir hale getirilir
+        }
+       
     }
 
 
@@ -138,6 +152,7 @@ public class Enemy_AI : MonoBehaviour
 
         if (health <= 0)
         {
+            isDie = true;
             animator.SetBool("isDie", true);
         }
     }
