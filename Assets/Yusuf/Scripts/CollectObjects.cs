@@ -11,7 +11,7 @@ public class CollectObjects : MonoBehaviour
 
     [SerializeField] private List<Sprite> parchmentUIList = new List<Sprite>();
     private int parchmentValue;
-    
+
     [SerializeField] private GameObject parchmentUI;
     private bool isActiveParchmentUI;
 
@@ -34,7 +34,7 @@ public class CollectObjects : MonoBehaviour
                     if (!isActiveParchmentUI)
                     {
                         Sprite matchingSprite = FindSpriteByRaycastObjectName(parchmentUIList, hit.collider.name);
-                        
+
                         parchmentUI.transform.DOLocalMove(Vector3.zero, 0.25f);
                         isActiveParchmentUI = true;
 
@@ -43,14 +43,30 @@ public class CollectObjects : MonoBehaviour
                             parchmentUI.GetComponent<Image>().sprite = parchmentUIList[parchmentValue];
                         }
                     }
-                }else if (hit.collider.CompareTag("Gem"))
+                }
+                else if (hit.collider.CompareTag("Gem"))
                 {
-                    Singleton.Instance.RaiseGemAmount(1);
-                    Destroy(hit.collider.gameObject);
-                    Debug.Log("Gem count: " + Singleton.Instance.gems);
+                    if (hit.collider.name == "PastGem")
+                    {
+                        Singleton.Instance.CallGemAction(5);
+                        Singleton.Instance.RaiseGemAmount(1);
+                    }
+                    else if (hit.collider.name == "PresentGem")
+                    {
+                        Singleton.Instance.CallGemAction(5);
+                        Singleton.Instance.RaiseGemAmount(1);
+                    }
+                    else if (hit.collider.name == "FutureGem")
+                    {
+                        Singleton.Instance.CallGemAction(5);
+                        Singleton.Instance.RaiseGemAmount(1);
+                    }
 
                     if (Singleton.Instance.gems == 3)
                         Debug.Log("FINISH GAME");
+
+                    Debug.Log("Gem count: " + Singleton.Instance.gems);
+                    Destroy(hit.collider.gameObject);
                 }
             }
 
@@ -59,15 +75,15 @@ public class CollectObjects : MonoBehaviour
 
         if (isActiveParchmentUI && Input.GetKeyDown(KeyCode.O))
         {
-            parchmentUI.transform.DOLocalMove(new Vector3(0,1100,0), 0.25f);
+            parchmentUI.transform.DOLocalMove(new Vector3(0, 1100, 0), 0.25f);
             isActiveParchmentUI = false;
         }
     }
-    
-     private Sprite FindSpriteByRaycastObjectName(List<Sprite> sprites, string objectName)
-     {
-         int raiseValue = 0;
-        
+
+    private Sprite FindSpriteByRaycastObjectName(List<Sprite> sprites, string objectName)
+    {
+        int raiseValue = 0;
+
         foreach (Sprite sprite in sprites)
         {
             if (sprite.name == objectName)
@@ -75,6 +91,7 @@ public class CollectObjects : MonoBehaviour
                 parchmentValue = raiseValue;
                 return sprite;
             }
+
             raiseValue++;
         }
 

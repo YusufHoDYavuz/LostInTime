@@ -20,6 +20,7 @@ namespace SlimUI.ModernMenu{
         public GameObject exitMenu;
         [Tooltip("Optional 4th Menu")]
         public GameObject extrasMenu;
+        public GameObject storyMenu;
 
         public enum Theme {custom1, custom2, custom3};
         [Header("THEME SETTINGS")]
@@ -87,6 +88,7 @@ namespace SlimUI.ModernMenu{
 			exitMenu.SetActive(false);
 			if(extrasMenu) extrasMenu.SetActive(false);
 			firstMenu.SetActive(true);
+			storyMenu.SetActive(false);
 			mainMenu.SetActive(true);
 
 			SetThemeColors();
@@ -121,6 +123,7 @@ namespace SlimUI.ModernMenu{
 			exitMenu.SetActive(false);
 			if(extrasMenu) extrasMenu.SetActive(false);
 			playMenu.SetActive(true);
+			storyMenu.SetActive(false);
 		}
 		
 		public void PlayCampaignMobile(){
@@ -128,6 +131,7 @@ namespace SlimUI.ModernMenu{
 			if(extrasMenu) extrasMenu.SetActive(false);
 			playMenu.SetActive(true);
 			mainMenu.SetActive(false);
+			storyMenu.SetActive(false);
 		}
 
 		public void ReturnMenu(){
@@ -135,6 +139,7 @@ namespace SlimUI.ModernMenu{
 			if(extrasMenu) extrasMenu.SetActive(false);
 			exitMenu.SetActive(false);
 			mainMenu.SetActive(true);
+			storyMenu.SetActive(false);
 		}
 
 		public void LoadScene(string scene){
@@ -179,11 +184,13 @@ namespace SlimUI.ModernMenu{
 			DisablePanels();
 			PanelGame.SetActive(true);
 			lineGame.SetActive(true);
+			storyMenu.SetActive(false);
 		}
 
 		public void VideoPanel(){
 			DisablePanels();
 			PanelVideo.SetActive(true);
+			storyMenu.SetActive(false);
 			lineVideo.SetActive(true);
 		}
 
@@ -191,6 +198,7 @@ namespace SlimUI.ModernMenu{
 			DisablePanels();
 			PanelControls.SetActive(true);
 			lineControls.SetActive(true);
+			storyMenu.SetActive(false);
 		}
 
 		public void KeyBindingsPanel(){
@@ -198,6 +206,7 @@ namespace SlimUI.ModernMenu{
 			MovementPanel();
 			PanelKeyBindings.SetActive(true);
 			lineKeyBindings.SetActive(true);
+			storyMenu.SetActive(false);
 		}
 
 		public void MovementPanel(){
@@ -205,6 +214,7 @@ namespace SlimUI.ModernMenu{
 			PanelKeyBindings.SetActive(true);
 			PanelMovement.SetActive(true);
 			lineMovement.SetActive(true);
+			storyMenu.SetActive(false);
 		}
 
 		public void CombatPanel(){
@@ -212,6 +222,7 @@ namespace SlimUI.ModernMenu{
 			PanelKeyBindings.SetActive(true);
 			PanelCombat.SetActive(true);
 			lineCombat.SetActive(true);
+			storyMenu.SetActive(false);
 		}
 
 		public void GeneralPanel(){
@@ -219,6 +230,7 @@ namespace SlimUI.ModernMenu{
 			PanelKeyBindings.SetActive(true);
 			PanelGeneral.SetActive(true);
 			lineGeneral.SetActive(true);
+			storyMenu.SetActive(false);
 		}
 
 		public void PlayHover(){
@@ -238,6 +250,7 @@ namespace SlimUI.ModernMenu{
 			exitMenu.SetActive(true);
 			if(extrasMenu) extrasMenu.SetActive(false);
 			DisablePlayCampaign();
+			storyMenu.SetActive(false);
 		}
 
 		public void AreYouSureMobile(){
@@ -251,6 +264,14 @@ namespace SlimUI.ModernMenu{
 			playMenu.SetActive(false);
 			if(extrasMenu) extrasMenu.SetActive(true);
 			exitMenu.SetActive(false);
+			storyMenu.SetActive(false);
+		}
+		
+		public void StoryMenu(){
+			playMenu.SetActive(false);
+			if(extrasMenu) extrasMenu.SetActive(false);
+			exitMenu.SetActive(false);
+			storyMenu.SetActive(true);
 		}
 
 		public void QuitGame(){
