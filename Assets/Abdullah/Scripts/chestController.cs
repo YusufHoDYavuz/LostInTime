@@ -6,6 +6,7 @@ public class chestController : MonoBehaviour
 {
     Animation animation;
     public  bool isOpen = false;
+    [SerializeField] private BoxCollider boxCollider;
     void Start()
     {
         animation = GetComponent<Animation>();
@@ -24,6 +25,7 @@ public class chestController : MonoBehaviour
         {
             animation.Play("ChestAnim");
             isOpen = true;
+            boxCollider.enabled = false;
         }
 
     }

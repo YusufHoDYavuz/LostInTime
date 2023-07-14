@@ -60,17 +60,17 @@ public class CollectObjects : MonoBehaviour
                 {
                     if (hit.collider.name == "PastGem")
                     {
-                        Singleton.Instance.CallGemAction(5);
+                        Singleton.Instance.CallGemAction(5,0);
                         Singleton.Instance.RaiseGemAmount(1);
                     }
                     else if (hit.collider.name == "PresentGem")
                     {
-                        Singleton.Instance.CallGemAction(5);
+                        Singleton.Instance.CallGemAction(5,1);
                         Singleton.Instance.RaiseGemAmount(1);
                     }
                     else if (hit.collider.name == "FutureGem")
                     {
-                        Singleton.Instance.CallGemAction(5);
+                        Singleton.Instance.CallGemAction(5,2);
                         Singleton.Instance.RaiseGemAmount(1);
                         openDoor(1);
                     }

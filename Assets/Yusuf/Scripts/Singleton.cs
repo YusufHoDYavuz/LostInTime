@@ -35,15 +35,16 @@ public class Singleton : MonoBehaviour
         gems += raiseValue;
     }
 
-    public void CallGemAction(float waitTime)
+    public void CallGemAction(float waitTime,int gemIndex)
     {
-        StartCoroutine(GetGemUIAndSetGems(waitTime));
+        StartCoroutine(GetGemUIAndSetGems(waitTime,gemIndex));
     }
 
-    private IEnumerator GetGemUIAndSetGems(float waitTime)
+    private IEnumerator GetGemUIAndSetGems(float waitTime,int gemIndex)
     {
         gemsParentUI.transform.DOLocalMove(new Vector3(0, 450, 0), 0.25f).OnComplete(() =>
         {
+            /*
             if (gems == 1)
             {
                 gemUIList[0].transform.DOScale(Vector2.one, 0.5f).SetEase(Ease.InBounce);
@@ -55,7 +56,8 @@ public class Singleton : MonoBehaviour
             else if (gems == 3)
             {
                 gemUIList[2].transform.DOScale(Vector2.one, 0.5f).SetEase(Ease.InBounce);;
-            }
+            }*/
+            gemUIList[gemIndex].transform.DOScale(Vector2.one, 0.5f).SetEase(Ease.InBounce);
         });
         yield return new WaitForSeconds(waitTime);
         gemsParentUI.transform.DOLocalMove(new Vector3(0, 600, 0), 0.25f);
