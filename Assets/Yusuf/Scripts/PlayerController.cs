@@ -1,8 +1,10 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static System.TimeZoneInfo;
 
 public class PlayerController : MonoBehaviour
 {
@@ -41,6 +43,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private UIManager uiManager;
 
+    //tp
+    [SerializeField] Transform gettingCaughtPoint;
+    [SerializeField] Image imageTp;
 
     private void Start()
     {
@@ -61,6 +66,8 @@ public class PlayerController : MonoBehaviour
         //STAMINA
         currentStamina = maxStamina;
         UpdateStaminaUI();
+
+       
     }
 
     void Update()
@@ -201,6 +208,31 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("TeleportCollider"))
         {
             uiManager.SetActiveTransitionPanel();
+        }
+    }
+
+    public IEnumerator gettingCaughtTeleport()
+    {
+    
+        imageTp.DOColor(Color.black,1.5f);
+        
+        
+        yield return new WaitForSeconds(2f); // 2 saniye bekle
+
+        imageTp.DOColor(new Color(0,0,0,0), 1.5f);
+
+        TeleportForEnemy();
+        canMove = true;
+       
+
+    }
+
+    private void TeleportForEnemy()
+    {
+        if (gettingCaughtPoint != null)
+        {
+
+            transform.position = gettingCaughtPoint.position;
         }
     }
 
