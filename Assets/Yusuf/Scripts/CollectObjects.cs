@@ -15,6 +15,18 @@ public class CollectObjects : MonoBehaviour
     [SerializeField] private GameObject parchmentUI;
     private bool isActiveParchmentUI;
 
+    [Header("Keypad")]
+    private string currentPassword = "";
+    private string correctPassword = "1328";
+    [SerializeField] private Transform[] doors;
+
+
+    public void openDoor(int doorIndex)
+    {
+        doors[doorIndex].DOLocalMoveY(doors[doorIndex].transform.localPosition.y+8- doorIndex*7, 1f);
+    }
+
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
@@ -60,6 +72,7 @@ public class CollectObjects : MonoBehaviour
                     {
                         Singleton.Instance.CallGemAction(5);
                         Singleton.Instance.RaiseGemAmount(1);
+                        openDoor(1);
                     }
 
                     if (Singleton.Instance.gems == 3)
@@ -67,6 +80,55 @@ public class CollectObjects : MonoBehaviour
 
                     Debug.Log("Gem count: " + Singleton.Instance.gems);
                     Destroy(hit.collider.gameObject);
+                }
+                else if (hit.collider.CompareTag("Purchaseable"))
+                {
+                    string itemName = hit.collider.name;
+                    switch (itemName)
+                    {
+                        case "Turret":
+                            Debug.Log("Turret purchased");
+                            Singleton.Instance.purchasedItems[0] = true;
+                            break;
+                                
+                        case "microchip":
+                            Debug.Log("Microchip purchased");
+                            Singleton.Instance.purchasedItems[1] = true;
+                            break;
+                        case "Cape":
+                            Debug.Log("Cape purchased");
+                            Singleton.Instance.purchasedItems[2] = true;
+                            break;
+
+
+                        default:
+                            Debug.Log("No item purchased");
+                            break;
+                    }
+                    
+                }else if (hit.collider.CompareTag("keypad"))
+                {
+                    string keypadValue = hit.collider.name;
+                    if (keypadValue == "ok")
+                    {
+                        if (currentPassword == correctPassword)
+                        {
+                            Debug.Log("Password is correct");
+                            openDoor(0);
+                        }
+                        else
+                        {
+                            Debug.Log("Password is wrong");
+                        }
+                    }
+                    else if (keypadValue == "clear")
+                    {
+                        currentPassword = "";
+                    }
+                    else
+                    {
+                        currentPassword += keypadValue;
+                    }
                 }
             }
 

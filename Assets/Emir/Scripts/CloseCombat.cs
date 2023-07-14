@@ -32,6 +32,8 @@ public class CloseCombat : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && !animator.GetBool("isWalk") &&!animator.GetBool("isRun") && animator.GetBool("isGrounded"))
             punchRequest();
+
+       
         
             
     }
@@ -45,7 +47,11 @@ public class CloseCombat : MonoBehaviour
             clickTimer = Time.time;
             animator.SetInteger("PunchCount", ++numberOfPunchs);
             PlayerController.canMove = false;
-        }
+        }else if(!animator.GetCurrentAnimatorStateInfo(0).IsName("Punch2") && !animator.GetCurrentAnimatorStateInfo(0).IsName("Punch1") )
+         {
+                PlayerController.canMove = true;
+                animator.SetInteger("PunchCount", numberOfPunchs = 0);
+       }
     }
 
     public static void PunchCollision()

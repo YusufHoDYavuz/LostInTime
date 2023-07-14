@@ -13,6 +13,9 @@ TagManager:
   - FxTemporaire
   - Gem
   - TeleportCollider
+  - Door
+  - Purchaseable
+  - keypad
   layers:
   - Default
   - TransparentFX

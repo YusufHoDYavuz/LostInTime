@@ -10,6 +10,7 @@ public class Singleton : MonoBehaviour
     public int gems;
     public GameObject gemsParentUI;
     public List<GameObject> gemUIList = new List<GameObject>();
+    public bool[] purchasedItems = {false,false,false};
 
     private void Awake()
     {
