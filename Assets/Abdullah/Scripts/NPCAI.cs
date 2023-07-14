@@ -12,6 +12,8 @@ public class NPCAI : MonoBehaviour
     [SerializeField] private Transform target;
     [SerializeField] private float visionAngle = 60f;
 
+    [SerializeField] PlayerController playerController;
+
     private int currentWaypointIndex = 0;
     private Animator animator;
 
@@ -36,6 +38,8 @@ public class NPCAI : MonoBehaviour
         {
             currentState = AIState.Detected;
             animator.SetBool("isWalk", false);
+            PlayerController.canMove = false;
+            StartCoroutine(playerController.gettingCaughtTeleport());
         }
         if (currentWaypointIndex >= waypoints.Length - 1)
         {
