@@ -60,7 +60,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 5000
+  far clip plane: 250
   field of view: 60
   orthographic: 0
   orthographic size: 10
@@ -153,3 +153,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raycastDistance: 1000
+  parchmentUIList:
+  - {fileID: 21300000, guid: 135fb987617a3964c999385bab77e792, type: 3}
+  - {fileID: 21300000, guid: d84216c8b9c9a294092f68dd1d91923c, type: 3}
+  - {fileID: 21300000, guid: 1e69a2f221b96fc4ab15418ef8ef9e1c, type: 3}
+  - {fileID: 21300000, guid: 0a2446a33612c054bb7110609b3752fa, type: 3}
+  - {fileID: 21300000, guid: 5d484de1de5c29e41983c834ddbd1783, type: 3}
+  parchmentUI: {fileID: 0}
+  doors: []
