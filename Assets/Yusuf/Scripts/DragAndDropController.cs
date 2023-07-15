@@ -27,6 +27,8 @@ public class DragAndDropController : MonoBehaviour
     [SerializeField] private float maxDistance = 10f; 
 
     private bool isRaycasting = false; 
+    private bool isTurretPlaced = false;
+    public static bool isTurretPurchased = false;
     private RaycastHit raycastHit;
 
     void Update()
@@ -39,7 +41,7 @@ public class DragAndDropController : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.X))
         {
-           
+           if (!isTurretPlaced && isTurretPurchased) { 
             isRaycasting = false;
 
             if (!isRaycasting)
@@ -55,13 +57,18 @@ public class DragAndDropController : MonoBehaviour
                     float distance = raycastHit.distance;
                     if (distance >= minDistance && distance <= maxDistance)
                     {
+                        isTurretPlaced = true;
                         turretPrefab.transform.position = raycastHit.point;
-                        Instantiate(turretPrefab);
+                        GameObject turret = Instantiate(turretPrefab);
+                        Destroy(turret, 30f);
+                        Invoke("closeTurret", 30f);
                     }
                 }
             }
+            }
         }
 
+       
 
         //************************************************************************
         if (Input.GetMouseButton(1))
@@ -112,4 +119,11 @@ public class DragAndDropController : MonoBehaviour
         if (hit.collider.GetComponent<Collider>() != null)
             hit.collider.GetComponent<Collider>().isTrigger = !isActive;
     }
+
+
+    private void closeTurret()
+    {
+        isTurretPlaced = false;
+    }
 }
+

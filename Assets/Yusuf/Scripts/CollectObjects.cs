@@ -26,6 +26,7 @@ public class CollectObjects : MonoBehaviour
     private bool isActiveCar;
 
     [SerializeField] private GameObject mainPlayerObject;
+    [SerializeField] private SkinnedMeshRenderer capeMeshRenderer;
     
     public void openDoor(int doorIndex)
     {
@@ -35,6 +36,10 @@ public class CollectObjects : MonoBehaviour
     private void Start()
     {
         dragAndDropController = GetComponent<DragAndDropController>();
+        if (Singleton.Instance.purchasedItems[2])
+            capeMeshRenderer.enabled = true;
+        if (Singleton.Instance.purchasedItems[0])
+            DragAndDropController.isTurretPurchased = true;
     }
 
     void Update()
@@ -99,15 +104,19 @@ public class CollectObjects : MonoBehaviour
                         case "Turret":
                             Debug.Log("Turret purchased");
                             Singleton.Instance.purchasedItems[0] = true;
+                            DragAndDropController.isTurretPurchased = true;
                             break;
                                 
                         case "microchip":
                             Debug.Log("Microchip purchased");
                             Singleton.Instance.purchasedItems[1] = true;
+                            Singleton.Instance.speedMultiplier = 1.5f;
+                            
                             break;
                         case "Cape":
                             Debug.Log("Cape purchased");
                             Singleton.Instance.purchasedItems[2] = true;
+                            capeMeshRenderer.enabled = true;
                             break;
 
 

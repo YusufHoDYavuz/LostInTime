@@ -11,7 +11,7 @@ public class Singleton : MonoBehaviour
     public GameObject gemsParentUI;
     public List<GameObject> gemUIList = new List<GameObject>();
     public bool[] purchasedItems = {false,false,false};
-
+    public float speedMultiplier = 1f;
     private void Awake()
     {
         if (instance == null)
