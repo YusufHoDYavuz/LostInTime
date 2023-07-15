@@ -28,6 +28,9 @@ public class CollectObjects : MonoBehaviour
     [SerializeField] private GameObject mainPlayerObject;
     [SerializeField] private SkinnedMeshRenderer capeMeshRenderer;
     
+    [SerializeField] private GameObject collactableUICount;
+    [SerializeField] private Text collactableText;
+    
     public void openDoor(int doorIndex)
     {
         doors[doorIndex].DOLocalMoveY(doors[doorIndex].transform.localPosition.y+8- doorIndex*7, 1f);
@@ -40,6 +43,8 @@ public class CollectObjects : MonoBehaviour
             capeMeshRenderer.enabled = true;
         if (Singleton.Instance.purchasedItems[0])
             DragAndDropController.isTurretPurchased = true;
+        
+        collactableText.text = "Robot Parçaları: " + Singleton.Instance.collactableCount;
     }
 
     void Update()
@@ -53,6 +58,7 @@ public class CollectObjects : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Collactable"))
                 {
+                    StartCoroutine(CollactableUIActive(3f));
                     Destroy(hit.collider.gameObject);
                     Debug.Log("Collactable Object: " + hit.collider.name);
                 }
@@ -196,5 +202,20 @@ public class CollectObjects : MonoBehaviour
         }
 
         return null;
+    }
+
+    private IEnumerator CollactableUIActive(float waitTime)
+    {
+        collactableUICount.transform.DOLocalMoveX(-750, 0.5f).OnComplete(() =>
+        {
+            collactableText.gameObject.transform.DOScale(Vector3.one * 2, 0.5f).OnComplete(() =>
+            {
+                Singleton.Instance.RaiseCollactableCount(1);
+                collactableText.text = "Robot Parçaları: " + Singleton.Instance.collactableCount;
+                collactableText.gameObject.transform.DOScale(Vector3.one * 1.5F, 0.5f);
+            });
+        });
+        yield return new WaitForSeconds(waitTime);
+        collactableUICount.transform.DOLocalMoveX(-1150, 0.5f);
     }
 }

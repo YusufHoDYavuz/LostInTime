@@ -12,6 +12,9 @@ public class Singleton : MonoBehaviour
     public List<GameObject> gemUIList = new List<GameObject>();
     public bool[] purchasedItems = {false,false,false};
     public float speedMultiplier = 1f;
+
+    public int collactableCount;
+    
     private void Awake()
     {
         if (instance == null)
@@ -33,6 +36,11 @@ public class Singleton : MonoBehaviour
     public void RaiseGemAmount(int raiseValue)
     {
         gems += raiseValue;
+    }
+    
+    public void RaiseCollactableCount(int raiseValue)
+    {
+        collactableCount += raiseValue;
     }
 
     public void CallGemAction(float waitTime,int gemIndex)
