@@ -11,11 +11,7 @@ public class destructObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            destruct();
-            
-        }
+
     }
 
     void destruct() 
@@ -23,5 +19,11 @@ public class destructObject : MonoBehaviour
         Instantiate(fragmentedObject,transform.position , transform.rotation);
         Instantiate(efekt, transform.position, transform.rotation);
         Destroy(gameObject);
-    } 
+        Destroy(fragmentedObject,3f);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        destruct();
+    }
 }

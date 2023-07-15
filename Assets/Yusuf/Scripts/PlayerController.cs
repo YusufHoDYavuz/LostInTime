@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         animator = transform.GetChild(0).GetComponent<Animator>();
         camera = Camera.main.transform;
-        currentSpeed = walkSpeed;
+        currentSpeed = walkSpeed*Singleton.Instance.speedMultiplier;
         canMove = true;
 
         //CROUCH
@@ -77,14 +77,14 @@ public class PlayerController : MonoBehaviour
         
         if (direction.magnitude >= 0.9f && Input.GetKeyDown(KeyCode.LeftShift) && !isCrouching && currentStamina > 1f)
         {
-            currentSpeed = runSpeed;
+            currentSpeed = runSpeed*Singleton.Instance.speedMultiplier;
             animator.SetBool("isRun", true);
         }
 
         if (!Input.GetKey(KeyCode.LeftShift) && Input.GetKeyUp(KeyCode.LeftShift) ||
             Input.GetKey(KeyCode.LeftShift) && direction.magnitude <= 0.5f || currentStamina < 1f)
         {
-            currentSpeed = walkSpeed;
+            currentSpeed = walkSpeed * Singleton.Instance.speedMultiplier;
             animator.SetBool("isRun", false);
         }
 
