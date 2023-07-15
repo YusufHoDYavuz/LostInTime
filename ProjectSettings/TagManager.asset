@@ -17,6 +17,7 @@ TagManager:
   - Purchaseable
   - keypad
   - Car
+  - oldMan
   layers:
   - Default
   - TransparentFX

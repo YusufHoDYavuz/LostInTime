@@ -10,11 +10,14 @@ public class Singleton : MonoBehaviour
     public int gems;
     public GameObject gemsParentUI;
     public List<GameObject> gemUIList = new List<GameObject>();
-    public bool[] purchasedItems = {false,false,false};
+    public bool[] purchasedItems = { false, false, false };
     public float speedMultiplier = 1f;
 
     public int collactableCount;
-    
+    public bool gameFinished = true;
+    public bool[] pastPuzzlesScrollCount= {false,false,false,false};
+    public bool rotationFinished = false;
+
     private void Awake()
     {
         if (instance == null)

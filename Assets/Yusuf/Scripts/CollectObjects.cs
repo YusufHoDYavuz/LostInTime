@@ -30,6 +30,7 @@ public class CollectObjects : MonoBehaviour
     
     [SerializeField] private GameObject collactableUICount;
     [SerializeField] private Text collactableText;
+    [SerializeField] private Transform pastChestLid;
     
     public void openDoor(int doorIndex)
     {
@@ -49,6 +50,13 @@ public class CollectObjects : MonoBehaviour
 
     void Update()
     {
+        if (Singleton.Instance.rotationFinished)
+        {
+            Debug.Log("Chest Open");
+            Singleton.Instance.rotationFinished = false;
+            pastRotationFinish();
+        }
+
         if (Input.GetKeyDown(KeyCode.F))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -75,6 +83,31 @@ public class CollectObjects : MonoBehaviour
                         {
                             parchmentUI.GetComponent<Image>().sprite = parchmentUIList[parchmentValue];
                         }
+                        switch (hit.collider.name)
+                        {
+                            case "p1":
+                                Singleton.Instance.pastPuzzlesScrollCount[0] = true;
+                                pastPuzzleFinish();
+                                break;
+                            case "p2":
+                                Singleton.Instance.pastPuzzlesScrollCount[1] = true;
+                                pastPuzzleFinish();
+                                break;
+                            case "p3":
+                                Singleton.Instance.pastPuzzlesScrollCount[2] = true;
+                                pastPuzzleFinish();
+                                break;
+                            case "p4":
+                                Singleton.Instance.pastPuzzlesScrollCount[3] = true;
+                                pastPuzzleFinish();
+                                break;
+
+
+                            default:
+                                break;
+                        }
+                        
+
                     }
                 }
                 else if (hit.collider.CompareTag("Gem"))
@@ -162,6 +195,9 @@ public class CollectObjects : MonoBehaviour
                     dragAndDropController.carController.enabled = true;
                     dragAndDropController.player.SetActive(false);
                     dragAndDropController.player.transform.parent = dragAndDropController.carPov.transform;
+                }else if (hit.collider.CompareTag("oldMan"))
+                {
+                    mainPlayerObject.GetComponentInChildren<DialogueManager>().PlayOldMan();
                 }
             }
 
@@ -217,5 +253,18 @@ public class CollectObjects : MonoBehaviour
         });
         yield return new WaitForSeconds(waitTime);
         collactableUICount.transform.DOLocalMoveX(-1150, 0.5f);
+    }
+
+    void pastPuzzleFinish()
+    {
+        if (Singleton.Instance.pastPuzzlesScrollCount[0] && Singleton.Instance.pastPuzzlesScrollCount[1] && Singleton.Instance.pastPuzzlesScrollCount[2] && Singleton.Instance.pastPuzzlesScrollCount[3])
+        {
+            openDoor(0);
+        }
+    }
+
+    void pastRotationFinish()
+    {
+        pastChestLid.DOLocalRotate(Vector3.right * -90, 1f);
     }
 }
