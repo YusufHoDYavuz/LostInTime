@@ -10,7 +10,7 @@ public class DialogueManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [SerializeField] private float textSpeed;
+    private float textSpeed = 40;
     [SerializeField] private TextMeshProUGUI textBox;
     [SerializeField] private GameObject textPanelObject;
     private bool isPlayingDialogue = false;
@@ -33,11 +33,12 @@ public class DialogueManager : MonoBehaviour
             textPanelObject.SetActive(false);
             isPlayingDialogue = false;
 
-            if(Singleton.Instance.gameFinished)
+            if (Singleton.Instance.gameFinished) { 
                 endGamePicture.enabled = true;
                 endGamePicture.DOColor(Color.white, 1.5f).OnComplete(()=>Invoke(nameof(GoMainMenu),2f));
-                
-            });
+            }
+
+        });
     }
 
     void GoMainMenu()
@@ -51,6 +52,10 @@ public class DialogueManager : MonoBehaviour
     {
         if(isPlayingDialogue)
             return;
+        var singleton = Singleton.Instance;
+
+        if (!(singleton.pastPuzzlesScrollCount[0] && singleton.pastPuzzlesScrollCount[1] && singleton.pastPuzzlesScrollCount[2] && singleton.pastPuzzlesScrollCount[3]))
+            return;
 
         isPlayingDialogue  = true;
         if (!Singleton.Instance.gameFinished)
@@ -61,7 +66,7 @@ public class DialogueManager : MonoBehaviour
                 ,"Anakrobot: Ben ne bu gücü ne de bu robottan bedeni istiyorum!"
                 ,"Yaşlı Adam: Bu robotun içine girdiğin zaman zamanda bir kırılma yarattın ve insan bedeninin olduğu zamanları bu boyuttan sildin. Eski bedenine geri kavuşmak için zamanda bir kırılma oluşturup robotun içine hapsolmadan önceki zamanına geri gitmen gerek."
                 ,"Anakrobot: Zamanda nasıl bir kırılma oluşturabilirim?"
-                ,"Yaşlı Adam: Her zaman kırılmasında bir taş oluşur. Senin yaşadığın Şimdiki zamanda, benim yaşadığım zamanda ve gelecek zamanda bir taş bulunmakta. Benim yaşadığım zamanda bu taş kalenin içinde insanların çözemeyeceği lanetli bir şifreyle korunmakta. Bu üç taşı bulup bana getirirsen seni yeniden bedenine kavuşturabilirim."
+                ,"Yaşlı Adam: Her zaman kırılmasında bir taş oluşur. Senin yaşadığın şimdiki zamanda, benim yaşadığım zamanda ve gelecek zamanda bir taş bulunmakta. Benim yaşadığım zamanda bu taş kalenin içinde insanların çözemeyeceği lanetli bir şifreyle korunmakta. Bu üç taşı bulup bana getirirsen seni yeniden bedenine kavuşturabilirim."
                 ,"Anakrobot: Tüm taşları bulup geri döneceğim."});
         }
         else

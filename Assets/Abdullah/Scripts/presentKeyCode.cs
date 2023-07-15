@@ -5,7 +5,7 @@ using UnityEngine;
 public class presentKeyCode : MonoBehaviour
 {
 
-    [SerializeField] float interactionDistance = 3f;
+    [SerializeField] float interactionDistance = 5f;
     [SerializeField] GameObject player;
     [SerializeField] chestCharacter chestCharacter;
    

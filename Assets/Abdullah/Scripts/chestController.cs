@@ -6,10 +6,11 @@ public class chestController : MonoBehaviour
 {
     Animation animation;
     public  bool isOpen = false;
-    [SerializeField] private BoxCollider boxCollider;
+    private BoxCollider boxCollider;
     void Start()
     {
         animation = GetComponent<Animation>();
+        boxCollider = GetComponent<BoxCollider>();
        
     }
 
