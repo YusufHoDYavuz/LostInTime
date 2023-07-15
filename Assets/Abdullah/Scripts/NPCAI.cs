@@ -14,6 +14,7 @@ public class NPCAI : MonoBehaviour
 
     [SerializeField] PlayerController playerController;
 
+  
     private int currentWaypointIndex = 0;
     private Animator animator;
 
@@ -26,7 +27,10 @@ public class NPCAI : MonoBehaviour
     private void Update()
     {
        
-       
+       if (playerController.againPatrol)
+        {
+            currentState = AIState.Patrolling;
+        }
         transform.position = new Vector3(transform.position.x,referanceObject.transform.position.y, transform.position.z);
         if (currentState == AIState.Patrolling && currentWaypointIndex < waypoints.Length)
         {
@@ -39,6 +43,7 @@ public class NPCAI : MonoBehaviour
             currentState = AIState.Detected;
             animator.SetBool("isWalk", false);
             PlayerController.canMove = false;
+            playerController.againPatrol = false;
             StartCoroutine(playerController.gettingCaughtTeleport());
         }
         if (currentWaypointIndex >= waypoints.Length - 1)

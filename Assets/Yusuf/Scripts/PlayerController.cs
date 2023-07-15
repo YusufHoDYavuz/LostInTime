@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
     //tp
     [SerializeField] Transform gettingCaughtPoint;
     [SerializeField] Image imageTp;
-    [SerializeField] NPCAI npcAI;
+    public bool againPatrol = false;
 
 
     private void Start()
@@ -233,9 +233,10 @@ public class PlayerController : MonoBehaviour
     {
         if (gettingCaughtPoint != null)
         {
+            
 
             transform.position = gettingCaughtPoint.position;
-            npcAI.currentState = NPCAI.AIState.Patrolling;
+            againPatrol = true;
         }
     }
 
