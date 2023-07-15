@@ -46,6 +46,8 @@ public class PlayerController : MonoBehaviour
     //tp
     [SerializeField] Transform gettingCaughtPoint;
     [SerializeField] Image imageTp;
+    public bool againPatrol = false;
+
 
     private void Start()
     {
@@ -231,8 +233,10 @@ public class PlayerController : MonoBehaviour
     {
         if (gettingCaughtPoint != null)
         {
+            
 
             transform.position = gettingCaughtPoint.position;
+            againPatrol = true;
         }
     }
 
