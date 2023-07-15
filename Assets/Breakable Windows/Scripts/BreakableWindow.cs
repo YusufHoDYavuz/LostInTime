@@ -49,7 +49,6 @@ public class BreakableWindow : MonoBehaviour {
 
     void Start()
     {
-  
         if (preCalculate == true && allreadyCalculated == false)
         {
             bakeVertices();
@@ -251,9 +250,9 @@ public class BreakableWindow : MonoBehaviour {
             else breakWindow();
         }        
     }
-
     private void OnTriggerEnter(Collider other)
     {
         breakWindow();
+        Destroy(gameObject,5f);
     }
 }
