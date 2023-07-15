@@ -130,7 +130,7 @@ public class CollectObjects : MonoBehaviour
                     }
 
                     if (Singleton.Instance.gems == 3)
-                        Debug.Log("FINISH GAME");
+                        Singleton.Instance.gameFinished = true;
 
                     Debug.Log("Gem count: " + Singleton.Instance.gems);
                     Destroy(hit.collider.gameObject);

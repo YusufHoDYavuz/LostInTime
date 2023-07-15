@@ -14,7 +14,7 @@ public class Singleton : MonoBehaviour
     public float speedMultiplier = 1f;
 
     public int collactableCount;
-    public bool gameFinished = true;
+    public bool gameFinished = false;
     public bool[] pastPuzzlesScrollCount= {false,false,false,false};
     public bool rotationFinished = false;
 
