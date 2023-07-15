@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
@@ -20,12 +21,21 @@ public class CollectObjects : MonoBehaviour
     private string correctPassword = "1328";
     [SerializeField] private Transform[] doors;
 
+    private DragAndDropController dragAndDropController;
 
+    private bool isActiveCar;
+
+    [SerializeField] private GameObject mainPlayerObject;
+    
     public void openDoor(int doorIndex)
     {
         doors[doorIndex].DOLocalMoveY(doors[doorIndex].transform.localPosition.y+8- doorIndex*7, 1f);
     }
 
+    private void Start()
+    {
+        dragAndDropController = GetComponent<DragAndDropController>();
+    }
 
     void Update()
     {
@@ -129,6 +139,14 @@ public class CollectObjects : MonoBehaviour
                     {
                         currentPassword += keypadValue;
                     }
+                }else if (hit.collider.CompareTag("Car"))
+                {
+                    dragAndDropController.cmFreeLook.Follow = dragAndDropController.carPov;
+                    dragAndDropController.cmFreeLook.LookAt = dragAndDropController.carPov;
+                    isActiveCar = true;
+                    dragAndDropController.carController.enabled = true;
+                    dragAndDropController.player.SetActive(false);
+                    dragAndDropController.player.transform.parent = dragAndDropController.carPov.transform;
                 }
             }
 
@@ -139,6 +157,17 @@ public class CollectObjects : MonoBehaviour
         {
             parchmentUI.transform.DOLocalMove(new Vector3(0, 1100, 0), 0.25f);
             isActiveParchmentUI = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.G) && isActiveCar)
+        {
+            dragAndDropController.carController.enabled = false;
+            dragAndDropController.cmFreeLook.Follow = dragAndDropController.currentPov;
+            dragAndDropController.cmFreeLook.LookAt = dragAndDropController.currentPov;
+            dragAndDropController.player.SetActive(true);
+            isActiveCar = false;
+            dragAndDropController.player.transform.parent = mainPlayerObject.transform;
+
         }
     }
 

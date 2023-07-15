@@ -13,8 +13,11 @@ public class DragAndDropController : MonoBehaviour
     private RaycastHit hit;
     
     //DRAG DROP POV
-    [SerializeField] private CinemachineFreeLook cmFreeLook;
-    [SerializeField] private Transform currentPov;
+    public CinemachineFreeLook cmFreeLook;
+    public Transform currentPov;
+    public Transform carPov;
+    public GameObject player;
+    public CarController carController;
     [SerializeField] private Transform dragDropPov;
 
     //************************
