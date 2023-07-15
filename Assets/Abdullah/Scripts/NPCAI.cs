@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class NPCAI : MonoBehaviour
 {
-    [SerializeField] private AIState currentState = AIState.None;
+    public AIState currentState = AIState.None;
     [SerializeField] GameObject referanceObject;
     [SerializeField] float distance = 20;
 

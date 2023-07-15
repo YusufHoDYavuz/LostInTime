@@ -46,6 +46,8 @@ public class PlayerController : MonoBehaviour
     //tp
     [SerializeField] Transform gettingCaughtPoint;
     [SerializeField] Image imageTp;
+    [SerializeField] NPCAI npcAI;
+
 
     private void Start()
     {
@@ -233,6 +235,7 @@ public class PlayerController : MonoBehaviour
         {
 
             transform.position = gettingCaughtPoint.position;
+            npcAI.currentState = NPCAI.AIState.Patrolling;
         }
     }
 
