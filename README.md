@@ -56,7 +56,7 @@ Anakronizm= Kişi, nesne veya olayların kendi gerçek zaman ve mekânlarından 
 https://miro.com/app/board/uXjVMB1QjTc=/#tpicker-content
 
 ## Jüriye Not 
-Oyunun ticarileşme kısmı Oyun doğrudan satışa sunularak yapılacaktır. Uygun pazar araştırması yapılacaktır.
+Oyunun ticarileşme kısmı oyun doğrudan satışa sunularak yapılacaktır. Uygun pazar araştırması yapılacaktır.
 
 # Sprint 1
 - **Sprint Notları**: User Story'ler product backlog'ların içine yazılmıştır. Product backlog item'lara tıklandığında hikayelerin detayları okunabilir.
