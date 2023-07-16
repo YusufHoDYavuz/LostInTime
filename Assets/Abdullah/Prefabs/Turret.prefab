@@ -320,7 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTag: Enemy
   rotationSpeed: 5
-  fireEffect: {fileID: 0}
+  fireEffect: {fileID: 6263782476919498309, guid: 1fd2749f2a4056446881dce86ed70c39, type: 3}
   bulletPrefab: {fileID: 5429489552379571985, guid: f552a4e8a483e3945870584fbdf00c84, type: 3}
   firePoint: {fileID: 3698045036596719143}
   fireRange: 50
