@@ -42,7 +42,7 @@ public class Enemy_AI : MonoBehaviour
 
     private void Update()
     {
- 
+        
         transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
       
         if (isFire && fireIntervalControl)
@@ -166,6 +166,20 @@ public class Enemy_AI : MonoBehaviour
         {
             isDie = true;
             animator.SetBool("isDie", true);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("bulletTurret"))
+        {
+            health -= 40;
+            if (health <= 0)
+            {
+                isDie = true;
+                animator.SetBool("isDie", true);
+                Destroy(gameObject,2f);
+            }
         }
     }
 

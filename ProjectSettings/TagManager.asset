@@ -18,6 +18,7 @@ TagManager:
   - keypad
   - Car
   - oldMan
+  - bulletTurret
   layers:
   - Default
   - TransparentFX
