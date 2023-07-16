@@ -134,8 +134,7 @@ Story'ler yapılacak işlere (task'lere) bölünmüştür. Miro Board'da gözük
   
 - **Ürün Durumu: Ekran görüntüleri:**
 
-- **Oyun videosu:**
-
+- **Jüriye Not:** Oyunun ticarileşme kısmı Oyun doğrudan satışa sunularak yapılacaktır. Uygun pazar araştırması yapılacaktır.
 
 - **Sprint Review: Alınan kararlar:** 
 **Sprint Review katılımcıları:** Berfin Yağmur Kanat, Mustafa Emir Uyar,Yusuf Yavuz, Abdullah İbrahimağaoğlu, Ayşe Gül Tüysüz
