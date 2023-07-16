@@ -129,12 +129,19 @@ https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/da46f9b0
 
 Story'ler yapılacak işlere (task'lere) bölünmüştür. Miro Board'da gözüken kırmızı item'lar yapılacak işleri (task) gösterirken, mavi item'lar story'leri temsil etmektedir.
 
-- **Daily Scrum:** Daily Scrum toplantılarının zamansal sebeplerden ötürü Discord ve Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg, word ve txt olarak Readme'de tarafımızdan zip olarak paylaşılmaktadır.
+- **Daily Scrum:** Daily Scrum toplantılarının zamansal sebeplerden ötürü Discord ve Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg, word ve txt olarak Readme'de tarafımızdan zip olarak paylaşılmaktadır.[daily scrum-U65-sprint3.zip](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/files/12064993/daily.scrum-U65-sprint3.zip)
+
 
 - **Sprint board update: Sprint board screenshotları:**
 
   
 - **Ürün Durumu: Ekran görüntüleri:**
+![son resimler 1](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/498ba4cf-8c22-444c-8060-159a886456a6)
+![son resimler 2](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/29b61660-a12e-4bc2-9464-12ba542afcdb)
+![son resimler 3](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/c3bc28a6-5720-4b8f-8545-9f58f4702ff1)
+![son resimler 4](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/f84eaaed-10d9-44ea-8076-f891b4e17428)
+![son resimler 5](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/3b000013-ef49-4a60-bcc2-ba139b4a0245)
+![Game Analytics](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/7afb8c90-def6-4c36-b370-3405a145204d)
 
 - **Sprint Review: Alınan kararlar:** Oyun tamamlandı. Oyun videosu değerlendirildi ve tamamlandı.
 **Sprint Review katılımcıları:** Berfin Yağmur Kanat, Mustafa Emir Uyar,Yusuf Yavuz, Abdullah İbrahimağaoğlu, Ayşe Gül Tüysüz
