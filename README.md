@@ -136,8 +136,8 @@ Story'ler yapılacak işlere (task'lere) bölünmüştür. Miro Board'da gözük
   
 - **Ürün Durumu: Ekran görüntüleri:**
 
-- **Sprint Review: Alınan kararlar:** 
+- **Sprint Review: Alınan kararlar:** Oyun tamamlandı. Oyun videosu değerlendirildi ve tamamlandı.
 **Sprint Review katılımcıları:** Berfin Yağmur Kanat, Mustafa Emir Uyar,Yusuf Yavuz, Abdullah İbrahimağaoğlu, Ayşe Gül Tüysüz
 
-- **Sprint Retrospective:** 
+- **Sprint Retrospective:**  Takımın uyumundan dolayı yeniden bir arada çalışılabileceğine ve Lost In Time oyununun geliştirilebileceğine dair vurgu yapılmıştır.
 
