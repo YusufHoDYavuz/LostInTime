@@ -55,6 +55,8 @@ Anakronizm= Kişi, nesne veya olayların kendi gerçek zaman ve mekânlarından 
 ## Product Backlog URL
 https://miro.com/app/board/uXjVMB1QjTc=/#tpicker-content
 
+## Jüriye Not 
+Oyunun ticarileşme kısmı Oyun doğrudan satışa sunularak yapılacaktır. Uygun pazar araştırması yapılacaktır.
 
 # Sprint 1
 - **Sprint Notları**: User Story'ler product backlog'ların içine yazılmıştır. Product backlog item'lara tıklandığında hikayelerin detayları okunabilir.
@@ -133,8 +135,6 @@ Story'ler yapılacak işlere (task'lere) bölünmüştür. Miro Board'da gözük
 
   
 - **Ürün Durumu: Ekran görüntüleri:**
-
-- **Jüriye Not:** Oyunun ticarileşme kısmı Oyun doğrudan satışa sunularak yapılacaktır. Uygun pazar araştırması yapılacaktır.
 
 - **Sprint Review: Alınan kararlar:** 
 **Sprint Review katılımcıları:** Berfin Yağmur Kanat, Mustafa Emir Uyar,Yusuf Yavuz, Abdullah İbrahimağaoğlu, Ayşe Gül Tüysüz
