@@ -133,8 +133,12 @@ Story'ler yapılacak işlere (task'lere) bölünmüştür. Miro Board'da gözük
 
 
 - **Sprint board update: Sprint board screenshotları:**
+![ss1](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/32d79eb5-39e8-4468-85b9-35a5ea320a44)
+![ss2](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/6359122c-91aa-4a0a-b21a-a729abd2a7bb)
+![ss3](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/ad7d733b-638c-461b-bec7-f9652f509a93)
+![ss4](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/77bd9e1f-65f0-4aa9-ae8b-614ec43ec6db)
 
-  
+
 - **Ürün Durumu: Ekran görüntüleri:**
 ![son resimler 1](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/498ba4cf-8c22-444c-8060-159a886456a6)
 ![son resimler 2](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/29b61660-a12e-4bc2-9464-12ba542afcdb)
