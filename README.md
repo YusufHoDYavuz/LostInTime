@@ -1,6 +1,7 @@
 # GoogleAkademiBootcamp U-65
 ## Takım İsmi
 Takım Unity 65 (**5D Studios**)
+![takım logosu siyah](https://github.com/YusufHoDYavuz/GoogleAkademiBootcamp/assets/135452389/d220a7d4-6a3f-408d-b4dc-f65e0e0afc4d)
 
 # Ürün İle İlgili Bilgiler
 
