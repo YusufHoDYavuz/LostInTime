@@ -10,7 +10,7 @@ public class TimePassWithButton : MonoBehaviour, IPointerEnterHandler, IPointerE
     [SerializeField] private GameObject[] buttons; 
     [SerializeField] private float hoverDelay; 
     private int currentIndex = 0;
-    private bool isHovering = false;
+    public static bool isHovering = false;
 
     private void Start()
     {

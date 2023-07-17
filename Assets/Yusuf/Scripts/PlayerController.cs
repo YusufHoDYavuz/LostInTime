@@ -244,6 +244,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("TeleportCollider"))
         {
+            TimePassWithButton.isHovering = false;
             uiManager.SetActiveTransitionPanel();
         }
     }
