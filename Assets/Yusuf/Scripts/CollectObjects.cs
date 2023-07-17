@@ -141,25 +141,33 @@ public class CollectObjects : MonoBehaviour
                     switch (itemName)
                     {
                         case "Turret":
-                            Debug.Log("Turret purchased");
-                            Singleton.Instance.purchasedItems[0] = true;
-                            DragAndDropController.isTurretPurchased = true;
-                            break;
-                                
-                        case "microchip":
-                            Debug.Log("Microchip purchased");
-                            Singleton.Instance.purchasedItems[1] = true;
-                            Singleton.Instance.speedMultiplier = 1.5f;
                             
+                            if (!Singleton.Instance.purchasedItems[0] && Singleton.Instance.collactableCount >=75 ){
+                                Singleton.Instance.collactableCount -= 75;
+                                Singleton.Instance.purchasedItems[0] = true;
+                                DragAndDropController.isTurretPurchased = true;
+                            }
+                            break;
+
+                        case "microchip":
+                            if (!Singleton.Instance.purchasedItems[1] && Singleton.Instance.collactableCount >= 25)
+                            {
+                                Singleton.Instance.collactableCount -= 25;
+                                Singleton.Instance.purchasedItems[1] = true;
+                                Singleton.Instance.speedMultiplier = 1.5f;
+                            }
                             break;
                         case "Cape":
-                            Debug.Log("Cape purchased");
-                            Singleton.Instance.purchasedItems[2] = true;
-                            capeMeshRenderer.enabled = true;
-                            break;
+                            if (!Singleton.Instance.purchasedItems[2] && Singleton.Instance.collactableCount >= 25)
+                            {
+                                Singleton.Instance.collactableCount -= 25;
+                                Singleton.Instance.purchasedItems[2] = true;
+                                capeMeshRenderer.enabled = true;
+                                
+                            }
+                             break;
 
-
-                        default:
+                                default:
                             Debug.Log("No item purchased");
                             break;
                     }
