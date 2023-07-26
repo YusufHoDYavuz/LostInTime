@@ -1,4 +1,3 @@
-using OpenCover.Framework.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -92,7 +91,7 @@ public class Enemy_AI : MonoBehaviour
                 {
                     isFire = true;
                     animator.SetBool("isWalk", false);
-                    // Hedefe dönme durumu
+                    // Hedefe dï¿½nme durumu
                     Vector3 targetDirection = Target.position - transform.position;
                     targetDirection.y = 0f;
                     Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
@@ -150,9 +149,9 @@ public class Enemy_AI : MonoBehaviour
     {
         if (isDie == false)
         {
-            fireIntervalControl = false;  // Ateþ yapýlamaz hale getirilir
-            yield return new WaitForSeconds(fireInterval);  // Belirli bir süre beklenir
-            fireIntervalControl = true;   // Ateþ yapýlabilir hale getirilir
+            fireIntervalControl = false;  // Ateï¿½ yapï¿½lamaz hale getirilir
+            yield return new WaitForSeconds(fireInterval);  // Belirli bir sï¿½re beklenir
+            fireIntervalControl = true;   // Ateï¿½ yapï¿½labilir hale getirilir
         }
        
     }
