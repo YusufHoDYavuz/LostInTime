@@ -212,13 +212,13 @@ public class CollectObjects : MonoBehaviour
             Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.cyan);
         }
 
-        if (isActiveParchmentUI && Input.GetKeyDown(KeyCode.O))
+        if (isActiveParchmentUI && Input.GetKeyDown(KeyCode.Q))
         {
             parchmentUI.transform.DOLocalMove(new Vector3(0, 1100, 0), 0.25f);
             isActiveParchmentUI = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.G) && isActiveCar)
+        if (Input.GetKeyDown(KeyCode.E) && isActiveCar)
         {
             dragAndDropController.carController.enabled = false;
             dragAndDropController.cmFreeLook.Follow = dragAndDropController.currentPov;
