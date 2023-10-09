@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     [Header("Stamina")] [SerializeField] private float maxStamina = 100f;
     [SerializeField] private float staminaDrainRate = 10f;
     private float currentStamina;
-    public Slider staminaSlider;
+    public Image staminaSlider;
 
     [SerializeField] private UIManager uiManager;
 
@@ -202,7 +202,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateStaminaUI()
     {
-        staminaSlider.value = currentStamina / maxStamina;
+        staminaSlider.fillAmount = currentStamina / maxStamina;
     }
 
     private void OnTriggerEnter(Collider other)
