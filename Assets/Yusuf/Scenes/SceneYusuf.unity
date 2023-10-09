@@ -1491,6 +1491,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -37.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8619783138568886606, guid: 073bd712105426a49b3e2204cf89e6d6, type: 3}
+      propertyPath: m_Text
+      value: 'Kapat: (Q)'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619783138568886607, guid: 073bd712105426a49b3e2204cf89e6d6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -622
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619783138568886607, guid: 073bd712105426a49b3e2204cf89e6d6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 490
+      objectReference: {fileID: 0}
     - target: {fileID: 8619783138637086121, guid: 073bd712105426a49b3e2204cf89e6d6, type: 3}
       propertyPath: m_Text
       value: "OBJE TA\u015EI: RMB"
@@ -1582,6 +1594,10 @@ PrefabInstance:
     - target: {fileID: 8619783139252482047, guid: 073bd712105426a49b3e2204cf89e6d6, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -862.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619783139284726684, guid: 073bd712105426a49b3e2204cf89e6d6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1100
       objectReference: {fileID: 0}
     - target: {fileID: 8619783139376927298, guid: 073bd712105426a49b3e2204cf89e6d6, type: 3}
       propertyPath: m_AnchorMax.y

@@ -11,7 +11,7 @@ public class DragAndDropController : MonoBehaviour
     [SerializeField] private float rayDistance;
     private float initialDistance;
     private RaycastHit hit;
-    
+
     //DRAG DROP POV
     public CinemachineFreeLook cmFreeLook;
     public Transform currentPov;
@@ -20,13 +20,11 @@ public class DragAndDropController : MonoBehaviour
     public CarController carController;
     [SerializeField] private Transform dragDropPov;
 
-    //************************
+    [SerializeField] private GameObject turretPrefab;
+    [SerializeField] private float minDistance = 0.5f;
+    [SerializeField] private float maxDistance = 10f;
 
-    [SerializeField] private GameObject turretPrefab; 
-    [SerializeField] private float minDistance = 0.5f; 
-    [SerializeField] private float maxDistance = 10f; 
-
-    private bool isRaycasting = false; 
+    private bool isRaycasting = false;
     private bool isTurretPlaced = false;
     public static bool isTurretPurchased = false;
     private RaycastHit raycastHit;
@@ -35,42 +33,38 @@ public class DragAndDropController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-           
             isRaycasting = true;
         }
 
         if (Input.GetKeyUp(KeyCode.X))
         {
-           if (!isTurretPlaced && isTurretPurchased) { 
-            isRaycasting = false;
-
-            if (!isRaycasting)
+            if (!isTurretPlaced && isTurretPurchased)
             {
-                Vector3 raycastOrigin = transform.position + transform.forward;
-                Ray ray = new Ray(raycastOrigin, transform.forward);
+                isRaycasting = false;
 
-                Debug.DrawRay(ray.origin, ray.direction * maxDistance, Color.red);
-
-                if (Physics.Raycast(ray, out raycastHit, maxDistance))
+                if (!isRaycasting)
                 {
+                    Vector3 raycastOrigin = transform.position + transform.forward;
+                    Ray ray = new Ray(raycastOrigin, transform.forward);
 
-                    float distance = raycastHit.distance;
-                    if (distance >= minDistance && distance <= maxDistance)
+                    Debug.DrawRay(ray.origin, ray.direction * maxDistance, Color.red);
+
+                    if (Physics.Raycast(ray, out raycastHit, maxDistance))
                     {
-                        isTurretPlaced = true;
-                        turretPrefab.transform.position = raycastHit.point;
-                        GameObject turret = Instantiate(turretPrefab);
-                        Destroy(turret, 30f);
-                        Invoke("closeTurret", 30f);
+                        float distance = raycastHit.distance;
+                        if (distance >= minDistance && distance <= maxDistance)
+                        {
+                            isTurretPlaced = true;
+                            turretPrefab.transform.position = raycastHit.point;
+                            GameObject turret = Instantiate(turretPrefab);
+                            Destroy(turret, 30f);
+                            Invoke("CloseTurret", 30f);
+                        }
                     }
                 }
             }
-            }
         }
 
-       
-
-        //************************************************************************
         if (Input.GetMouseButton(1))
         {
             Vector3 raycastOrigin = transform.position + transform.forward;
@@ -120,10 +114,8 @@ public class DragAndDropController : MonoBehaviour
             hit.collider.GetComponent<Collider>().isTrigger = !isActive;
     }
 
-
-    private void closeTurret()
+    private void CloseTurret()
     {
         isTurretPlaced = false;
     }
 }
-

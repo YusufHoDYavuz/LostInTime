@@ -1,33 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class chestController : MonoBehaviour
+public class ChestController : MonoBehaviour
 {
-    Animation animation;
-    public  bool isOpen = false;
+    public  bool isOpen;
+
+    private Animation animation;
     private BoxCollider boxCollider;
-    void Start()
+    
+    void Awake()
     {
         animation = GetComponent<Animation>();
         boxCollider = GetComponent<BoxCollider>();
-       
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OpenChest()
     {
-        
-    }
-
-    public void openChest()
-    {
-        if (isOpen == false)
+        if (!isOpen)
         {
             animation.Play("ChestAnim");
             isOpen = true;
             boxCollider.enabled = false;
         }
-
     }
 }

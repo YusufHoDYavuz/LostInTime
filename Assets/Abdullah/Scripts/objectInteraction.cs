@@ -1,17 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class objectInteraction : MonoBehaviour
+public class ObjectInteraction : MonoBehaviour
 {
     [SerializeField] float interactionDistance = 2f;
-
-
-    [SerializeField] chestController chestController;
-
+    [SerializeField] ChestController chestController;
     [SerializeField] GameObject interactionUI;
     [SerializeField] GameObject player;
-
 
     void Interact()
     {
@@ -34,14 +28,10 @@ public class objectInteraction : MonoBehaviour
 
         if (distance <= interactionDistance)
         {
-            
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Interact();
-                
-                
             }
         }
-       
     }
 }

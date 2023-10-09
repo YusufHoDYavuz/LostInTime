@@ -48,13 +48,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Image imageTp;
     public bool againPatrol = false;
 
-
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
         animator = transform.GetChild(0).GetComponent<Animator>();
         camera = Camera.main.transform;
-        currentSpeed = walkSpeed*Singleton.Instance.speedMultiplier;
+        currentSpeed = walkSpeed * Singleton.Instance.speedMultiplier;
         canMove = true;
 
         //CROUCH
@@ -68,18 +67,16 @@ public class PlayerController : MonoBehaviour
         //STAMINA
         currentStamina = maxStamina;
         UpdateStaminaUI();
-
-       
     }
 
     void Update()
     {
         HandleJump();
         Movement();
-        
+
         if (direction.magnitude >= 0.9f && Input.GetKeyDown(KeyCode.LeftShift) && !isCrouching && currentStamina > 1f)
         {
-            currentSpeed = runSpeed*Singleton.Instance.speedMultiplier;
+            currentSpeed = runSpeed * Singleton.Instance.speedMultiplier;
             animator.SetBool("isRun", true);
         }
 
@@ -94,7 +91,7 @@ public class PlayerController : MonoBehaviour
         {
             ToggleCrouch();
         }
-        
+
         //Stamina
         if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0)
             DrainStamina(staminaDrainRate * Time.deltaTime);
@@ -215,26 +212,21 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator gettingCaughtTeleport()
     {
-    
-        imageTp.DOColor(Color.black,1.5f);
-        
-        
+        imageTp.DOColor(Color.black, 1.5f);
+
+
         yield return new WaitForSeconds(2f); // 2 saniye bekle
 
-        imageTp.DOColor(new Color(0,0,0,0), 1.5f);
+        imageTp.DOColor(new Color(0, 0, 0, 0), 1.5f);
 
         TeleportForEnemy();
         canMove = true;
-       
-
     }
 
     private void TeleportForEnemy()
     {
         if (gettingCaughtPoint != null)
         {
-            
-
             transform.position = gettingCaughtPoint.position;
             againPatrol = true;
         }

@@ -6,17 +6,16 @@ using DG.Tweening;
 public class Singleton : MonoBehaviour
 {
     private static Singleton instance;
-
     public int gems;
     public GameObject gemsParentUI;
-    public List<GameObject> gemUIList = new List<GameObject>();
+    public List<GameObject> gemUIList = new();
     public bool[] purchasedItems = { false, false, false };
     public float speedMultiplier = 1f;
 
     public int collactableCount;
-    public bool gameFinished = false;
-    public bool[] pastPuzzlesScrollCount= {false,false,false,false};
-    public bool rotationFinished = false;
+    public bool gameFinished;
+    public bool[] pastPuzzlesScrollCount = { false, false, false, false };
+    public bool rotationFinished;
 
     private void Awake()
     {
@@ -40,34 +39,21 @@ public class Singleton : MonoBehaviour
     {
         gems += raiseValue;
     }
-    
+
     public void RaiseCollactableCount(int raiseValue)
     {
         collactableCount += raiseValue;
     }
 
-    public void CallGemAction(float waitTime,int gemIndex)
+    public void CallGemAction(float waitTime, int gemIndex)
     {
-        StartCoroutine(GetGemUIAndSetGems(waitTime,gemIndex));
+        StartCoroutine(GetGemUIAndSetGems(waitTime, gemIndex));
     }
 
-    private IEnumerator GetGemUIAndSetGems(float waitTime,int gemIndex)
+    private IEnumerator GetGemUIAndSetGems(float waitTime, int gemIndex)
     {
         gemsParentUI.transform.DOLocalMove(new Vector3(0, 450, 0), 0.25f).OnComplete(() =>
         {
-            /*
-            if (gems == 1)
-            {
-                gemUIList[0].transform.DOScale(Vector2.one, 0.5f).SetEase(Ease.InBounce);
-            }
-            else if (gems == 2)
-            {
-                gemUIList[1].transform.DOScale(Vector2.one, 0.5f).SetEase(Ease.InBounce);;
-            }
-            else if (gems == 3)
-            {
-                gemUIList[2].transform.DOScale(Vector2.one, 0.5f).SetEase(Ease.InBounce);;
-            }*/
             gemUIList[gemIndex].transform.DOScale(Vector2.one, 0.5f).SetEase(Ease.InBounce);
         });
         yield return new WaitForSeconds(waitTime);

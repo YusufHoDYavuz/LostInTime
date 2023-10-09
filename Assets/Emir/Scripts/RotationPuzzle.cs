@@ -1,16 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RotationPuzzle : MonoBehaviour
 {
-    // Start is called before the first frame update
-
-    private bool isInteracting = false;
-    GameObject [] puzzlePieces;
+    private bool isInteracting;
+    private GameObject[] puzzlePieces;
     private Camera cam;
     public static int puzzlePiecesLength;
-    
 
     void Start()
     {
@@ -19,42 +14,46 @@ public class RotationPuzzle : MonoBehaviour
         cam = Camera.main;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        interactPiece();
-       
-            if(!isInteracting){
-                 foreach(GameObject piece in puzzlePieces){
-                    Outline objectOutline = piece.GetComponent<Outline>();
-                    if(objectOutline != null){
-                        objectOutline.enabled = false;
-                    }
+        InteractPiece();
+
+        if (!isInteracting)
+        {
+            foreach (GameObject piece in puzzlePieces)
+            {
+                Outline objectOutline = piece.GetComponent<Outline>();
+                if (objectOutline != null)
+                {
+                    objectOutline.enabled = false;
+                }
             }
         }
     }
 
-    void interactPiece(){
+    void InteractPiece()
+    {
         RaycastHit hit;
-        
-        Vector3 raycastOrigin = cam.transform.position+ cam.transform.forward;
+
+        Vector3 raycastOrigin = cam.transform.position + cam.transform.forward;
         Ray ray = new Ray(raycastOrigin, cam.transform.forward);
-        if(Physics.Raycast(ray, out hit)){
-            if(hit.collider.gameObject.tag == "PuzzlePiece"){
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.collider.gameObject.tag == "PuzzlePiece")
+            {
                 Outline objectOutline = hit.collider.gameObject.GetComponent<Outline>();
-                if(objectOutline != null){
+                if (objectOutline != null)
+                {
                     objectOutline.enabled = true;
                     isInteracting = true;
-                    if(Input.GetKeyDown(KeyCode.E)){
-                    hit.collider.gameObject.GetComponent<PuzzlePiece>().rotatePiece();
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        hit.collider.gameObject.GetComponent<PuzzlePiece>().RotatePiece();
+                    }
                 }
-                }
-                
             }
             else
                 isInteracting = false;
         }
     }
-
-  
 }

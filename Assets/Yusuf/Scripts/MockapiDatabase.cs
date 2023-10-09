@@ -1,13 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Networking;
-using UnityEngine.UI;
 
 public class MockapiDatabase : MonoBehaviour
 {
-    
     private string URL = "https://64b1704a062767bc48263498.mockapi.io/lostintime";
 
     [SerializeField] private TextMeshPro userName;

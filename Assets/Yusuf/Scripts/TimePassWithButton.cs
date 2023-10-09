@@ -7,8 +7,8 @@ public class TimePassWithButton : MonoBehaviour, IPointerEnterHandler, IPointerE
 {
     [SerializeField] private TimePass timePass;
     [SerializeField] private UIManager uiManager;
-    [SerializeField] private GameObject[] buttons; 
-    [SerializeField] private float hoverDelay; 
+    [SerializeField] private GameObject[] buttons;
+    [SerializeField] private float hoverDelay;
     private int currentIndex = 0;
     public static bool isHovering = false;
 
@@ -20,30 +20,20 @@ public class TimePassWithButton : MonoBehaviour, IPointerEnterHandler, IPointerE
     private void Update()
     {
         if (isHovering)
-        {
             return;
-        }
 
         float horizontalInput = Input.GetAxis("Mouse X");
         float verticalInput = Input.GetAxis("Mouse Y");
 
         if (horizontalInput > 0)
-        {
             HoverNextButton();
-        }
         else if (horizontalInput < 0)
-        {
             HoverPreviousButton();
-        }
         else if (verticalInput > 0)
-        {
             HoverUpButton();
-        }
 
         if (Input.GetMouseButtonDown(0))
-        {
             ClickButton();
-        }
     }
 
     private void HoverNextButton()
@@ -65,7 +55,7 @@ public class TimePassWithButton : MonoBehaviour, IPointerEnterHandler, IPointerE
     {
         index = Mathf.Clamp(index, 0, buttons.Length - 1);
         isHovering = true;
-        
+
         buttons[currentIndex].GetComponent<Image>().color = Color.white;
         buttons[index].GetComponent<Image>().color = Color.green;
 

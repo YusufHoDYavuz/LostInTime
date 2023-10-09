@@ -7,75 +7,72 @@ using UnityEngine;
 
 public class Enemy_AI : MonoBehaviour
 {
-    [SerializeField] Transform Target;
+    [SerializeField] private Transform Target;
     public float distanceEnemy = 10;
-    [SerializeField] float moveSpeed = 2f;
+    [SerializeField] private float moveSpeed = 2f;
 
-    [SerializeField] targetForEnemy targetForEnemy;
+    [SerializeField] private TargetForEnemy targetForEnemy;
     GameObject pointObject;
     Animator animator;
 
     [SerializeField] GameObject fireEffect;
 
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private float bulletForce = 10f;
+    [SerializeField] private float destroyTime = 10f;
+    [SerializeField] private float fireInterval = 0.5f;
 
-    [SerializeField] GameObject bulletPrefab;
-    [SerializeField] Transform firePoint;
-    [SerializeField] float bulletForce = 10f;
-    [SerializeField] float destroyTime = 10f;
-    [SerializeField] float fireInterval = 0.5f;
-
-    [SerializeField] bool isFire = false;
+    [SerializeField] private bool isFire;
     bool fireIntervalControl = true;
 
-
     [SerializeField] int health = 100;
-     bool isDie = false;
-
+    bool isDie;
 
     bool isFirst = true;
-    private void Start()
+
+    private void Awake()
     {
         animator = GetComponent<Animator>();
-        InvokeRepeating("functionForPointObject", 5f,10f);
+    }
+
+    private void Start()
+    {
+        InvokeRepeating("PointObject", 5f, 10f);
     }
 
     private void Update()
     {
-        
         transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
-      
+
         if (isFire && fireIntervalControl)
-        {
             Fire();
-        }
-        
+
         Rotate();
 
-        if (Vector3.Distance(transform.position,Target.position) <= distanceEnemy)
+        if (Vector3.Distance(transform.position, Target.position) <= distanceEnemy)
         {
             if (isFirst)
             {
-                functionForPointObject();
+                PointObject();
                 isFirst = false;
             }
         }
-       
-        
     }
+
     private void Movement(Vector3 nextPosition)
     {
-       if (isDie == false)
+        if (isDie == false)
         {
             nextPosition.y = gameObject.transform.position.y;
             if (Vector3.Distance(transform.position, Target.transform.position) < distanceEnemy)
             {
-
                 if (transform.position != nextPosition)
                 {
                     isFire = false;
                     animator.SetBool("isWalk", true);
-                    transform.position = Vector3.MoveTowards(transform.position, nextPosition, moveSpeed * Time.deltaTime);
-
+                    transform.position =
+                        Vector3.MoveTowards(transform.position, nextPosition, moveSpeed * Time.deltaTime);
                 }
             }
         }
@@ -83,7 +80,7 @@ public class Enemy_AI : MonoBehaviour
 
     private void Rotate()
     {
-        if (isDie == false)
+        if (!isDie)
         {
             if (pointObject != null)
             {
@@ -91,17 +88,14 @@ public class Enemy_AI : MonoBehaviour
                 {
                     isFire = true;
                     animator.SetBool("isWalk", false);
-                    // Hedefe d�nme durumu
+
                     Vector3 targetDirection = Target.position - transform.position;
                     targetDirection.y = 0f;
                     Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
 
                     transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 3f);
-
-
                 }
                 else if (Vector3.Distance(transform.position, pointObject.transform.position) > 1f)
-                // noktaya bakarken
                 {
                     isFire = false;
                     Vector3 targetDirection = pointObject.transform.position - transform.position;
@@ -110,54 +104,47 @@ public class Enemy_AI : MonoBehaviour
                     targetRotation.x = 0f;
                     transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 3f);
                     Movement(pointObject.transform.position);
-
                 }
             }
         }
     }
 
-    private void functionForPointObject()
+    private void PointObject()
     {
         if (pointObject != null)
-        {
             Destroy(pointObject);
-        }
+
         targetForEnemy.GenerateRandomPoint(gameObject);
         pointObject = targetForEnemy.pointObject;
-
     }
 
 
     void Fire()
     {
-        if (isDie == false)
+        if (!isDie)
         {
             GameObject yeniMermi = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             GameObject yeniEfekt = Instantiate(fireEffect, firePoint.position, firePoint.rotation);
             Rigidbody mermiRigidbody = yeniMermi.GetComponent<Rigidbody>();
             mermiRigidbody.velocity = firePoint.forward * bulletForce;
 
-
             Destroy(yeniMermi, destroyTime);
             Destroy(yeniEfekt, 0.2f);
-            StartCoroutine(fireStandby());
-
+            StartCoroutine(FireStandby());
         }
-
     }
-    System.Collections.IEnumerator fireStandby()
+
+    private IEnumerator FireStandby()
     {
-        if (isDie == false)
+        if (!isDie)
         {
-            fireIntervalControl = false;  // Ate� yap�lamaz hale getirilir
-            yield return new WaitForSeconds(fireInterval);  // Belirli bir s�re beklenir
-            fireIntervalControl = true;   // Ate� yap�labilir hale getirilir
+            fireIntervalControl = false;
+            yield return new WaitForSeconds(fireInterval);
+            fireIntervalControl = true;
         }
-       
     }
 
-
-    public void die(int damage)
+    public void Die(int damage)
     {
         health -= damage;
 
@@ -177,9 +164,8 @@ public class Enemy_AI : MonoBehaviour
             {
                 isDie = true;
                 animator.SetBool("isDie", true);
-                Destroy(gameObject,2f);
+                Destroy(gameObject, 2f);
             }
         }
     }
-
 }
