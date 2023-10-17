@@ -1324,6 +1324,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6806963150372674156, guid: 073bd712105426a49b3e2204cf89e6d6, type: 3}
+      propertyPath: m_Mass
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7857945086383016504, guid: 073bd712105426a49b3e2204cf89e6d6, type: 3}
+      propertyPath: maxSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7857945086383016504, guid: 073bd712105426a49b3e2204cf89e6d6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7857945086383016504, guid: 073bd712105426a49b3e2204cf89e6d6, type: 3}
+      propertyPath: acceleration
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7857945086383016504, guid: 073bd712105426a49b3e2204cf89e6d6, type: 3}
+      propertyPath: deceleration
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7857945086383016504, guid: 073bd712105426a49b3e2204cf89e6d6, type: 3}
+      propertyPath: rotationSpeed
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 7857945086383016504, guid: 073bd712105426a49b3e2204cf89e6d6, type: 3}
+      propertyPath: deacceleration
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8619783137689965140, guid: 073bd712105426a49b3e2204cf89e6d6, type: 3}
       propertyPath: m_IsActive
       value: 1
