@@ -1328,6 +1328,14 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 1500
       objectReference: {fileID: 0}
+    - target: {fileID: 7420302229088642269, guid: 073bd712105426a49b3e2204cf89e6d6, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1897656514}
+    - target: {fileID: 7420302229088642269, guid: 073bd712105426a49b3e2204cf89e6d6, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 1689988604}
     - target: {fileID: 7857945086383016504, guid: 073bd712105426a49b3e2204cf89e6d6, type: 3}
       propertyPath: maxSpeed
       value: 20
@@ -4631,6 +4639,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1678327364}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1689988604 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6700619806127460507, guid: 073bd712105426a49b3e2204cf89e6d6, type: 3}
+  m_PrefabInstance: {fileID: 378184565}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc2c5e2891a5514bb1889f320a4fcf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1813718214
 GameObject:
   m_ObjectHideFlags: 0
@@ -5140,6 +5159,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1872974210}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &1897656514 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6700619806334140199, guid: 073bd712105426a49b3e2204cf89e6d6, type: 3}
+  m_PrefabInstance: {fileID: 378184565}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2096857908
 GameObject:
   m_ObjectHideFlags: 0
