@@ -26,6 +26,7 @@ public class CollectObjects : MonoBehaviour
     [SerializeField] private SkinnedMeshRenderer capeMeshRenderer;
 
     [SerializeField] private GameObject collactableUICount;
+    [SerializeField] private GameObject autoCollactable;
     [SerializeField] private Text collactableText;
     [SerializeField] private Transform pastChestLid;
     [SerializeField] private Animator animator;
@@ -63,14 +64,7 @@ public class CollectObjects : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, raycastDistance))
             {
-                if (hit.collider.CompareTag("Collactable"))
-                {
-                    StartCoroutine(CollactableUIActive(3f));
-                    Destroy(hit.collider.gameObject);
-                    PlayPickUpAnimation();
-                    Debug.Log("Collactable Object: " + hit.collider.name);
-                }
-                else if (hit.collider.CompareTag("Show"))
+                if (hit.collider.CompareTag("Show"))
                 {
                     if (!isActiveParchmentUI)
                     {
@@ -286,5 +280,20 @@ public class CollectObjects : MonoBehaviour
     private void SetActivePlayerController()
     {
         playerController.enabled = true;
+    }
+
+    public void SetAutoCollactable(bool isShow)
+    {
+        if (isShow)
+            autoCollactable.transform.DOLocalMoveX(-750, 0.25f);
+        else
+            autoCollactable.transform.DOLocalMoveX(-1150, 0.25f);
+    }
+
+    public void AutoCollactable()
+    {
+        StartCoroutine(CollactableUIActive(3f));
+        PlayPickUpAnimation();
+        SetAutoCollactable(false);
     }
 }
