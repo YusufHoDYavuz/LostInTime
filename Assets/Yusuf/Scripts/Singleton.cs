@@ -16,6 +16,7 @@ public class Singleton : MonoBehaviour
     public bool gameFinished;
     public bool[] pastPuzzlesScrollCount = { false, false, false, false };
     public bool rotationFinished;
+    public Collider[] punchColliders;
 
     private void Awake()
     {

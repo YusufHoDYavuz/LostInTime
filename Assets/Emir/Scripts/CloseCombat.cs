@@ -6,10 +6,13 @@ public class CloseCombat : MonoBehaviour
     public static int numberOfPunchs = 0;
     private float clickTimer = 0;
 
+
+    public static bool isPunching = false;
     public Animator animator;
     public static CloseCombat closeCombat;
     public static float range = 1f;
-
+    [SerializeField]
+    private Collider[] punchColliders;
     private void Start()
     {
         if (closeCombat == null)
@@ -55,4 +58,5 @@ public class CloseCombat : MonoBehaviour
             }
         }
     }
+   
 }

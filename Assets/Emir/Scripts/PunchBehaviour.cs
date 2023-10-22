@@ -4,6 +4,7 @@ public class PunchBehaviour : StateMachineBehaviour
 {
     private bool canHit = true;
 
+    
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.SetFloat("PunchStyle", Random.Range(0, 1f));
@@ -32,7 +33,11 @@ public class PunchBehaviour : StateMachineBehaviour
         else if (canHit && stateInfo.normalizedTime >= 0.4f)
         {
             canHit = false;
-            CloseCombat.PunchCollision();
+            //CloseCombat.PunchCollision();
+            foreach(Collider col in Singleton.Instance.punchColliders)
+                col.enabled = true;
+            
+            CloseCombat.isPunching = true;
         }
     }
 }
