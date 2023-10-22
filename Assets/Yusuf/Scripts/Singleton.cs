@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
 
 public class Singleton : MonoBehaviour
 {
@@ -17,6 +19,9 @@ public class Singleton : MonoBehaviour
     public bool[] pastPuzzlesScrollCount = { false, false, false, false };
     public bool rotationFinished;
     public Collider[] punchColliders;
+
+    public RectTransform knowledgeUI;
+    public TextMeshProUGUI knowledgeText;
 
     private void Awake()
     {
@@ -59,5 +64,21 @@ public class Singleton : MonoBehaviour
         });
         yield return new WaitForSeconds(waitTime);
         gemsParentUI.transform.DOLocalMove(new Vector3(0, 600, 0), 0.25f);
+    }
+
+    public void SetKnowledge(string knowledgeText)
+    {
+        StartCoroutine(KnowledgeTextDelay(knowledgeText));
+
+        Sequence knowledgeSeq = DOTween.Sequence();
+        knowledgeSeq.Append(knowledgeUI.DOMoveX(-500, 0.25f));
+        knowledgeSeq.AppendInterval(0.25f);
+        knowledgeSeq.Append(knowledgeUI.DOMoveX(25, 0.25f));
+    }
+
+    private IEnumerator KnowledgeTextDelay(string knowledgeText)
+    {
+        yield return new WaitForSeconds(0.25f);
+        this.knowledgeText.text = knowledgeText;
     }
 }

@@ -11,7 +11,7 @@ public class Enemy_AI : MonoBehaviour
     public float distanceEnemy = 10;
     [SerializeField] private float moveSpeed = 2f;
 
-    [SerializeField] private TargetForEnemy targetForEnemy;
+   
     GameObject pointObject;
     Animator animator;
 
@@ -54,7 +54,7 @@ public class Enemy_AI : MonoBehaviour
         {
             if (isFirst)
             {
-                PointObject();
+                
                 isFirst = false;
             }
         }
@@ -72,7 +72,7 @@ public class Enemy_AI : MonoBehaviour
                     isFire = false;
                     animator.SetBool("isWalk", true);
                     transform.position =
-                        Vector3.MoveTowards(transform.position, nextPosition, moveSpeed * Time.deltaTime);
+                    Vector3.MoveTowards(transform.position, nextPosition, moveSpeed * Time.deltaTime);
                 }
             }
         }
@@ -109,14 +109,7 @@ public class Enemy_AI : MonoBehaviour
         }
     }
 
-    private void PointObject()
-    {
-        if (pointObject != null)
-            Destroy(pointObject);
-
-        targetForEnemy.GenerateRandomPoint(gameObject);
-        pointObject = targetForEnemy.pointObject;
-    }
+ 
 
 
     void Fire()

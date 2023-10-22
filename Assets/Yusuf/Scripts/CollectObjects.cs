@@ -28,6 +28,8 @@ public class CollectObjects : MonoBehaviour
     [SerializeField] private GameObject collactableUICount;
     [SerializeField] private Text collactableText;
     [SerializeField] private Transform pastChestLid;
+    [SerializeField] private Animator animator;
+    [SerializeField] private PlayerController playerController;
 
     public void openDoor(int doorIndex)
     {
@@ -65,6 +67,7 @@ public class CollectObjects : MonoBehaviour
                 {
                     StartCoroutine(CollactableUIActive(3f));
                     Destroy(hit.collider.gameObject);
+                    PlayPickUpAnimation();
                     Debug.Log("Collactable Object: " + hit.collider.name);
                 }
                 else if (hit.collider.CompareTag("Show"))
@@ -271,5 +274,17 @@ public class CollectObjects : MonoBehaviour
     void PastRotationFinish()
     {
         pastChestLid.DOLocalRotate(Vector3.right * -90, 1f);
+    }
+
+    private void PlayPickUpAnimation()
+    {
+        playerController.enabled = false;
+        Invoke(nameof(SetActivePlayerController), 4.8f);
+        animator.SetTrigger("PickUp");
+    }
+
+    private void SetActivePlayerController()
+    {
+        playerController.enabled = true;
     }
 }
