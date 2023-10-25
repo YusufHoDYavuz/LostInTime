@@ -1,6 +1,0 @@
-texture0="abstract::dirtgrime_a.dds"
-texture1="abstract::dirtgrime_a-norm.dds"
-blend=alpha
-depthmask=0
-zsort=1
-overlay=1
