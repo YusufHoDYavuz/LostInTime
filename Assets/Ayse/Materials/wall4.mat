@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: wall2
+  m_Name: wall4
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 2100000, guid: 290cbb42fb38e5e4c88d373d89c4fa81, type: 2}
+  m_Parent: {fileID: 2100000, guid: 9e701e99610314a4d8f65b19f02c1447, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -26,5 +26,5 @@ Material:
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _Color: {r: 0.16470589, g: 0.18823531, b: 0.21176472, a: 1}
+    - _Color: {r: 0.92549026, g: 0.49803925, b: 0.14901961, a: 1}
   m_BuildTextureStacks: []
