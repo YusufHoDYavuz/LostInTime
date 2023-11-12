@@ -48,7 +48,7 @@ Material:
     - _InvFade: 1
     - _Occlusion: 7.5
     - _ShadowStrength: 0.5
-    - _Shininess: 0.10000002
+    - _Shininess: 0.1
     - _SquashAmount: 1
     - _TranslucencyViewDependency: 0.7
     m_Colors:
