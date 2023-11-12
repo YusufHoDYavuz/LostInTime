@@ -273,7 +273,7 @@ public class CollectObjects : MonoBehaviour
     private void PlayPickUpAnimation()
     {
         playerController.enabled = false;
-        Invoke(nameof(SetActivePlayerController), 4.8f);
+        Invoke(nameof(SetActivePlayerController), 1.2f);
         animator.SetTrigger("PickUp");
     }
 
