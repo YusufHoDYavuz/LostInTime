@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: town wall
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 2100000, guid: c1e5025573cf5ed4f9c7b8ffb5053e0b, type: 2}
+  m_Parent: {fileID: 2100000, guid: f10661f3b8d1cf043bd0e5705c08f00f, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords:
