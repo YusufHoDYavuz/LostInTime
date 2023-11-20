@@ -48,6 +48,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Image imageTp;
     public bool againPatrol = false;
 
+    [SerializeField] float health = 100;
+    [SerializeField] bool isDie = false;
+
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -71,25 +74,29 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        HandleJump();
-        Movement();
-
-        if (direction.magnitude >= 0.9f && Input.GetKeyDown(KeyCode.LeftShift) && !isCrouching && currentStamina > 1f)
+        if (isDie)
         {
-            currentSpeed = runSpeed * Singleton.Instance.speedMultiplier;
-            animator.SetBool("isRun", true);
-        }
+            HandleJump();
+            Movement();
 
-        if (!Input.GetKey(KeyCode.LeftShift) && Input.GetKeyUp(KeyCode.LeftShift) ||
-            Input.GetKey(KeyCode.LeftShift) && direction.magnitude <= 0.5f || currentStamina < 1f)
-        {
-            currentSpeed = walkSpeed * Singleton.Instance.speedMultiplier;
-            animator.SetBool("isRun", false);
-        }
+            if (direction.magnitude >= 0.9f && Input.GetKeyDown(KeyCode.LeftShift) && !isCrouching && currentStamina > 1f)
+            {
+                currentSpeed = runSpeed * Singleton.Instance.speedMultiplier;
+                animator.SetBool("isRun", true);
+            }
 
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            ToggleCrouch();
+            if (!Input.GetKey(KeyCode.LeftShift) && Input.GetKeyUp(KeyCode.LeftShift) ||
+                Input.GetKey(KeyCode.LeftShift) && direction.magnitude <= 0.5f || currentStamina < 1f)
+            {
+                currentSpeed = walkSpeed * Singleton.Instance.speedMultiplier;
+                animator.SetBool("isRun", false);
+            }
+
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                ToggleCrouch();
+            }
+
         }
 
         //Stamina
@@ -238,6 +245,18 @@ public class PlayerController : MonoBehaviour
         {
             TimePassWithButton.isHovering = false;
             uiManager.SetActiveTransitionPanel();
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("bullet"))
+        {
+            health -= 10;
+            if (health <= 0)
+            {
+                isDie = true;
+            }
         }
     }
 }

@@ -252,6 +252,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!4 &132329316 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 420815684, guid: 8957328bf736a9a45984d538e81e9677, type: 3}
+  m_PrefabInstance: {fileID: 1708581502}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &152635604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -481,6 +486,13 @@ MonoBehaviour:
   timeBackShort: 4
   timeSideLong: 5
   timeSideShort: 3
+  bulletPrefab: {fileID: 5429489552379571985, guid: f552a4e8a483e3945870584fbdf00c84, type: 3}
+  firePoint: {fileID: 132329316}
+  bulletForce: 10
+  destroyTime: 10
+  fireInterval: 0.5
+  fireEffect: {fileID: 0}
+  isFire: 0
   patrolPoints:
   - {fileID: 1310992862}
   - {fileID: 1134920875}
