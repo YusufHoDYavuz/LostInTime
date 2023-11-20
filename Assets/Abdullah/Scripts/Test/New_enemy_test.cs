@@ -54,6 +54,11 @@ public class New_enemy_test : MonoBehaviour
     [SerializeField] int health = 100;
     bool isDie = false;
 
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
     private void Start()
     {
          player = GameObject.FindWithTag("Player");
@@ -68,7 +73,10 @@ public class New_enemy_test : MonoBehaviour
         Dedection();
         Rotate();
         if (isFire && fireIntervalControl)
+        {
             Fire();
+
+        }
     }
 
     void calculateValues()
@@ -172,6 +180,9 @@ public class New_enemy_test : MonoBehaviour
                 transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 3f);
                 Movement(targetDirection);
 
+                animator.SetBool("isWalk", false);
+
+
             }
             else if (Vector3.Distance(transform.position, nextPatrolPoint) > 0.5f )
             {
@@ -182,8 +193,10 @@ public class New_enemy_test : MonoBehaviour
                 Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
 
                 transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 3f);
-                Movement(targetDirection);  
-                
+                Movement(targetDirection);
+
+                animator.SetBool("isWalk", true);
+
             }
             else
             {
@@ -198,14 +211,13 @@ public class New_enemy_test : MonoBehaviour
     {
         if (!isDedection) 
         {
-        transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+            animator.SetBool("isWalk", true);
+            transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
         }
         else
         {
-            if (Vector3.Distance(transform.position, nextPosition) > maxFireDistance)
-            {
-                transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
-            }
+                transform.Translate(Vector3.forward * 0 * Time.deltaTime);
+            animator.SetBool("isWalk", false);
         }
     }
 
