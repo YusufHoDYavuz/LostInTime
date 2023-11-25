@@ -13,9 +13,11 @@ public class Singleton : MonoBehaviour
     public List<GameObject> gemUIList = new();
     public bool[] purchasedItems = { false, false, false };
     public float speedMultiplier = 1f;
+    
 
     public int collactableCount;
     public bool gameFinished;
+    public bool isFirstSceneDone = false;
     public bool[] pastPuzzlesScrollCount = { false, false, false, false };
     public bool rotationFinished;
     public Collider[] punchColliders;

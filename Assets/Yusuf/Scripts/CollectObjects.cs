@@ -112,11 +112,13 @@ public class CollectObjects : MonoBehaviour
                     {
                         Singleton.Instance.CallGemAction(5, 1);
                         Singleton.Instance.RaiseGemAmount(1);
+                        playerController.gameObject.GetComponent<QuestManager>().questComplete();
                     }
                     else if (hit.collider.name == "FutureGem")
                     {
                         Singleton.Instance.CallGemAction(5, 2);
                         Singleton.Instance.RaiseGemAmount(1);
+                        playerController.gameObject.GetComponent<QuestManager>().questComplete();
                         openDoor(1);
                     }
 

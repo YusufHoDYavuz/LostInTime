@@ -8,6 +8,7 @@ public class QuestManager : MonoBehaviour
     private Queue<Quest> queue;
     [SerializeField] private Transform questController;
     private Quest currentQuest;
+    [SerializeField] private Quest firstQuest;
 
     public void Start()
     {
@@ -20,6 +21,15 @@ public class QuestManager : MonoBehaviour
             queue.Enqueue(quest.GetComponent<Quest>());
         }
         questComplete();
+
+        if (!Singleton.Instance.isFirstSceneDone && firstQuest != null)
+        {
+            queue.Clear();
+            queue.Enqueue(firstQuest.GetComponent<Quest>());
+            questComplete();
+            Singleton.Instance.isFirstSceneDone = true;
+            
+        }
 
     }
 
