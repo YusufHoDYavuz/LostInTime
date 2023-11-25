@@ -116,12 +116,12 @@ public class New_enemy_test : MonoBehaviour
         {
             if (distance < frontShortRange)
             {
-                Debug.Log("önünde");
+              
                 StartCounter(timeFrontShort);
             }
             else if (distance < frontLongRange)
             {
-                Debug.Log("önünde uzun");
+                
                 StartCounter(timeFrontLong);
             }
             else
@@ -133,12 +133,12 @@ public class New_enemy_test : MonoBehaviour
         {
             if (distance < sideShortRange)
             {
-                Debug.Log("yanda");
+                
                 StartCounter(timeSideShort);
             }
             else if (distance < sideLongRange)
             {
-                Debug.Log("Yanda uzun");
+               
                 StartCounter(timeSideLong);
             }
             else
@@ -150,12 +150,12 @@ public class New_enemy_test : MonoBehaviour
         {
             if (distance < backShortRange)
             {
-                Debug.Log("arkada");
+               
                 StartCounter(timeBackShort);
             }
             else if (distance < backLongRange)
             {
-                Debug.Log("arkada uzun");
+               
                 StartCounter(timeBackLong);
             }
             else
@@ -183,7 +183,7 @@ public class New_enemy_test : MonoBehaviour
     IEnumerator Counter(float waitingSeconds)
     {
         
-        Debug.Log("Coroutine started");
+        
         yield return new WaitForSeconds(waitingSeconds);
         isDedection = true;
 
@@ -195,7 +195,7 @@ public class New_enemy_test : MonoBehaviour
         {
             if (isDedection)
             {
-                //Playera dön
+                
                 isFire = true;
                 Vector3 targetDirection = player.transform.position - transform.position;
                 targetDirection.y = 0f;
@@ -249,7 +249,7 @@ public class New_enemy_test : MonoBehaviour
     {
         if (!isDie)
         {
-            Debug.Log("firee");
+           
           
             // Nesnenin baktýðý yöne doðru bir vektör oluþtur
             Vector3 atisYonu = transform.forward;
@@ -262,9 +262,9 @@ public class New_enemy_test : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 // Çarpan nesnenin adýný konsola yazdýr
-                Debug.Log("Çarpýlan Nesne: " + hit.collider.gameObject.name);
+                
             }
-            Debug.DrawRay(firePoint.position, atisYonu * 100f, Color.red, 1f);
+            Debug.DrawRay(firePoint.position, atisYonu * 10f, Color.red, 1f);
 
 
             
@@ -317,6 +317,6 @@ public class New_enemy_test : MonoBehaviour
         );
 
             nextPatrolPoint = randomPoint;
-        Debug.Log(nextPatrolPoint);
+      
     }
 }
