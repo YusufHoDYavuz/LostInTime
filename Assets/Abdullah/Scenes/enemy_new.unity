@@ -488,7 +488,7 @@ MonoBehaviour:
   timeSideShort: 3
   bulletPrefab: {fileID: 5429489552379571985, guid: f552a4e8a483e3945870584fbdf00c84, type: 3}
   firePoint: {fileID: 132329316}
-  bulletForce: 10
+  bulletForce: 2000
   destroyTime: 10
   fireInterval: 0.5
   fireEffect: {fileID: 0}
@@ -802,6 +802,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 197256479, guid: 8957328bf736a9a45984d538e81e9677, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5871750048884285173, guid: 8957328bf736a9a45984d538e81e9677, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.664577

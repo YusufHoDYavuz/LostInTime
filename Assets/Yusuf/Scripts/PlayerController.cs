@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (isDie)
+        if (isDie == false)
         {
             HandleJump();
             Movement();
@@ -97,6 +97,10 @@ public class PlayerController : MonoBehaviour
                 ToggleCrouch();
             }
 
+        }
+        else if (isDie)
+        {
+            animator.SetBool("isDie", true);
         }
 
         //Stamina
@@ -248,15 +252,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("bullet"))
+    public void dicreaseHealth() 
         {
-            health -= 10;
-            if (health <= 0)
-            {
-                isDie = true;
-            }
+        health -= 10;
+        if (health <= 0)
+        {
+            isDie = true;
         }
-    }
+        } 
 }
