@@ -19,6 +19,7 @@ TagManager:
   - Car
   - oldMan
   - bulletTurret
+  - quest
   layers:
   - Default
   - TransparentFX

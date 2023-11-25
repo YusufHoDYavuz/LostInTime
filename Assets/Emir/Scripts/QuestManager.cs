@@ -8,7 +8,6 @@ public class QuestManager : MonoBehaviour
     private Queue<Quest> queue;
     [SerializeField] private Transform questController;
     private Quest currentQuest;
-    [SerializeField] private TextMeshProUGUI questText;
 
     public void Start()
     {
@@ -30,7 +29,7 @@ public class QuestManager : MonoBehaviour
             currentQuest.gameObject.SetActive(false);
         currentQuest = queue.Dequeue();
         currentQuest.gameObject.SetActive(true);
-        questText.SetText(currentQuest.questDescription.description);
+        Singleton.Instance.SetKnowledge(currentQuest.questDescription.description);
 
     }
 

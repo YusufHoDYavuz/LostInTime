@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Q3_Past
   m_EditorClassIdentifier: 
   priority: 3
-  description: "Evlerin \xF6n\xFCndeki par\u015Fomenlerin hepsini bul ve oku.oku."
+  description: "Evlerin \xF6n\xFCndeki par\u015Fomenlerin hepsini bul ve oku."
   done: 0

@@ -22,4 +22,12 @@ public class Quest : MonoBehaviour
         Gizmos.DrawWireCube(transform.position,Vector3.one*0.5f);
 
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.GetComponent<QuestManager>().questComplete();
+        }
+    }
 }

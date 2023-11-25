@@ -49,9 +49,7 @@ public class DialogueManager : MonoBehaviour
             return;
         var singleton = Singleton.Instance;
 
-        if (!(singleton.pastPuzzlesScrollCount[0] && singleton.pastPuzzlesScrollCount[1] &&
-              singleton.pastPuzzlesScrollCount[2] && singleton.pastPuzzlesScrollCount[3]))
-            return;
+        
 
         isPlayingDialogue = true;
         if (!Singleton.Instance.gameFinished)

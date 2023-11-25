@@ -49,6 +49,8 @@ public class RotationPuzzle : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         hit.collider.gameObject.GetComponent<PuzzlePiece>().RotatePiece();
+                        if (Singleton.Instance.rotationFinished)
+                            GetComponent<QuestManager>().questComplete();
                     }
                 }
             }

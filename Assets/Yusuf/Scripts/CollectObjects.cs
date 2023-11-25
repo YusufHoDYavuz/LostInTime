@@ -54,6 +54,7 @@ public class CollectObjects : MonoBehaviour
         {
             Debug.Log("Chest Open");
             Singleton.Instance.rotationFinished = false;
+            playerController.gameObject.GetComponent<QuestManager>().questComplete();
             PastRotationFinish();
         }
 
@@ -105,6 +106,7 @@ public class CollectObjects : MonoBehaviour
                     {
                         Singleton.Instance.CallGemAction(5, 0);
                         Singleton.Instance.RaiseGemAmount(1);
+                        playerController.gameObject.GetComponent<QuestManager>().questComplete();
                     }
                     else if (hit.collider.name == "PresentGem")
                     {
@@ -262,6 +264,8 @@ public class CollectObjects : MonoBehaviour
             Singleton.Instance.pastPuzzlesScrollCount[2] && Singleton.Instance.pastPuzzlesScrollCount[3])
         {
             openDoor(0);
+            mainPlayerObject.GetComponentInChildren<QuestManager>().questComplete();
+
         }
     }
 
