@@ -54,6 +54,10 @@ public class New_enemy_test : MonoBehaviour
     [SerializeField] int health = 100;
     bool isDie = false;
 
+    private bool isRayActive = false;
+    private float timer = 0f;
+   
+
 
     private void Awake()
     {
@@ -74,9 +78,29 @@ public class New_enemy_test : MonoBehaviour
         Rotate();
         if (isFire && fireIntervalControl)
         {
-            Fire();
-
+            // Iþýný aç veya kapa
+            isRayActive = true;
         }
+        else
+        {
+            isRayActive= false;
+        }
+
+        // Eðer ýþýn açýksa
+        if (isRayActive)
+        {
+            timer += Time.deltaTime;
+
+            
+            if (timer >= fireInterval)
+            {
+                Fire();
+                timer = 0f;
+            }
+        }
+
+          
+        
     }
 
     void calculateValues()
@@ -225,14 +249,26 @@ public class New_enemy_test : MonoBehaviour
     {
         if (!isDie)
         {
-            GameObject yeniMermi = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-            GameObject yeniEfekt = Instantiate(fireEffect, firePoint.position, firePoint.rotation);
-            Rigidbody mermiRigidbody = yeniMermi.GetComponent<Rigidbody>();
-            mermiRigidbody.velocity = firePoint.forward * bulletForce;
+            Debug.Log("firee");
+          
+            // Nesnenin baktýðý yöne doðru bir vektör oluþtur
+            Vector3 atisYonu = transform.forward;
 
-            Destroy(yeniMermi, destroyTime);
-            Destroy(yeniEfekt, 0.2f);
-            StartCoroutine(FireStandby());
+            // Raycast ýþýnýný oluþtur
+            Ray ray = new Ray(firePoint.position, atisYonu);
+            RaycastHit hit;
+
+            // Iþýnýn çarptýðý nesneyi kontrol et
+            if (Physics.Raycast(ray, out hit))
+            {
+                // Çarpan nesnenin adýný konsola yazdýr
+                Debug.Log("Çarpýlan Nesne: " + hit.collider.gameObject.name);
+            }
+            Debug.DrawRay(firePoint.position, atisYonu * 100f, Color.red, 1f);
+
+
+            
+           
         }
     }
 
