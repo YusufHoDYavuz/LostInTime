@@ -4,6 +4,7 @@ public class DontDestroyScript : MonoBehaviour
 {
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        
+        //DontDestroyOnLoad(gameObject);
     }
 }
