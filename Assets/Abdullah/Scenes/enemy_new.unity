@@ -252,11 +252,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!4 &132329316 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 420815684, guid: 8957328bf736a9a45984d538e81e9677, type: 3}
-  m_PrefabInstance: {fileID: 1708581502}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &152635604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -455,53 +450,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 46266795}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &781252829 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6500793383992230991, guid: 8957328bf736a9a45984d538e81e9677, type: 3}
-  m_PrefabInstance: {fileID: 1708581502}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &781252830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 781252829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40bc819122ed11e418eaa8ae237b0f75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  frontShortRange: 7
-  backShortRange: 3
-  sideShortRange: 5
-  frontLongRange: 12
-  backLongRange: 6
-  sideLongRange: 8
-  frontAngle: 90
-  backAngle: 70
-  timeFrontLong: 3
-  timeFrontShort: 0.2
-  timeBackLong: 6
-  timeBackShort: 4
-  timeSideLong: 5
-  timeSideShort: 3
-  bulletPrefab: {fileID: 5429489552379571985, guid: f552a4e8a483e3945870584fbdf00c84, type: 3}
-  firePoint: {fileID: 132329316}
-  bulletForce: 2000
-  destroyTime: 10
-  fireInterval: 0.5
-  fireEffect: {fileID: 0}
-  isFire: 0
-  patrolPoints:
-  - {fileID: 1310992862}
-  - {fileID: 1134920875}
-  - {fileID: 606393916}
-  - {fileID: 1575630608}
-  moveSpeed: 1
-  maxFireDistance: 0
-  maxDedectionDistance: 35
-  health: 100
 --- !u!1 &1134920874
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,10 +750,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 197256479, guid: 8957328bf736a9a45984d538e81e9677, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 4397099770621002970, guid: 8957328bf736a9a45984d538e81e9677, type: 3}
+      propertyPath: patrolPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1310992862}
+    - target: {fileID: 4397099770621002970, guid: 8957328bf736a9a45984d538e81e9677, type: 3}
+      propertyPath: patrolPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1134920875}
+    - target: {fileID: 4397099770621002970, guid: 8957328bf736a9a45984d538e81e9677, type: 3}
+      propertyPath: patrolPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 606393916}
+    - target: {fileID: 4397099770621002970, guid: 8957328bf736a9a45984d538e81e9677, type: 3}
+      propertyPath: patrolPoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 1575630608}
     - target: {fileID: 5871750048884285173, guid: 8957328bf736a9a45984d538e81e9677, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.664577
@@ -850,14 +810,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Swat@Firing Rifle (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 197256476, guid: 8957328bf736a9a45984d538e81e9677, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6500793383992230991, guid: 8957328bf736a9a45984d538e81e9677, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 781252830}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8957328bf736a9a45984d538e81e9677, type: 3}
 --- !u!1 &1760406378
 GameObject:

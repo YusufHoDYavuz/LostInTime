@@ -252,9 +252,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void dicreaseHealth() 
+    public void dicreaseHealth(float damage) 
         {
-        health -= 10;
+        health -= damage;
         if (health <= 0)
         {
             isDie = true;

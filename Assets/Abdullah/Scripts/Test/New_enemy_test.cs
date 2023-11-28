@@ -52,7 +52,7 @@ public class New_enemy_test : MonoBehaviour
 
 
     [SerializeField] int health = 100;
-    bool isDie = false;
+    [SerializeField] bool isDie = false;
 
     private bool isRayActive = false;
     private float timer = 0f;
@@ -68,36 +68,46 @@ public class New_enemy_test : MonoBehaviour
          player = GameObject.FindWithTag("Player");
         nextPatrolPoint = transform.position;
         GenerateRandomPoint();
+
+        
     }
 
     void Update()
     {
-        calculateValues();
-        checkAngle();
-        Dedection();
-        Rotate();
-        if (isFire && fireIntervalControl)
+        if (!isDie)
         {
-            // Iþýný aç veya kapa
-            isRayActive = true;
+            calculateValues();
+            checkAngle();
+            Dedection();
+            Rotate();
+            if (isFire && fireIntervalControl)
+            {
+                // Iþýný aç veya kapa
+                isRayActive = true;
+            }
+            else
+            {
+                isRayActive = false;
+            }
+
+            // Eðer ýþýn açýksa
+            if (isRayActive)
+            {
+                timer += Time.deltaTime;
+
+
+                if (timer >= fireInterval)
+                {
+                    Fire();
+                    timer = 0f;
+                }
+            }
         }
         else
         {
-            isRayActive= false;
+            Die(100);
         }
-
-        // Eðer ýþýn açýksa
-        if (isRayActive)
-        {
-            timer += Time.deltaTime;
-
-            
-            if (timer >= fireInterval)
-            {
-                Fire();
-                timer = 0f;
-            }
-        }
+       
 
           
         
@@ -261,7 +271,13 @@ public class New_enemy_test : MonoBehaviour
             // Iþýnýn çarptýðý nesneyi kontrol et
             if (Physics.Raycast(ray, out hit))
             {
-                // Çarpan nesnenin adýný konsola yazdýr
+                if (hit.collider.CompareTag("Player"))
+                {
+                     player.GetComponent<PlayerController>().dicreaseHealth(10);
+
+                }
+                player.GetComponent<PlayerController>();
+
                 
             }
             Debug.DrawRay(firePoint.position, atisYonu * 10f, Color.red, 1f);
