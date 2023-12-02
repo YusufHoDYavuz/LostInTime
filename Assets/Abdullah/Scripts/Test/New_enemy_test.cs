@@ -273,7 +273,7 @@ public class New_enemy_test : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Player"))
                 {
-                     player.GetComponent<PlayerController>().dicreaseHealth(10);
+                     player.GetComponent<PlayerController>().dicreaseHealth(0);
 
                 }
                 player.GetComponent<PlayerController>();
