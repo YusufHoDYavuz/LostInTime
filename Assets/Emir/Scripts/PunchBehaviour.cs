@@ -33,9 +33,7 @@ public class PunchBehaviour : StateMachineBehaviour
         else if (canHit && stateInfo.normalizedTime >= 0.4f)
         {
             canHit = false;
-            //CloseCombat.PunchCollision();
-            foreach(Collider col in Singleton.Instance.punchColliders)
-                col.enabled = true;
+            CloseCombat.PunchCollision();
             
             CloseCombat.isPunching = true;
         }

@@ -4,7 +4,13 @@ public class DontDestroyScript : MonoBehaviour
 {
     void Start()
     {
-        
-        //DontDestroyOnLoad(gameObject);
+        if (Singleton.Instance.isFirstSceneDone)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+
+
+            DontDestroyOnLoad(gameObject);
     }
 }

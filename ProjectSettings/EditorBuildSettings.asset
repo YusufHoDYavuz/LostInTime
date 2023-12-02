@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Main Game/present.unity
     guid: b3470894befd9d74d91bb400d96f841e
   - enabled: 1
-    path: Assets/Main Game/future.unity
-    guid: c0ce9da3ebdf05147bc97b06b97f64eb
+    path: Assets/Main Game/newFuture.unity
+    guid: c742ec14d2eb80544b7a8a18f9844a1e
   m_configObjects: {}
