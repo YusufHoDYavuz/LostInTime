@@ -268,6 +268,10 @@ public class New_enemy_test : MonoBehaviour
             Ray ray = new Ray(firePoint.position, atisYonu);
             RaycastHit hit;
 
+
+            
+
+
             // Iþýnýn çarptýðý nesneyi kontrol et
             if (Physics.Raycast(ray, out hit))
             {
