@@ -889,7 +889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6700619804714838680, guid: 073bd712105426a49b3e2204cf89e6d6, type: 3}
       propertyPath: m_Rigs.Array.size
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6700619805250321483, guid: 073bd712105426a49b3e2204cf89e6d6, type: 3}
       propertyPath: field of view
@@ -980,8 +980,7 @@ PrefabInstance:
       value: 0.26206926
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 6868454508218400015, guid: 073bd712105426a49b3e2204cf89e6d6, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 073bd712105426a49b3e2204cf89e6d6, type: 3}

@@ -1956,7 +1956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 30cf10235e22ea54aa9afcaa91ae04d3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5465940246521907071, guid: 30cf10235e22ea54aa9afcaa91ae04d3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23920,6 +23920,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickCooldown: 0.02
   animator: {fileID: 724165191}
+  punchColliders: {fileID: 0}
 --- !u!1 &1156100598
 GameObject:
   m_ObjectHideFlags: 0
@@ -40939,7 +40940,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &435826931917701215
 GameObject:
   m_ObjectHideFlags: 0
@@ -41175,6 +41176,8 @@ MonoBehaviour:
   gettingCaughtPoint: {fileID: 0}
   imageTp: {fileID: 0}
   againPatrol: 0
+  health: 100
+  isDie: 0
 --- !u!4 &604098834819860117
 Transform:
   m_ObjectHideFlags: 0
@@ -50807,7 +50810,7 @@ Transform:
   m_GameObject: {fileID: 334209072028308603}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: -1.166, z: 0}
   m_LocalScale: {x: 39, y: 39, z: 39}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -51457,6 +51460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickCooldown: 0.02
   animator: {fileID: 604098835697428776}
+  punchColliders: {fileID: 0}
 --- !u!4 &2002548250889154100
 Transform:
   m_ObjectHideFlags: 0

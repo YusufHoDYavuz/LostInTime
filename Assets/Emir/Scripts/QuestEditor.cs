@@ -1,5 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+
+#if UNITY_EDITOR
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -7,7 +7,6 @@ using UnityEngine;
 [CustomEditor(typeof(QuestController))]
 public class QuestEditor : Editor
 {
-    GameObject lastCreated = null;
 
     public override void OnInspectorGUI()
     {
@@ -24,3 +23,4 @@ public class QuestEditor : Editor
         }
     }
 }
+#endif
